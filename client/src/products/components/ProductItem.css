@@ -1,9 +1,11 @@
 .product-item {
   margin: 1rem 0;
+  
 }
 
 .product-item__content {
   display: flex;
+  filter: brightness(98%);
 }
 
 .product-item__info {
@@ -19,6 +21,7 @@
 .product-item__image img {
   width: 25rem;
   height: 100%;
+  /* background-color:#f7f7f7 */
   /* object-fit: cover; */
 }
 
@@ -31,7 +34,6 @@
   margin-bottom: 1rem;
   text-decoration: none;
   font-size: 25px;
-  
   display: block;
   color:#0F1111 
 }

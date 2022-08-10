@@ -1,0 +1,52 @@
+.product-detail {
+  background: white;
+  margin: 7rem auto;
+  width: 90%;
+  max-width: 120rem;
+
+}
+
+.product-detail__content {
+  display: flex;
+}
+
+.product-detail .image {
+  position: sticky;
+  top:100px;
+  width: 50%;
+  height: 80%;
+  padding: 2rem;
+}
+
+.product-detail .image img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.product-detail .info {
+  position: relative;
+  justify-self: end;
+  width: 50%;
+  background-color: white;
+}
+
+.product-detail .title {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10rem;
+}
+
+.product-detail .info .about {
+  font-size: 20px;
+}
+
+.product-detail .info .about h1,
+.product-detail .info .about h2,
+.product-detail .info .about h3 {
+  margin-bottom: 1rem;
+}
+
+.product-detail .info .about ul li {
+  margin-bottom: 0.5rem;
+}

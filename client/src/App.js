@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import StoreProducts from "./products/pages/StoreProducts";
-import ProductDetail from "./products/components/ProductDetail";
+import ProductDetail from "./products/pages/ProductDetail";
 
 function App() {
   return (
