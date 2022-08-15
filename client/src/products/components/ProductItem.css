@@ -47,30 +47,7 @@
 
 }
 
-.product-item__info .prices{
-  display: flex;
-  justify-content: flex-start;
-  gap:0.4rem;
-  font-size: 3rem;
-}
 
-.product-item__info .prices .discount{
-
-  color:#cc0c39 !important
-
-}
-
-.product-item__info .prices .final-price{
-
-}
-
-.product-item__info .prices .secondery{
-  font-size: 1.5rem;
-  text-decoration:line-through;
-  color:#565959;
-  align-self: end;
-  margin-bottom: 8px;
-}
 
 .product-item__actions {
   padding: 1rem;

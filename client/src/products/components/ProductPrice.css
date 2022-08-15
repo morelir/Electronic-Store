@@ -1,0 +1,21 @@
+.prices {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  font-size: 2rem;
+}
+
+.prices .discount {
+  color: #cc0c39 !important;
+}
+
+.prices .final-price {
+}
+
+.prices .secondery {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  color: #565959;
+  align-self: end;
+  margin-bottom: 8px;
+}
