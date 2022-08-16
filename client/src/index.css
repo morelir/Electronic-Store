@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
 }
 
 html {
-  font-family: "Amazon Ember",Arial,sans-serif;
+  font-family: Arial;
 }
 
 body {
@@ -39,4 +39,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.size-large {
+  font-size: 24px;
+  line-height: 32px ;
+}
+
+.size-base {
+  font-size: 16px ;
+  line-height: 22px ;
+}
+
+.size-base-plus {
+  font-size: 18px ;
+  line-height: 26px ;
+}
+
+.text-bold {
+  font-weight: 700 ;
+}
+
+hr {
+  background-color: transparent ;
+  border-bottom-width: 0 ;
+  border-left-width: 0 ;
+  border-right-width: 0 ;
+  border-top: 1px solid #cacaca ;
+  display: block ;
+  height: 1px ;
+  line-height: 19px ;
+  margin-bottom: 14px ;
+  margin-top: 0 ;
 }

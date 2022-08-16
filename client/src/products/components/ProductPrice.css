@@ -2,20 +2,34 @@
   display: flex;
   justify-content: flex-start;
   gap: 0.4rem;
-  font-size: 2rem;
 }
 
 .prices .discount {
   color: #cc0c39 !important;
+  font-size: 28px;
+  
 }
 
 .prices .final-price {
+  font-size: 28px;
 }
 
-.prices .secondery {
-  font-size: 1.5rem;
+.prices .list-price {
+  font-size: 14px;
   text-decoration: line-through;
   color: #565959;
-  align-self: end;
-  margin-bottom: 8px;
+  align-self: flex-end;
+  padding-bottom: 5px;
 }
+
+.list-price__detail {
+  font-size: 14px;
+  color: #565959;
+}
+
+.list-price__detail .price {
+  text-decoration: line-through;
+}
+
+
+

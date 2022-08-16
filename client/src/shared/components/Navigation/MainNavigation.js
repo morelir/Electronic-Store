@@ -39,9 +39,7 @@ const MainNavigation = (props) => {
         </button>
         <h1 className="main-navigation__title">
           <Link to="/">
-            
-            <img src={logo} height={65} />
-           
+            <img src={logo} height={50} />
           </Link>
         </h1>
         <nav className="main-navigation__header-nav">

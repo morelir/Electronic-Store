@@ -1,0 +1,48 @@
+.info {
+  position: relative;
+  justify-self: end;
+  width: 40%;
+  background-color: white;
+  margin-left: 2rem;
+}
+
+/* .info .title {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 10px;
+} */
+
+.info .rating {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info .price {
+  margin-bottom: 20px;
+}
+
+.info .overview {
+  margin-bottom: 20px;
+}
+
+/* .info .about {
+  font-size: 18px;
+}
+
+.info .about h1,
+.info .about h2,
+.info .about h3 {
+
+  margin-bottom: 1rem;
+} */
+
+.info .about ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1400px) {
+  .info {
+    margin: 0;
+    width: 100%;
+  }
+}

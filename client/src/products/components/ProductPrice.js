@@ -8,12 +8,32 @@ const ProductPrice = (props) => {
   } else {
     finalPrice = props.price;
   }
+  
+  if (props.priceDetail) {
+    return (
+      <div className={`${props.className ? props.className : ""}`}>
+        <div className="prices">
+          {!!props.discount && (
+            <span className="discount">-{props.discount}%</span>
+          )}
+          <span className="final-price">{finalPrice}$</span>
+        </div>
+        <div>
+          {!!props.discount && (
+            <span className="list-price__detail">
+              List Price: <span className="price">{props.price}$</span>
+            </span>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`${props.className ? props.className : ""} prices `}>
       {!!props.discount && <span className="discount">-{props.discount}%</span>}
       <span className="final-price">{finalPrice}$</span>
-      {!!props.discount && <span className="secondery">{props.price}$</span>}
+      {!!props.discount && <span className="list-price">{props.price}$</span>}
     </div>
   );
 };

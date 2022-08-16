@@ -1,16 +1,30 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+// import Cart from "../../../Cart/Cart";
+import HeaderCartButton from "./HeaderCartButton";
 // import { AuthContext } from "../../context/auth-context";
 import "./NavLinks.css";
 
 const NavLinks = (props) => {
   // const auth = useContext(AuthContext);
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
 
   return (
     <ul className="nav-links">
+      {/* {cartIsShown && <Cart onClose={hideCartHandler} />} */}
       <li>
         <NavLink to="/auth">Sign in</NavLink>
       </li>
+      <HeaderCartButton onClick={props.onShowCart} />
     </ul>
     // <ul className="nav-links">
     //   <li>
