@@ -5,7 +5,7 @@ import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "../UIElements/Backdrop";
-import logo from "../../images/online store.png"
+import logo from "../../images/gamer store.png"
 import "./MainNavigation.css";
 
 const MainNavigation = (props) => {
