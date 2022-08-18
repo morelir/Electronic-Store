@@ -21,6 +21,15 @@ const ProductActions = (props) => {
       return;
     }
 
+    // const addToCartHandler = amount => {
+    //   cartCtx.addItem({
+    //     id: props.id,
+    //     name: props.name,
+    //     amount: amount,
+    //     price: props.price
+    //   });
+    // };
+
     props.onAddToCart(enteredAmountNumber);
   };
 

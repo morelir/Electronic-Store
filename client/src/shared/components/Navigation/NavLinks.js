@@ -24,7 +24,7 @@ const NavLinks = (props) => {
       <li>
         <NavLink to="/auth">Sign in</NavLink>
       </li>
-      <HeaderCartButton onClick={props.onShowCart} />
+      <li><HeaderCartButton onClick={props.onShowCart} /></li>
     </ul>
     // <ul className="nav-links">
     //   <li>

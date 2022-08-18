@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import {useSelector} from "react-redux"
 
 // import CartIcon from '../../../Cart/CartIcon';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './HeaderCartButton.css';
 
 const HeaderCartButton = (props) => {
@@ -35,7 +36,7 @@ const HeaderCartButton = (props) => {
     <button className={btnClasses} onClick={props.onClick}>
       <span className="icon">
         {/* <CartIcon /> */}
-        <ShoppingCartIcon />
+        <ShoppingCartOutlinedIcon style={{fontSize:"30px"}}  />
       </span>
       <span>Cart</span>
       {/* {numberOfCartItems} */}
