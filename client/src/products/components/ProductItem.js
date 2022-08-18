@@ -12,12 +12,13 @@ const ProductItem = (props) => {
     <li className="product-item">
       <Card className="product-item__content">
         <div className="product-item__image">
-          <img src={props.image} />
+          <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} />
         </div>
         <div className="product-item__info">
           <Link to={"/"+props.id}>{props.title}</Link>
-          <Rating  name="read-only" value={props.rating} readOnly />
-          <ProductPrice discount={props.discount} price={props.price}/>
+          {/* need to change rating */}
+          <Rating  name="read-only" value={props.rating.amount} readOnly /> 
+          <ProductPrice discount={props.discount} listPrice={props.listPrice}/>
         </div>
         <div className="product-item__actions"></div>
       </Card>

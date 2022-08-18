@@ -61,10 +61,18 @@
   .nav-links li {
     margin: 0 0.5rem;
   }
-
   .nav-links a {
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid transparent;
     color: white;
     text-decoration: none;
+    
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    border-color: white;
   }
 
   .nav-links button {

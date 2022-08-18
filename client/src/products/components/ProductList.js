@@ -10,10 +10,10 @@ const ProductList = (props) => {
         <ProductItem
           key={product.id}
           id={product.id}
-          image={product.image}
           title={product.title}
+          image={product.images[0]}
           rating={product.rating}
-          price={product.price}
+          listPrice={product.listPrice}
           discount={product.discount}
         />
       ))}

@@ -14,13 +14,13 @@ const ProductInfoBlock = (props) => {
       <Rating
         className="rating"
         name="read-only"
-        value={props.rating}
+        value={props.rating.amount}
         readOnly
       />
       <hr />
       <ProductPrice
         className="price"
-        price={props.price}
+        listPrice={props.listPrice}
         discount={props.discount}
         priceDetail
       />

@@ -40,7 +40,7 @@
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 1400px) {
+@media  (max-width: 1200px) {
   .info {
     margin: 0;
     width: 100%;

@@ -14,16 +14,13 @@ app.use("/uploads", express.static(path.join("uploads")));
 
 routesInit(app);
 
-
-
-
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@online-store.v89if2n.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(process.env.PORT || 5000);
-    console.log("mongo connected");
+    console.log("mongoose connected");
   })
   .catch((err) => {
     console.log(err);

@@ -6,10 +6,9 @@ import p3_image from "../../shared/images/71CMCq8IMFL._AC_SL1500_.jpg";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ProductImageBlock from "../components/ProductImageBlock";
 import ProductInfoBlock from "../components/ProductInfoBlock";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./ProductDetail.css";
-import Card from "../../shared/components/UIElements/Card";
-
-
 
 const generateListOfImages = (image) => {
   const images = [];
@@ -50,17 +49,22 @@ const DUMMY_PRODUCTS = [
 
 const ProductDetail = () => {
   const productId = useParams().productId;
-  const [isLoading, setIsLoading] = useState(true);
   const [product, setProduct] = useState();
-  
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
-    const product = DUMMY_PRODUCTS.find((prod) => prod.id === productId);
-    setProduct(product);
-    setIsLoading(false);
+    const fetchProductById = async () => {
+      try {
+        const responseData = await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/products/${productId}`
+        );
+        console.log(responseData)
+        setProduct(responseData.product);
+      } catch (err) {}
+    };
+    fetchProductById();
   }, []);
 
-  
   if (isLoading) {
     return (
       <div className="center">
@@ -71,8 +75,18 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail">
-      <ProductImageBlock images={product.images} />
-      <ProductInfoBlock title={product.title} rating={product.rating} price={product.price} discount={product.discount}/>
+      <ErrorModal error={error} onClear={clearError} />
+      {product && (
+        <React.Fragment>
+          <ProductImageBlock images={product.images} />
+          <ProductInfoBlock
+            title={product.title}
+            rating={product.rating}
+            listPrice={product.listPrice}
+            discount={product.discount}
+          />
+        </React.Fragment>
+      )}
     </div>
   );
 };

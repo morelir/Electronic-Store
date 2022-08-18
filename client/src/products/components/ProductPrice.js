@@ -4,9 +4,9 @@ import "./ProductPrice.css";
 const ProductPrice = (props) => {
   let finalPrice;
   if (props.discount) {
-    finalPrice = (1 - props.discount / 100) * props.price;
+    finalPrice = (1 - props.discount / 100) * props.listPrice;
   } else {
-    finalPrice = props.price;
+    finalPrice = props.listPrice;
   }
   
   if (props.priceDetail) {
@@ -21,7 +21,7 @@ const ProductPrice = (props) => {
         <div>
           {!!props.discount && (
             <span className="list-price__detail">
-              List Price: <span className="price">{props.price}$</span>
+              List Price: <span className="price">{props.listPrice}$</span>
             </span>
           )}
         </div>
@@ -33,7 +33,7 @@ const ProductPrice = (props) => {
     <div className={`${props.className ? props.className : ""} prices `}>
       {!!props.discount && <span className="discount">-{props.discount}%</span>}
       <span className="final-price">{finalPrice}$</span>
-      {!!props.discount && <span className="list-price">{props.price}$</span>}
+      {!!props.discount && <span className="list-price">{props.listPrice}$</span>}
     </div>
   );
 };

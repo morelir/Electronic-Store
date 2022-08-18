@@ -4,13 +4,12 @@ const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 
 const HttpError = require("../models/http-error");
-//const Product = require("../models/product");
-const {Product} = require("../models/product");
+const Product = require("../models/product");
+// const {Product} = require("../models/product");
 // const User = require("../models/user");
 
 const getProductsByCategory = async (req, res, next) => {
   const category = req.params.category;
-  console.log(category)
   let products;
   try {
     products = await Product.find({ category: category });
@@ -22,7 +21,6 @@ const getProductsByCategory = async (req, res, next) => {
     return next(error);
   }
 
-
   if (!products || products.length === 0) {
     const error = new HttpError(
       "Could not find products for the provided category.",
@@ -30,9 +28,37 @@ const getProductsByCategory = async (req, res, next) => {
     );
     return next(error);
   }
-
+  
   res.json({
     products: products.map((product) => product.toObject({ getters: true })),
+  });
+};
+
+const getProductById = async (req, res, next) => {
+  const productId = req.params.productId;
+  console.log("here");
+  let product;
+  try {
+    product = await Product.findById(productId);
+  } catch (err) {
+    const error = new HttpError(
+      "Fetching product failed, please try again later.",
+      500
+    );
+    return next(error);
+  }
+
+  if (!product) {
+    const error = new HttpError(
+      "Could not find product, please try again later.",
+      404
+    );
+    return next(error);
+  }
+  console.log(product);
+
+  res.json({
+    product: product.toObject({ getters: true }),
   });
 };
 
@@ -220,6 +246,6 @@ const getProductsByCategory = async (req, res, next) => {
 //   res.status(200).json({ message: "Deleted place." });
 // };
 
+exports.getProductById = getProductById;
 exports.getProductsByCategory = getProductsByCategory;
-// exports.getPlacesByUserId = getPlacesByUserId;
 

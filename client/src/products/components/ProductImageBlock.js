@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import "./ProductImageBlock.css";
 
@@ -52,18 +52,18 @@ const ProductImageBlock = (props) => {
           return (
             <li
               className={`image ${img.isActive ? "active" : ""}`}
-              onClick={() => {
+              onMouseEnter={() => {
                 selectImageHandler(img.src, pos);
               }}
               key={pos}
             >
-              <img src={img.src} />
+              <img src={`${process.env.REACT_APP_ASSET_URL}/${img.src}`} />
             </li>
           );
         })}
       </ul>
       <div className="image-container">
-        <img src={pickedImage.src}></img>
+        <img src={`${process.env.REACT_APP_ASSET_URL}/${pickedImage.src}`} />
       </div>
     </div>
   );
