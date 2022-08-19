@@ -58,7 +58,7 @@ const ProductDetail = () => {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/products/${productId}`
         );
-        console.log(responseData)
+        console.log(responseData);
         setProduct(responseData.product);
       } catch (err) {}
     };
@@ -84,6 +84,8 @@ const ProductDetail = () => {
             rating={product.rating}
             listPrice={product.listPrice}
             discount={product.discount}
+            bulletsDescription={product.bulletsDescription}
+            overview={product.overview}
           />
         </React.Fragment>
       )}
