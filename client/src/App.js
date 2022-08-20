@@ -4,16 +4,17 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import StoreProducts from "./products/pages/StoreProducts";
 import ProductDetail from "./products/pages/ProductDetail";
 import Auth from "./auth/Auth";
-import Carousel from "./shared/components/UIElements/Carousel";
+import Category from "./products/pages/Category";
+
 
 function App() {
   return (
     <Router>
       <MainNavigation />
-      <Carousel/>
       <Routes>
-        <Route path="/" element={<StoreProducts/>} />
-        <Route path="/:productId" element={<ProductDetail/>} />
+        <Route path="/" element={<Category/>} />
+        <Route path="/:categoryId/products" element={<StoreProducts/>} />
+        <Route path="/:categoryId/products/:productId" element={<ProductDetail/>} />
         <Route path="/auth" element={<Auth/>} />
       </Routes>
     </Router>

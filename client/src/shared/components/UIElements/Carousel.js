@@ -1,33 +1,59 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Carousel from "react-elastic-carousel";
 import "./Carousel.css";
-import image1 from "../../images/4a012340-8fdf-43e6-a5b4-110079db0586.__CR0,0,1464,600_PT0_SX1464_V1___.jpg";
-import image2 from "../../images/af0b035b-cdde-43b3-8739-24b4771df61e.__CR0,0,800,600_PT0_SX800_V1___.jpg";
+import image1 from "../../images/RAZER.jpg";
+import image2 from "../../images/nintendo switch.webp";
+import image3 from "../../images/playstation 5.jpg";
+import image4 from "../../images/HyperX Cloud 2.jpg";
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   // { width: 550, itemsToShow: 2 },
   // { width: 768, itemsToShow: 3 },
   // { width: 1200, itemsToShow: 4 },
 ];
+const TEMP_carouselImages = [
+  <div className="image">
+    <img src={image1}></img>
+  </div>,
+  <div className="image">
+    <img src={image2}></img>
+  </div>,
+  <div className="image">
+    <img src={image3}></img>
+  </div>,
+  <div className="image">
+    <img src={image4}></img>
+  </div>,
+];
+
+let resetTimeout;
 
 const Carousel2 = () => {
+  const [carouselImages, setCarouselImages] = useState(TEMP_carouselImages);
+  const carouselRef = useRef();
   return (
     <>
       <div className="carousel">
-        <Carousel enableAutoPlay  enableMouseSwipe={false}  breakPoints={breakPoints}>
-          <div className="image">
-            <img src={image1}></img>
-          </div>
-          <div className="image">
-            <img src={image2}></img>
-          </div>
-
-          {/* <Item>Three</Item>
-          <Item>Four</Item>
-          <Item>Five</Item>
-          <Item>Six</Item>
-          <Item>Seven</Item>
-          <Item>Eight</Item> */}
+        <Carousel
+          ref={carouselRef}
+          enableAutoPlay
+          autoPlaySpeed={2000}
+          enableMouseSwipe={false}
+          showArrows={false}
+          pagination={false}
+          onNextEnd={({ index }) => {
+            clearTimeout(resetTimeout);
+            if (index + 1 === carouselImages.length) {
+              resetTimeout = setTimeout(() => {
+                carouselRef.current.goTo(0);
+                // setCarouselImages(carouselImages.reverse())
+              }, 2000); // same time
+            }
+          }}
+        >
+          {carouselImages.map((image, pos) => {
+            return <React.Fragment key={pos}>{image}</React.Fragment>;
+          })}
         </Carousel>
       </div>
     </>

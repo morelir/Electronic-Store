@@ -20,6 +20,7 @@
 .main-navigation__title {
   color: white;
   margin: 1rem;
+  font-size: 26px;
 }
 
 .main-navigation__title a {
@@ -42,5 +43,24 @@
 
   .main-navigation__header-nav {
     display: block;
+  }
+
+  .main-navigation__title {
+    
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+
+  .main-navigation__title {
+    
+    font-size: 26px;
+  }
+
+  .main-navigation__title {
+    
+    font-size: 24px;
   }
 }

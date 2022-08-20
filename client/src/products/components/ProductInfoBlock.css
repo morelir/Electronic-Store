@@ -6,11 +6,9 @@
   margin-left: 2rem;
 }
 
-/* .info .title {
-  font-size: 28px;
-  line-height: 32px;
-  margin-bottom: 10px;
-} */
+.info .title {
+  font-weight: 500;
+}
 
 .info .rating {
   font-size: 20px;

@@ -12,6 +12,10 @@
   padding: 1rem;
 }
 
+.product-item__info .title {
+  font-weight: 500;
+}
+
 .product-item__image {
   width: 25rem;
   height: 20rem;
@@ -79,8 +83,26 @@
     width: 100%;
     justify-content: center;
   } 
+  .product-item__image img {
+    width: 20rem;
+    height: 100%;
+    /* background-color:#f7f7f7 */
+    /* object-fit: cover; */
+  }
+
   .product-item__content{
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  
+
+  .product-item__image {
+    
+    /* width: 90%; */
+    
+  } 
+}
+
 

@@ -6,9 +6,9 @@ const ProductOverview = (props) => {
   return (
     <table className="overview table">
       <tbody>
-        {props.overview.map((item) => {
+        {props.overview.map((item,pos) => {
           return (
-            <tr>
+            <tr key={pos}>
               <td>
                 <span className="size-base text-bold">
                   {item[0]}

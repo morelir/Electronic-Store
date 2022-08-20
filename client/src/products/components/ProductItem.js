@@ -15,7 +15,7 @@ const ProductItem = (props) => {
           <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} />
         </div>
         <div className="product-item__info">
-          <Link to={"/"+props.id}>{props.title}</Link>
+          <Link className="title" to={props.id}>{props.title}</Link>
           {/* need to change rating */}
           <Rating  name="read-only" value={props.rating.amount} readOnly /> 
           <ProductPrice discount={props.discount} listPrice={props.listPrice}/>
