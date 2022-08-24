@@ -10,6 +10,7 @@ let Product = {
 };
 
 const productSchema = new mongoose.Schema({
+  user:{ type: mongoose.Types.ObjectId, required: true, ref: 'users' },
   products: [Product],
   totalAmount: { type: Number, required: true },
   totalQuantity: { type: Number, required: true },

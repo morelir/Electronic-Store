@@ -12,10 +12,10 @@ import ProductDetail from "./products/pages/ProductDetail";
 import Auth from "./auth/Auth";
 import Category from "./products/pages/Category";
 import Notification from "./shared/components/UIElements/Notification";
-import { useAuthSideEffects } from "./shared/hooks/authSideEffects-hook";
+import { useSideEffects } from "./shared/hooks/sideEffects-hook";
 
 function App() {
-  useAuthSideEffects();
+  useSideEffects();
   const auth = useSelector((state) => state.auth);
 
   let routes;

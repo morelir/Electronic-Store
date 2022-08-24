@@ -19,3 +19,13 @@
   border: 2px solid #e4c62ed4;
   
 }
+
+.form button:disabled {
+ 
+  cursor: auto;
+  background-color: #ffec8f;
+  border: 2px solid #ffec8f;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+
+}

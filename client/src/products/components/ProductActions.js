@@ -1,16 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import {useNavigate} from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../shared/store/cart-slice";
+import { sendCartData } from "../../shared/store/cart-actions";
 import Input from "../../shared/components/UIElements/Input";
 import "./ProductActions.css";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 let finalPrice;
 
 const ProductActions = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
+  const cartIsLoading = useSelector((state) => state.cart.isLoading);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const navigate=useNavigate();
 
   useEffect(() => {
     if (props.discount) {
@@ -34,25 +39,14 @@ const ProductActions = (props) => {
       setAmountIsValid(false);
       return;
     }
-
-    dispatch(
-      cartActions.addItemToCart({
-        id: props.id,
-        price: finalPrice,
-        amount: enteredAmountNumber,
-      })
-    );
-
-    // const addToCartHandler = amount => {
-    //   cartCtx.addItem({
-    //     id: props.id,
-    //     name: props.name,
-    //     amount: amount,
-    //     price: props.price
-    //   });
-    // };
-
-    // props.onAddToCart(enteredAmountNumber);
+    if (auth.isLoggedIn) {
+      dispatch(
+        sendCartData(props.id, finalPrice, enteredAmountNumber, auth.token)
+      );
+    }
+    else{
+      navigate(`/auth`,{replace:true})
+    }
   };
 
   return (
@@ -69,7 +63,9 @@ const ProductActions = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>Add to Cart</button>
+      {!cartIsLoading && <button>Add to Cart</button>}
+      {cartIsLoading && <LoadingSpinner />}
+
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>
   );

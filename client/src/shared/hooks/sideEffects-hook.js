@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store/auth-slice";
+import {fetchCartData} from "../store/cart-actions"
 
 let logoutTimer;
 
-export const useAuthSideEffects = () => {
-  const {token, tokenExpirationDate} = useSelector((state) => state.auth);
+export const useSideEffects = () => { //set timout to logout for new user token
+  const { token, tokenExpirationDate,isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,9 +17,9 @@ export const useAuthSideEffects = () => {
     } else {
       clearTimeout(logoutTimer);
     }
-  }, [token, tokenExpirationDate,dispatch]);
+  }, [token, tokenExpirationDate, dispatch]);
 
-  useEffect(() => {
+  useEffect(() => { //get from local storage userData if there is
     const storedData = JSON.parse(localStorage.getItem("userData"));
     if (
       storedData &&
@@ -34,6 +35,12 @@ export const useAuthSideEffects = () => {
       );
     }
   }, [dispatch]);
+
+  useEffect(() => { //fetch cart data for user that sign in
+    if (isLoggedIn) {
+      dispatch(fetchCartData(token));
+    }
+  }, [isLoggedIn,token]);
 
   return {};
 };

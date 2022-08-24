@@ -1,11 +1,12 @@
 import { uiActions } from "./ui-slice";
 import { cartActions } from "./cart-slice";
 
-export const fetchCartData = () => {
+export const fetchCartData = (token) => {
   return async (dispatch) => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://test-9b5eb-default-rtdb.firebaseio.com/cart.json"
+        `${process.env.REACT_APP_BACKEND_URL}/cart`,
+        { headers: { Authorization: "Bearer " + token } }
       );
 
       if (!response.ok) {
@@ -18,74 +19,70 @@ export const fetchCartData = () => {
     };
 
     try {
+      dispatch(cartActions.setIsLoading({ isLoading: true }));
       const cartData = await fetchData();
       dispatch(
         cartActions.replaceCart({
           products: cartData.products || [],
-          totalQuantity: cartData.totalQuantity,
+          totalQuantity: cartData.totalQuantity || 0,
+          totalAmount: cartData.totalAmount || 0,
         })
       );
     } catch (error) {
       dispatch(
-        uiActions.showNotification({
-          status: "error",
-          title: "Error!",
-          message: "Fetching cart data failed!",
+        uiActions.setError({
+          message: error.message,
         })
       );
     }
+    dispatch(cartActions.setIsLoading({ isLoading: false }));
   };
 };
 
-export const sendCartData = (cart) => {
+export const sendCartData = (id, price, amount, token) => {
   return async (dispatch) => {
-    // dispatch(
-    //   uiActions.showNotification({
-    //     status: "pending",
-    //     title: "Sending...",
-    //     message: "Sending cart data!",
-    //   })
-    // );
-
     const sendRequest = async () => {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/cart`,
         {
           method: "PUT",
           body: JSON.stringify({
-            products: cart.products,
-            totalQuantity: cart.totalQuantity,
-            totalAmount: cart.totalAmount,
+            productId: id,
+            price,
+            amount,
           }),
-          headers:{
-            'Content-Type': 'application/json'
-          }
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
         }
       );
 
       if (!response.ok) {
-        throw new Error("Sending cart data failed.");
+        throw new Error(responseData.message);
       }
+      const responseData = await response.json();
+
+      return responseData;
     };
 
     try {
-      await sendRequest();
-
-      // dispatch(
-      //   uiActions.showNotification({
-      //     status: "success",
-      //     title: "Success!",
-      //     message: "Sent cart data successfully!",
-      //   })
-      // );
+      dispatch(cartActions.setIsLoading({ isLoading: true }));
+      const cartData = await sendRequest();
+      dispatch(
+        cartActions.replaceCart({
+          products: cartData.products,
+          totalQuantity: cartData.totalQuantity,
+          totalAmount: cartData.totalAmount,
+        })
+      );
     } catch (error) {
       dispatch(
-        uiActions.showNotification({
-          status: "error",
-          title: "Error!",
-          message: "Sending cart data failed!",
+        uiActions.setError({
+          message: error.message,
         })
       );
     }
+    dispatch(cartActions.setIsLoading({ isLoading: false }));
   };
 };

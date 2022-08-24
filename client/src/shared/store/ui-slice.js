@@ -1,16 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  name: 'ui',
-  initialState: { notification: null },
+  name: "ui",
+  initialState: { isLoading: false ,errorMessage:""},
   reducers: {
-    showNotification(state, action) {
-      state.notification = {
-        status: action.payload.status,
-        title: action.payload.title,
-        message: action.payload.message,
-      };
+    setIsLoading(state, action) {
+      state.isLoading = action.payload.isLoading;
     },
+    setError(state,action){
+      state.errorMessage = action.payload.message;
+    }
   },
 });
 

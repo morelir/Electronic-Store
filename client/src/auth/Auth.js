@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 import Card from "../shared/components/UIElements/Card";
 import Input from "../shared/components/FormElements/Input";
@@ -15,11 +16,11 @@ import {
 import { useForm } from "../shared/hooks/form-hook";
 import { useHttpClient } from "../shared/hooks/http-hook";
 import { authActions } from "../shared/store/auth-slice";
-// import { AuthContext } from '../shared/context/auth-context';
 import "./Auth.css";
 
 const Auth = () => {
   // const auth = useContext(AuthContext);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -83,6 +84,7 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
+
         dispatch(
           authActions.login({
             userId: responseData.userId,
@@ -105,15 +107,16 @@ const Auth = () => {
           "POST",
           formData
         );
-
         dispatch(
           authActions.login({
             userId: responseData.userId,
             token: responseData.token,
           })
         );
+        
       } catch (err) {}
     }
+    navigate(-1);
   };
 
   return (

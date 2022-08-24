@@ -1,35 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 
-// import CartIcon from '../../../Cart/CartIcon';
+import { useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./HeaderCartButton.css";
-import { sendCartData } from "../../store/cart-actions";
-
-let isInitial = true;
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-
-  // const numberOfCartItems = items.reduce((curNumber, item) => {
-  //   return curNumber + item.amount;
-  // }, 0);
 
   const btnClasses = `cart-button`;
-
-  useEffect(() => {
-    if (isInitial) {
-      isInitial = false;
-      return;
-    }
-
-    if (cart.changed) {
-      console.log("changed")
-      dispatch(sendCartData(cart));
-    }
-  }, [cart]);
 
   useEffect(() => {
     if (cart.totalQuantity === 0) {
@@ -53,6 +32,7 @@ const HeaderCartButton = (props) => {
         <ShoppingCartOutlinedIcon style={{ fontSize: "30px" }} />
       </span>
       <span>Cart</span>
+
       <span
         className={`badge ${btnIsHighlighted ? "bump" : ""} ${
           cart.totalQuantity > 9 ? "move-badge__left" : ""
