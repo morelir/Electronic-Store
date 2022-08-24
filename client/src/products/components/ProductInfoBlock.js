@@ -24,7 +24,11 @@ const ProductInfoBlock = (props) => {
         discount={props.discount}
         priceDetail
       />
-      <ProductActions />
+      <ProductActions
+        id={props.id}
+        listPrice={props.listPrice}
+        discount={props.discount}
+      />
       <hr />
       <ProductOverview overview={props.overview} className="overview" />
       <hr />

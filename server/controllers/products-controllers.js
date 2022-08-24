@@ -36,8 +36,7 @@ const getProductsByCategory = async (req, res, next) => {
 
 const getProductById = async (req, res, next) => {
   const productId = req.params.productId;
-  console.log("here");
-  let product;
+
   try {
     product = await Product.findById(productId);
   } catch (err) {
@@ -55,7 +54,7 @@ const getProductById = async (req, res, next) => {
     );
     return next(error);
   }
-  console.log(product);
+
 
   res.json({
     product: product.toObject({ getters: true }),

@@ -1,47 +1,65 @@
-import { useContext, useEffect, useState } from 'react';
-import {useSelector} from "react-redux"
+import { useContext, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 // import CartIcon from '../../../Cart/CartIcon';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import './HeaderCartButton.css';
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import "./HeaderCartButton.css";
+import { sendCartData } from "../../store/cart-actions";
+
+let isInitial = true;
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-  // const cartCtx = useContext(CartContext);
-
-  // const { items } = cartCtx;
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   // const numberOfCartItems = items.reduce((curNumber, item) => {
   //   return curNumber + item.amount;
   // }, 0);
 
-  const btnClasses=`cart-button ${btnIsHighlighted ? "bump" : ''}`
+  const btnClasses = `cart-button`;
 
-  // useEffect(() => {
-  //   if (items.length === 0) {
-  //     return;
-  //   }
-  //   setBtnIsHighlighted(true);
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
 
-  //   const timer = setTimeout(() => {
-  //     setBtnIsHighlighted(false);
-  //   }, 300);
+    if (cart.changed) {
+      console.log("changed")
+      dispatch(sendCartData(cart));
+    }
+  }, [cart]);
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [items]);
+  useEffect(() => {
+    if (cart.totalQuantity === 0) {
+      return;
+    }
+    setBtnIsHighlighted(true);
+
+    const timer = setTimeout(() => {
+      setBtnIsHighlighted(false);
+    }, 400);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cart.totalQuantity]);
 
   return (
     <button className={btnClasses} onClick={props.onClick}>
       <span className="icon">
         {/* <CartIcon /> */}
-        <ShoppingCartOutlinedIcon style={{fontSize:"30px"}}  />
+        <ShoppingCartOutlinedIcon style={{ fontSize: "30px" }} />
       </span>
       <span>Cart</span>
-      {/* {numberOfCartItems} */}
-      <span className="badge">3</span>
-      
+      <span
+        className={`badge ${btnIsHighlighted ? "bump" : ""} ${
+          cart.totalQuantity > 9 ? "move-badge__left" : ""
+        }`}
+      >
+        {cart.totalQuantity}
+      </span>
     </button>
   );
 };

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import Cart from "../../../Cart/Cart";
+import { useSelector,useDispatch } from "react-redux";
+import {authActions} from "../../store/auth-slice"
 import HeaderCartButton from "./HeaderCartButton";
-// import { AuthContext } from "../../context/auth-context";
 import "./NavLinks.css";
 
 const NavLinks = (props) => {
-  // const auth = useContext(AuthContext);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -17,14 +18,26 @@ const NavLinks = (props) => {
     setCartIsShown(false);
   };
 
+  const logout=()=>{
+    dispatch(authActions.logout());
+  }
 
   return (
     <ul className="nav-links">
       {/* {cartIsShown && <Cart onClose={hideCartHandler} />} */}
+      {!isLoggedIn && (
+        <li>
+          <NavLink to="/auth">Sign <span style={{color:"#f08804"}}>in</span></NavLink>
+        </li>
+      )}
+      {isLoggedIn && (
+        <li>
+          <button onClick={logout}>Sign out</button>
+        </li>
+      )}
       <li>
-        <NavLink to="/auth">Sign in</NavLink>
+        <HeaderCartButton />
       </li>
-      <li><HeaderCartButton onClick={props.onShowCart} /></li>
     </ul>
     // <ul className="nav-links">
     //   <li>

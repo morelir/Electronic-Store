@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 let Rating = {
   amount: Number,
   stars: {
@@ -21,9 +20,19 @@ const productSchema = new mongoose.Schema({
   discount: { type: Number, required: true },
   overview: { type: [[String]], required: true },
   bulletsDescription: { type: [String], required: true },
+  cart: {
+    type: mongoose.Types.ObjectId,
+    ref: "carts",
+  },
 });
 
-//type: Map, of: String
+// productSchema.methods.finalPrice = function() {
+//   if (this.discount) {
+//     return (1 - this.discount / 100) * this.listPrice;
+//   } else {
+//     return this.listPrice;
+//   }
+// };
 
 module.exports = mongoose.model("products", productSchema);
 // exports.Product = mongoose.model("products", productSchema);

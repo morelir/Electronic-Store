@@ -1,10 +1,24 @@
-import React,{useState,useRef} from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../shared/store/cart-slice";
 import Input from "../../shared/components/UIElements/Input";
 import "./ProductActions.css";
+
+let finalPrice;
 
 const ProductActions = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    if (props.discount) {
+      finalPrice = (1 - props.discount / 100) * props.listPrice;
+    } else {
+      finalPrice = props.listPrice;
+    }
+  }, []);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -21,6 +35,14 @@ const ProductActions = (props) => {
       return;
     }
 
+    dispatch(
+      cartActions.addItemToCart({
+        id: props.id,
+        price: finalPrice,
+        amount: enteredAmountNumber,
+      })
+    );
+
     // const addToCartHandler = amount => {
     //   cartCtx.addItem({
     //     id: props.id,
@@ -30,9 +52,8 @@ const ProductActions = (props) => {
     //   });
     // };
 
-    props.onAddToCart(enteredAmountNumber);
+    // props.onAddToCart(enteredAmountNumber);
   };
-
 
   return (
     <form className="form" onSubmit={submitHandler}>

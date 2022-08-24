@@ -41,6 +41,7 @@ const ProductDetail = () => {
         <React.Fragment>
           <ProductImageBlock images={product.images} />
           <ProductInfoBlock
+            id={product.id}
             title={product.title}
             rating={product.rating}
             listPrice={product.listPrice}

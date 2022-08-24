@@ -47,7 +47,11 @@
 }
 
 .bump {
-  animation: bump 300ms ease-out;
+  animation: bump 400ms ease-out;
+}
+
+.move-badge__left{
+  left:10px;
 }
 
 @keyframes bump {
