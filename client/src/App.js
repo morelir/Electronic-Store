@@ -13,6 +13,7 @@ import Auth from "./auth/Auth";
 import Category from "./products/pages/Category";
 import Notification from "./shared/components/UIElements/Notification";
 import { useSideEffects } from "./shared/hooks/sideEffects-hook";
+import ShoppingCart from "./Cart/pages/ShoppingCart";
 
 function App() {
   useSideEffects();
@@ -28,6 +29,7 @@ function App() {
           path="/:categoryId/products/:productId"
           element={<ProductDetail />}
         />
+        <Route path="/shoppingCart" element={<ShoppingCart/>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );

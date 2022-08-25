@@ -22,6 +22,7 @@ const getCart = async (req, res, next) => {
 
   if (user.cart) {
     return res.status(201).json({
+      id: user.cart.id,
       products: user.cart.products,
       totalQuantity: user.cart.totalQuantity,
       totalAmount: user.cart.totalAmount,
@@ -96,7 +97,7 @@ const updateCart = async (req, res, next) => {
       return next(error);
     }
   }
-
+  
   res.status(201).json({
     products: user.cart.products,
     totalQuantity: user.cart.totalQuantity,
@@ -104,5 +105,42 @@ const updateCart = async (req, res, next) => {
   });
 };
 
+const getCartProducts = async (req, res, next) => {
+  const cartId = req.params.cartId;
+  console.log("here")
+  let cart;
+  try{
+    cart= await Cart.findById(cartId).populate("products.product")
+  }catch (err) {
+    const error = new HttpError(
+      "Fetching product failed, please try again later.",
+      500
+    );
+    return next(error);
+  };
+  console.log(cart)
+
+  if (!product) {
+    const error = new HttpError(
+      "Could not find product, please try again later.",
+      404
+    );
+    return next(error);
+  }
+
+
+  
+    return res.status(201).json({
+      products: user.cart.products,
+      totalQuantity: user.cart.totalQuantity,
+      totalAmount: user.cart.totalAmount,
+    });
+
+  res.status(201).json({});
+
+
+}
+
 exports.updateCart = updateCart;
 exports.getCart = getCart;
+exports.getCartProducts=getCartProducts;

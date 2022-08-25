@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
 import HeaderCartButton from "./HeaderCartButton";
@@ -8,6 +8,7 @@ import "./NavLinks.css";
 const NavLinks = (props) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigation = useNavigate();
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -21,6 +22,13 @@ const NavLinks = (props) => {
   const logout = () => {
     dispatch(authActions.logout());
   };
+
+  const cartClickHandler=()=>{
+    console.log("click")
+    navigation("/shoppingCart",{replace:true})
+
+
+  }
 
   return (
     <ul className="nav-links">
@@ -37,9 +45,10 @@ const NavLinks = (props) => {
           <li>
             <button onClick={logout}>Sign <span style={{ color: "#f08804" }}>out</span></button>
           </li>
-          <li>
+          <li onClick={cartClickHandler}>
             <HeaderCartButton />
           </li>
+
         </React.Fragment>
       )}
     </ul>

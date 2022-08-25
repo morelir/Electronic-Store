@@ -23,6 +23,7 @@ export const fetchCartData = (token) => {
       const cartData = await fetchData();
       dispatch(
         cartActions.replaceCart({
+          id: cartData.id || null,
           products: cartData.products || [],
           totalQuantity: cartData.totalQuantity || 0,
           totalAmount: cartData.totalAmount || 0,

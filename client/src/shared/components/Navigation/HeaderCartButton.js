@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./HeaderCartButton.css";
@@ -25,8 +24,10 @@ const HeaderCartButton = (props) => {
     };
   }, [cart.totalQuantity]);
 
+  
+
   return (
-    <button className={btnClasses} onClick={props.onClick}>
+    <button className={btnClasses} >
       <span className="icon">
         {/* <CartIcon /> */}
         <ShoppingCartOutlinedIcon style={{ fontSize: "30px" }} />

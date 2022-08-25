@@ -36,7 +36,7 @@ const getProductsByCategory = async (req, res, next) => {
 
 const getProductById = async (req, res, next) => {
   const productId = req.params.productId;
-
+  let product;
   try {
     product = await Product.findById(productId);
   } catch (err) {

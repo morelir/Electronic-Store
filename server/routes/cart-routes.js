@@ -12,6 +12,8 @@ router.use(checkAuth); //middleware that cheacking authentication to all middlew
 
 router.get("/", cartControllers.getCart);
 
+router.get("/:cartId/products", cartControllers.getCartProducts);
+
 router.put(
   "/",
   [
