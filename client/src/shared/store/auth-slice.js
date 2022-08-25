@@ -25,7 +25,7 @@ const authSlice = createSlice({
         })
       );
     },
-    logout(state, action) {
+    logout(state) {
       state.token = undefined;
       state.tokenExpirationDate = undefined;
       state.userId = undefined;

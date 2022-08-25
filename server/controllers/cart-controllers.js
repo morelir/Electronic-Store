@@ -74,10 +74,12 @@ const updateCart = async (req, res, next) => {
   } else {
     let newCart = new Cart({
       user: user.id,
-      products: [{
-        amount: amount,
-        product: mongoose.Types.ObjectId(productId),
-      }],
+      products: [
+        {
+          amount: amount,
+          product: mongoose.Types.ObjectId(productId),
+        },
+      ],
       totalAmount: price * amount,
       totalQuantity: amount,
     });
@@ -97,7 +99,7 @@ const updateCart = async (req, res, next) => {
       return next(error);
     }
   }
-  
+
   res.status(201).json({
     products: user.cart.products,
     totalQuantity: user.cart.totalQuantity,
@@ -107,40 +109,31 @@ const updateCart = async (req, res, next) => {
 
 const getCartProducts = async (req, res, next) => {
   const cartId = req.params.cartId;
-  console.log("here")
   let cart;
-  try{
-    cart= await Cart.findById(cartId).populate("products.product")
-  }catch (err) {
+  try {
+    cart = await Cart.findById(cartId).populate("products.product");
+  } catch (err) {
     const error = new HttpError(
       "Fetching product failed, please try again later.",
       500
     );
     return next(error);
-  };
-  console.log(cart)
+  }
 
-  if (!product) {
+  if (!cart) {
     const error = new HttpError(
-      "Could not find product, please try again later.",
+      "Could not find this cart, please try again later.",
       404
     );
     return next(error);
   }
 
+  return res.status(201).json({
+    products: cart.products,
+  });
 
-  
-    return res.status(201).json({
-      products: user.cart.products,
-      totalQuantity: user.cart.totalQuantity,
-      totalAmount: user.cart.totalAmount,
-    });
-
-  res.status(201).json({});
-
-
-}
+};
 
 exports.updateCart = updateCart;
 exports.getCart = getCart;
-exports.getCartProducts=getCartProducts;
+exports.getCartProducts = getCartProducts;

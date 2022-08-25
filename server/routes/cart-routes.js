@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 
-router.use(checkAuth); //middleware that cheacking authentication to all middleware(routes) below.
+router.use(checkAuth); //middleware that checking authentication for all middlewares(routes) below it.
 
 router.get("/", cartControllers.getCart);
 

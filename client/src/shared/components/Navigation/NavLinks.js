@@ -24,10 +24,7 @@ const NavLinks = (props) => {
   };
 
   const cartClickHandler=()=>{
-    console.log("click")
     navigation("/shoppingCart",{replace:true})
-
-
   }
 
   return (

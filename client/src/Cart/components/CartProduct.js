@@ -2,7 +2,7 @@ import React from "react" ;
 
 
 const CartProduct=(props)=>{
-    console.log(props.title)
+
     
 
     return(

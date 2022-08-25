@@ -91,7 +91,9 @@ const Auth = () => {
             token: responseData.token,
           })
         );
-      } catch (err) {}
+      } catch (error) {
+        console.log(error)
+      }
     } else {
       try {
         const formData = new FormData();
@@ -114,7 +116,9 @@ const Auth = () => {
           })
         );
         
-      } catch (err) {}
+      } catch (err) {
+        console.log(error)
+      }
     }
     navigate(-1);
   };
