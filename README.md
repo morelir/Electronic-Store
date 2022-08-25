@@ -1,1 +1,1 @@
-# Store
+# Gaming Store
