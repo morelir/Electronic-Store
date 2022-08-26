@@ -11,14 +11,14 @@ export const useSideEffects = () => {
 
   useEffect(() => {
     if (token && tokenExpirationDate) { //set timout to logout for new user token
-      // localStorage.setItem(
-      //   "userData",
-      //   JSON.stringify({
-      //     userId: userId,
-      //     token: token,
-      //     expiration: tokenExpirationDate,
-      //   })
-      // );
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          userId: userId,
+          token: token,
+          expiration: tokenExpirationDate,
+        })
+      );
       const remainingTime =
         new Date(tokenExpirationDate).getTime() - new Date().getTime();
       logoutTimer = setTimeout(()=>{dispatch(authActions.logout())}, remainingTime);
@@ -27,28 +27,28 @@ export const useSideEffects = () => {
     }
   }, [token, tokenExpirationDate,dispatch]);
 
-  // useEffect(() => { //get from local storage userData if there is and login again
-  //   const storedData = JSON.parse(localStorage.getItem("userData"));
-  //   if (
-  //     storedData &&
-  //     storedData.token &&
-  //     new Date(storedData.expiration) > new Date()
-  //   ) {
-  //     dispatch(
-  //       authActions.login({
-  //         userId: storedData.userId,
-  //         token: storedData.token,
-  //         expirationDate: storedData.expiration,
-  //       })
-  //     );
-  //   }
-  // }, [dispatch]);
+  useEffect(() => { //get from local storage userData if there is and login again
+    const storedData = JSON.parse(localStorage.getItem("userData"));
+    if (
+      storedData &&
+      storedData.token &&
+      new Date(storedData.expiration) > new Date()
+    ) {
+      dispatch(
+        authActions.login({
+          userId: storedData.userId,
+          token: storedData.token,
+          expirationDate: storedData.expiration,
+        })
+      );
+    }
+  }, [dispatch]);
 
-  // useEffect(() => { //fetch cart data for user that sign in
-  //   if (isLoggedIn) {
-  //     dispatch(fetchCartData(token));
-  //   }
-  // }, [isLoggedIn,token,dispatch]);
+  useEffect(() => { //fetch cart data for user that sign in
+    if (isLoggedIn) {
+      dispatch(fetchCartData(token));
+    }
+  }, [isLoggedIn,token,dispatch]);
 
   return {};
 };

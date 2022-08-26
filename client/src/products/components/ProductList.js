@@ -5,7 +5,7 @@ import "./ProductList.css"
 
 const ProductList = (props) => {
   return (
-    <ul className="product-list">
+    <ul className="store-product-list">
       {props.products.map(product => (
         <ProductItem
           key={product.id}

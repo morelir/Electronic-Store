@@ -4,7 +4,7 @@ import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ProductList from "../components/ProductList";
 import { useHttpClient } from "../../shared/hooks/http-hook";
-
+import "./StoreProducts.css"
 
 const StoreProducts = () => {
   const [loadedProducts, setLoadedProducts] = useState();

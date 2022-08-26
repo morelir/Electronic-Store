@@ -16,14 +16,14 @@ const authSlice = createSlice({
       state.userId = userId;
       let tokenExpirationDate= expirationDate ??  new Date(new Date().getTime() + 1000 * 60 * 60).toISOString();
       state.tokenExpirationDate = tokenExpirationDate;
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          userId: userId,
-          token: token,
-          expiration: tokenExpirationDate,
-        })
-      );
+      // localStorage.setItem(
+      //   "userData",
+      //   JSON.stringify({
+      //     userId: userId,
+      //     token: token,
+      //     expiration: tokenExpirationDate,
+      //   })
+      // );
     },
     logout(state) {
       state.token = undefined;
