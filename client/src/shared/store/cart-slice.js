@@ -20,7 +20,7 @@ const cartSlice = createSlice({
       state.totalQuantity = action.payload.totalQuantity;
       state.totalAmount= action.payload.totalAmount;
     },
-    addItemToCart(state, action) {
+    addItemToCart(state, action) { //using that logic in the backend
       const newItem = action.payload;
       const existingItem = state.products.find((item) => item.id === newItem.id);
       state.totalQuantity += newItem.amount;
@@ -35,7 +35,7 @@ const cartSlice = createSlice({
         existingItem.amount += newItem.amount;
       }
     },
-    removeItemFromCart(state, action) {
+    removeItemFromCart(state, action) { //using that logic in the backend
       const id = action.payload;
       const existingItem = state.products.find((item) => item.id === id);
       state.totalQuantity--;

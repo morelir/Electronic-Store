@@ -64,7 +64,6 @@ export const sendCartData = (id, price, amount, token) => {
       if (!response.ok) {
         throw new Error(responseData.message);
       }
-      
 
       return responseData;
     };
@@ -74,12 +73,60 @@ export const sendCartData = (id, price, amount, token) => {
       const cartData = await sendRequest();
       dispatch(
         cartActions.replaceCart({
+          id: cartData.id,
           products: cartData.products,
           totalQuantity: cartData.totalQuantity,
           totalAmount: cartData.totalAmount,
         })
       );
     } catch (error) {
+      console.log(error);
+      dispatch(
+        uiActions.setError({
+          message: error.message,
+        })
+      );
+    }
+    dispatch(cartActions.setIsLoading({ isLoading: false }));
+  };
+};
+
+export const removeProductFromCart = (id,token) => {
+  return async (dispatch) => {
+    const sendRequest = async () => {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+
+      return responseData;
+    };
+
+    try {
+      dispatch(cartActions.setIsLoading({ isLoading: true }));
+      const cartData = await sendRequest();
+      dispatch(
+        cartActions.replaceCart({
+          id: cartData.id,
+          products: cartData.products,
+          totalQuantity: cartData.totalQuantity,
+          totalAmount: cartData.totalAmount,
+        })
+      );
+    } catch (error) {
+      console.log(error);
       dispatch(
         uiActions.setError({
           message: error.message,

@@ -13,11 +13,14 @@ const CartProducts = (props) => {
             <CartProduct
               key={prod.product._id}
               id={prod.product._id}
+              removingId={prod._id}
               amount={prod.amount}
               title={prod.product.title}
               image={prod.product.images[0]}
               listPrice={prod.product.listPrice}
               discount={prod.product.discount}
+              onAddProductToCart={props.onAddProductToCart}
+              onRemoveProductFromCart={props.onRemoveProductFromCart}
             />
           );
         })}

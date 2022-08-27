@@ -1,5 +1,4 @@
 import React from "react";
-import { dispatch } from "react-redux";
 import Button from "../../shared/components/FormElements/Button";
 import "./CartProduct.css";
 
@@ -11,9 +10,13 @@ const CartProduct = (props) => {
     finalPrice = props.listPrice;
   }
 
-  const addProductToCart = () => {};
+  const addProductToCart = () => {
+    props.onAddProductToCart(props.id, finalPrice);
+  };
 
-  const removeProductFromCart = () => {};
+  const removeProductFromCart = () => {
+    props.onRemoveProductFromCart(props.removingId);
+  };
 
   return (
     <li className="cart-product__item">
@@ -30,10 +33,10 @@ const CartProduct = (props) => {
         </div>
       </div>
       <div className="right-container">
-        <Button onClick={addProductToCart} inverse>
+        <Button onClick={removeProductFromCart} inverse>
           -
         </Button>
-        <Button onClick={removeProductFromCart} inverse>
+        <Button onClick={addProductToCart} inverse>
           +
         </Button>
       </div>
