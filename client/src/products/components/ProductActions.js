@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../shared/store/cart-slice";
 import { sendCartData } from "../../shared/store/cart-actions";
@@ -15,7 +15,7 @@ const ProductActions = (props) => {
   const cartIsLoading = useSelector((state) => state.cart.isLoading);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (props.discount) {
@@ -41,11 +41,22 @@ const ProductActions = (props) => {
     }
     if (auth.isLoggedIn) {
       dispatch(
-        sendCartData(props.id, finalPrice, enteredAmountNumber, auth.token)
+        sendCartData(
+          `${process.env.REACT_APP_BACKEND_URL}/cart/product/${props.id}`,
+          "PUT",
+          JSON.stringify({
+            productId: props.id,
+            price: finalPrice,
+            amount: enteredAmountNumber,
+          }),
+          {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + auth.token,
+          }
+        )
       );
-    }
-    else{
-      navigate(`/auth`,{replace:true})
+    } else {
+      navigate(`/auth`, { replace: true });
     }
   };
 

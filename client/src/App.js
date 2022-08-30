@@ -14,6 +14,7 @@ import Category from "./products/pages/Category";
 import Notification from "./shared/components/UIElements/Notification";
 import { useSideEffects } from "./shared/hooks/sideEffects-hook";
 import ShoppingCart from "./Cart/pages/ShoppingCart";
+import Footer from "./shared/components/Navigation/Footer";
 
 function App() {
   useSideEffects();
@@ -29,7 +30,7 @@ function App() {
           path="/:categoryId/products/:productId"
           element={<ProductDetail />}
         />
-        <Route path="/shoppingCart" element={<ShoppingCart/>} />
+        <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );
@@ -53,6 +54,7 @@ function App() {
       <Notification />
       <MainNavigation />
       <main>{routes}</main>
+      <Footer />
     </Router>
   );
 }

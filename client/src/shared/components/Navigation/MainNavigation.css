@@ -28,6 +28,14 @@
   color: white;
 }
 
+/* .change-main-navigation__title{
+  font-size: 32px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+} */
+
+
 .main-navigation__header-nav {
   display: none;
 }
@@ -47,7 +55,7 @@
 
   .main-navigation__title {
     
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 

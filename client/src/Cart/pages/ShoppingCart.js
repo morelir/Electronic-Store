@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHttpClient } from "../../shared/hooks/http-hook.js";
-import {sendCartData,removeProductFromCart} from "../../shared/store/cart-actions"
+import {
+  sendCartData,
+  removeProductFromCart,
+} from "../../shared/store/cart-actions";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner.js";
 import CartProducts from "../components/CartProducts";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal.js";
@@ -26,14 +29,37 @@ const ShoppingCart = (props) => {
       } catch (err) {}
     };
     fetchCartProducts();
-  }, [sendRequest, auth.token, cart.id,cart.totalAmount]);
+  }, [sendRequest, auth.token, cart.id, cart.totalAmount]);
 
-  const addProductToCartHandler = (id,finalPrice) => {
-    dispatch(sendCartData(id, finalPrice, 1, auth.token));
+  const addProductToCartHandler = (id, finalPrice) => {
+    dispatch(
+      sendCartData(
+        `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
+        "PUT",
+        JSON.stringify({
+          price: finalPrice,
+          amount: 1,
+        }),
+        {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
+        }
+      )
+    );
   };
 
   const removeProductFromCartHandler = (id) => {
-    dispatch(removeProductFromCart(id, auth.token));
+    dispatch(
+      sendCartData(
+        `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
+        "DELETE",
+        null,
+        {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
+        }
+      )
+    );
   };
 
   if (isLoading || cart.isLoading) {

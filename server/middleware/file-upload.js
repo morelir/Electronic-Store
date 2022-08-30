@@ -22,14 +22,6 @@ const fileUploaded = multer({
           return cb(null, dir);
         }
       });
-      // fs.exists(dir, exist => {
-      // if (!exist) {
-      //   return fs.mkdir(dir, error => cb(error, dir))
-      // }
-      // return cb(null, dir)
-      // })
-
-      // cb(null, "uploads/temp");
     },
     filename: (req, file, cb) => {
       const ext = MIME_TYPE_MAP[file.mimetype];

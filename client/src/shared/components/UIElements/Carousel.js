@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import Carousel from "react-elastic-carousel";
 import "./Carousel.css";
-import image1 from "../../images/RAZER.jpg";
-import image2 from "../../images/nintendo switch.webp";
-import image3 from "../../images/playstation 5.jpg";
-import image4 from "../../images/HyperX Cloud 2.jpg";
+import image1 from "../../images/laptops.jpg";
+import image2 from "../../images/nintendo.jpg";
+import image3 from "../../images/headsets.jpg";
+import image4 from "../../images/mouses.jpg";
+import image5 from "../../images/controllers.jpg";
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   // { width: 550, itemsToShow: 2 },
@@ -23,6 +24,9 @@ const TEMP_carouselImages = [
   </div>,
   <div className="image">
     <img src={image4}></img>
+  </div>,
+  <div className="image">
+    <img src={image5}></img>
   </div>,
 ];
 

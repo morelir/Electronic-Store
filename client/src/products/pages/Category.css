@@ -1,6 +1,6 @@
 .category-images {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .category-images .image-container {
@@ -9,8 +9,8 @@
   height: 30rem;
   border-width: 0px 1px 1px 1px;
   font-size: 28px;
-  padding-bottom: 5px;
-  font-weight: 500;
+  /* padding-bottom: 5px; */
+  font-weight: 400;
 }
 
 .category-images .image-container:active,
@@ -22,17 +22,23 @@
 .category-images .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 .category-images .image-container figcaption {
-  bottom: 2em;
-
+  bottom: 75px;
   position: relative;
   padding: 0.6em 1em;
   text-align: center;
   width: 100%;
 }
+
+@media (max-width: 1150px) {
+  .category-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 @media (max-width: 768px) {
   .category-images .image-container {

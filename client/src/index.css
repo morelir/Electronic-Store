@@ -6,16 +6,20 @@
 }
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  
 }
 
 body {
   margin: 0;
 }
 
+#root{
+  min-height: 100vh;
+}
 
-.background-color-dark{
-  background-color: #EAEDED!important
+.background-color-dark {
+  background-color: #eaeded !important;
 }
 
 .slide-in-left-enter {
@@ -40,7 +44,7 @@ body {
 }
 
 .center {
-  text-align: center ;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,32 +52,32 @@ body {
 
 .size-large {
   font-size: 24px;
-  line-height: 32px ;
+  line-height: 32px;
 }
 
 .size-base {
-  font-size: 16px ;
-  line-height: 22px ;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .size-base-plus {
-  font-size: 18px ;
-  line-height: 40px ;
+  font-size: 18px;
+  line-height: 40px;
 }
 
 .text-bold {
-  font-weight: 700 ;
+  font-weight: 700;
 }
 
 hr {
-  background-color: transparent ;
-  border-bottom-width: 0 ;
-  border-left-width: 0 ;
-  border-right-width: 0 ;
-  border-top: 1px solid #cacaca ;
-  display: block ;
-  height: 1px ;
-  line-height: 19px ;
-  margin-bottom: 14px ;
-  margin-top: 0 ;
+  background-color: transparent;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top: 1px solid #cacaca;
+  display: block;
+  height: 1px;
+  line-height: 19px;
+  margin-bottom: 14px;
+  margin-top: 0;
 }

@@ -15,9 +15,8 @@ router.get("/", cartControllers.getCart);
 router.get("/:cartId/products", cartControllers.getCartProducts);
 
 router.put(
-  "/",
+  "/product/:prodId",
   [
-    check("productId").isString().notEmpty(),
     check("price").isFloat({ min: 1 }),
     check("amount").isInt({ min: 1 }),
   ],

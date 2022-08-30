@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
@@ -16,6 +16,7 @@ import {
 import { useForm } from "../shared/hooks/form-hook";
 import { useHttpClient } from "../shared/hooks/http-hook";
 import { authActions } from "../shared/store/auth-slice";
+import {uiActions} from "../shared/store/ui-slice";
 import "./Auth.css";
 
 const Auth = () => {
@@ -38,6 +39,10 @@ const Auth = () => {
     },
     false
   );
+
+  useEffect(()=>{
+    dispatch(uiActions.setChangeMainHeader({changeMainHeader:true}))
+  },[])
 
   const switchModeHandler = () => {
     if (!isLoginMode) {
@@ -116,11 +121,12 @@ const Auth = () => {
           })
         );
         
-      } catch (err) {
+      } catch (error) {
         console.log(error)
       }
     }
-    navigate(-1);
+    // navigate(-1);
+    dispatch(uiActions.setChangeMainHeader({changeMainHeader:false}))
   };
 
   return (

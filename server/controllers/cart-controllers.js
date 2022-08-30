@@ -64,8 +64,9 @@ const updateCart = async (req, res, next) => {
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-
-  const { productId, price, amount } = req.body;
+  
+  const productId = req.params.prodId;
+  const { price, amount } = req.body;
 
   let user;
   try {

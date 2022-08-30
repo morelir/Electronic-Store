@@ -40,22 +40,15 @@ export const fetchCartData = (token) => {
   };
 };
 
-export const sendCartData = (id, price, amount, token) => {
+export const sendCartData = (url, method = 'GET', body = null, headers = {}) => {
   return async (dispatch) => {
     const sendRequest = async () => {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/cart`,
+        url,
         {
-          method: "PUT",
-          body: JSON.stringify({
-            productId: id,
-            price,
-            amount,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
+          method,
+          body,
+          headers,
         }
       );
 

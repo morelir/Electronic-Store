@@ -1,33 +1,50 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 
-import Button from './Button';
-import './ImageUpload.css';
-import defualtProfile from "../../images/profile image.jpg"
+import Button from "./Button";
+import CropImage from "./CropImage";
+import defualtProfile from "../../images/profile image.jpg";
+import "./ImageUpload.css";
 
-const ImageUpload = props => {
+const ImageUpload = (props) => {
   const [file, setFile] = useState();
+  const [cropFile,setCropFile]=useState();
   const [previewUrl, setPreviewUrl] = useState();
   const [isValid, setIsValid] = useState(true);
 
   const filePickerRef = useRef();
 
   useEffect(() => {
-    if (!file) {
-      return;
-    }
-    const fileReader = new FileReader();
-    fileReader.onload = () => {
-      setPreviewUrl(fileReader.result);
-    };
-    fileReader.readAsDataURL(file);
+    // if (!file || !cropFile) {
+    //   return;
+    // }
+    // const fileReader = new FileReader();
+    // fileReader.onload = () => {
+    //   setPreviewUrl(fileReader.result);
+    // };
+    // fileReader.readAsDataURL(file);
   }, [file]);
 
-  const pickedHandler = event => {
+  const onCropSave = ({ file, preview }) => {
+    console.log(file)
+    setCropFile(file)
+    setPreviewUrl(preview)
+    props.onInput(props.id, file, isValid)
+    // setState((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     cropFile: {
+    //       name: file.name,
+    //       file: file,
+    //     },
+    //   };
+    // });
+  };
+
+  const pickedHandler = (event) => {
     let pickedFile;
     let fileIsValid = isValid;
     if (event.target.files && event.target.files.length === 1) {
       pickedFile = event.target.files[0];
-      console.log(event.target.files[0])
       setFile(pickedFile);
       setIsValid(true);
       fileIsValid = true;
@@ -35,7 +52,7 @@ const ImageUpload = props => {
       setIsValid(false);
       fileIsValid = false;
     }
-    props.onInput(props.id, pickedFile, fileIsValid);
+    // props.onInput(props.id, pickedFile, fileIsValid);
   };
 
   const pickImageHandler = () => {
@@ -43,26 +60,29 @@ const ImageUpload = props => {
   };
 
   return (
-    <div className="form-control">
-      <input
-        id={props.id}
-        ref={filePickerRef}
-        style={{ display: 'none' }}
-        type="file"
-        accept=".jpg,.png,.jpeg"
-        onChange={pickedHandler}
-      />
-      <div className={`image-upload ${props.center && 'center'}`}>
-        <div className="image-upload__preview">
-          {previewUrl && <img src={previewUrl} alt="Preview" />}
-          {!previewUrl && <img src={defualtProfile} alt="Preview" />}
+    <React.Fragment>
+      <div className="form-control">
+        <input
+          id={props.id}
+          ref={filePickerRef}
+          style={{ display: "none" }}
+          type="file"
+          accept=".jpg,.png,.jpeg"
+          onChange={pickedHandler}
+        />
+        <div className={`image-upload ${props.center && "center"}`}>
+          <div className="image-upload__preview">
+            {previewUrl && <img src={previewUrl} alt="Preview" />}
+            {!previewUrl && <img src={defualtProfile} alt="Preview" />}
+          </div>
+          <Button type="button" onClick={pickImageHandler}>
+            PICK IMAGE
+          </Button>
         </div>
-        <Button type="button" onClick={pickImageHandler}>
-          PICK IMAGE
-        </Button>
+        {!isValid && <p className="center">{props.errorText}</p>}
       </div>
-      {!isValid && <p className='center'>{props.errorText}</p>}
-    </div>
+      <CropImage onSave={onCropSave} selectedFile={file} />
+    </React.Fragment>
   );
 };
 
