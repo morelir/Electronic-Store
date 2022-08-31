@@ -25,7 +25,7 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
-        <Route path="/:categoryId/products" element={<StoreProducts />} />
+        <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
           element={<ProductDetail />}
@@ -38,7 +38,7 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
-        <Route path="/:categoryId/products" element={<StoreProducts />} />
+        <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
           element={<ProductDetail />}

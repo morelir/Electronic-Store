@@ -13,7 +13,7 @@ const Category = () => {
   const navigate = useNavigate();
   
   const navigationHandler = (e) => {
-    navigate(`/${e.currentTarget.id}/products`)
+    navigate(`/${e.currentTarget.id}/products`,{replace:true,state:"CATEGORY"})
   };
 
   return (

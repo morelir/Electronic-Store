@@ -20,7 +20,7 @@ const MainHeader = (props) => {
           onClick={changeMainHeaderHandler}
           to="/"
         >
-          <span>Gaming</span> <span style={{ color: "#f08804" }}>Store</span>
+          <span>Electronic</span> <span style={{ color: "rgb(158, 172, 255)" }}>Store</span>
         </Link>
       </header>
     );

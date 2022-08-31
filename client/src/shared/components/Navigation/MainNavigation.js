@@ -44,10 +44,10 @@ const MainNavigation = (props) => {
           <Link to="/">
             {/* <img src={logo} height={50} /> */}
             <span>Electronic</span>{" "}
-            <span style={{ color: "#f08804" }}>Store</span>
+            <span style={{ color: "rgb(158, 172, 255)" }}>Store</span>
           </Link>
         </h1>
-        <SearchBar />
+        <SearchBar className="search-bar" />
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>

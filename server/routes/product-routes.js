@@ -9,5 +9,6 @@ const router = express.Router();
 
 router.get('/category/:category', productsControllers.getProductsByCategory);
 router.get('/:productId', productsControllers.getProductById);
+router.get('/search/:input', productsControllers.getProductsByInputSearch);
 
 module.exports = router;

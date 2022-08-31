@@ -8,7 +8,6 @@ import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./ProductDetail.css";
 
-
 const ProductDetail = () => {
   const productId = useParams().productId;
   const [product, setProduct] = useState();

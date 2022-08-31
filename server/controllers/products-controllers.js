@@ -8,6 +8,7 @@ const Product = require("../models/product");
 // const {Product} = require("../models/product");
 // const User = require("../models/user");
 
+
 const getProductsByCategory = async (req, res, next) => {
   const category = req.params.category;
   let products;
@@ -58,6 +59,32 @@ const getProductById = async (req, res, next) => {
 
   res.json({
     product: product.toObject({ getters: true }),
+  });
+};
+
+const getProductsByInputSearch = async (req, res, next) => {
+  const input = req.params.input;
+  let products;
+  try {
+    products = await Product.find({ "title": { "$regex": input, "$options": "i" } });
+  } catch (err) {
+    const error = new HttpError(
+      "Fetching products failed, please try again later.",
+      500
+    );
+    return next(error);
+  }
+
+  if (!products) {
+    const error = new HttpError(
+      "Fetching products failed.",
+      404
+    );
+    return next(error);
+  }
+  
+  res.json({
+    products: products.map((product) => product.toObject({ getters: true })),
   });
 };
 
@@ -247,4 +274,5 @@ const getProductById = async (req, res, next) => {
 
 exports.getProductById = getProductById;
 exports.getProductsByCategory = getProductsByCategory;
+exports.getProductsByInputSearch = getProductsByInputSearch;
 

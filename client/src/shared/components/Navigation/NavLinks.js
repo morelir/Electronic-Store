@@ -33,14 +33,14 @@ const NavLinks = (props) => {
       {!isLoggedIn && (
         <li>
           <NavLink to="/auth">
-            Sign <span style={{ color: "#f08804" }}>in</span>
+            Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>
           </NavLink>
         </li>
       )}
       {isLoggedIn && (
         <React.Fragment>
           <li>
-            <button onClick={logout}>Sign <span style={{ color: "#f08804" }}>out</span></button>
+            <button onClick={logout}>Sign <span style={{ color: "rgb(158, 172, 255)" }}>out</span></button>
           </li>
           <li onClick={cartClickHandler}>
             <HeaderCartButton />

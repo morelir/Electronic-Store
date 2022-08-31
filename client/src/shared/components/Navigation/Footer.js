@@ -8,7 +8,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="page-footer">
       <div className="col-1">
         <h3>USEFUL LINKS</h3>
         <Link to="">About</Link>

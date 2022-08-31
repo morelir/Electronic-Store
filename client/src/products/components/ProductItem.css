@@ -20,6 +20,7 @@
   width: 25rem;
   height: 20rem;
   margin-right: 1.5rem;
+  cursor: pointer;
 }
 
 .product-item__image img {
@@ -46,7 +47,7 @@
 .product-item__info a:hover,
 .product-item__info a:active
 {
-  color:#c45500 ;
+  color:rgba(98, 113, 197, 0.976) ;
   cursor: pointer;
 
 }

@@ -6,7 +6,7 @@ import "./CartProducts.css"
 const CartProducts = (props) => {
   return (
     <div className="cart-products">
-      <h1 className="header">Shopping <span style={{color:"#f08804"}}>Cart</span></h1>
+      <h1 className="header">Shopping <span style={{color:"rgb(158, 172, 255)"}}>Cart</span></h1>
       <ul className="product-list">
         {props.products.map((prod) => {
           return (

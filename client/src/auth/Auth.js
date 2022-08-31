@@ -134,8 +134,8 @@ const Auth = () => {
       <ErrorModal error={error} onClear={clearError} />
       <div className="authentication ">
         {isLoading && <LoadingSpinner asOverlay />}
-        {isLoginMode && <header className="authentication__header">Sign <span style={{color:"#f08804"}}>in</span></header>}
-        {!isLoginMode && <header className="authentication__header">Sign <span style={{color:"#f08804"}}>up</span></header>}
+        {isLoginMode && <header className="authentication__header">Sign <span style={{color:"rgb(158, 172, 255)"}}>in</span></header>}
+        {!isLoginMode && <header className="authentication__header">Sign <span style={{color:"rgb(158, 172, 255)"}}>up</span></header>}
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
             <ImageUpload

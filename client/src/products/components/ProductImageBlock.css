@@ -19,8 +19,8 @@
 .images-container .image-list .image:hover,
 .images-container .image-list .image.active {
   padding: 5px;
-  border: 2px solid rgba(252, 135, 18, 0.5);
-  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+  border: 2px solid rgb(158, 172, 255);;
+  box-shadow: 0 0 3px 2px rgb(158, 172, 255);;
 }
 
 .images-container .image-list img {
