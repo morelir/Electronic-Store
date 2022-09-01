@@ -13,7 +13,7 @@ const ProductList = (props) => {
           title={product.title}
           image={product.images[0]}
           rating={product.rating}
-          listPrice={product.listPrice}
+          listPrice={product.listPrice.toFixed(2)}
           discount={product.discount}
         />
       ))}

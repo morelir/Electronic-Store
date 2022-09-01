@@ -36,7 +36,7 @@ const CartProduct = (props) => {
             </select>
           </span> */}
           <div className="product-summary">
-            <span className="price">${finalPrice}</span>
+            <span className="price">${finalPrice.toFixed(2)}</span>
             <span className="amount">x{props.amount}</span>
           </div>
         </div>

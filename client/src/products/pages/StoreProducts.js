@@ -43,7 +43,7 @@ const StoreProducts = () => {
   }
 
   if (loadedProducts && loadedProducts.length === 0) {
-    return <p className="size-large products-not__found" >No results for {keyword}.</p>;
+    return <p  className="center size-large products-not__found" >No results for {keyword}.</p>;
   }
 
   return (

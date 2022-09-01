@@ -17,7 +17,7 @@ const CartProducts = (props) => {
               amount={prod.amount}
               title={prod.product.title}
               image={prod.product.images[0]}
-              listPrice={prod.product.listPrice}
+              listPrice={prod.product.listPrice.toFixed(2)}
               discount={prod.product.discount}
               onAddProductToCart={props.onAddProductToCart}
               onRemoveProductFromCart={props.onRemoveProductFromCart}

@@ -15,7 +15,7 @@ const Category = () => {
   const navigationHandler = (e) => {
     navigate(`/${e.currentTarget.id}/products`,{replace:true,state:"CATEGORY"})
   };
-
+  
   return (
     <React.Fragment>
       <Carousel />
@@ -24,23 +24,23 @@ const Category = () => {
           <img src={image1} />
           <figcaption>Laptops</figcaption>
         </figure>
-        <figure id="headsets" className="image-container">
+        <figure id="headsets" onClick={(e)=>{navigationHandler(e)}} className="image-container">
           <img src={image2} />
           <figcaption>Headsets</figcaption>
         </figure>
-        <figure id="mouses" className="image-container">
+        <figure id="mouses" onClick={(e)=>{navigationHandler(e)}} className="image-container">
           <img src={image6} />
           <figcaption>Mouses</figcaption>
         </figure>
-        <figure id="nintendo" className="image-container">
+        <figure id="nintendo" onClick={(e)=>{navigationHandler(e)}} className="image-container">
           <img src={image3} />
           <figcaption>Nintendo</figcaption>
         </figure>
-        <figure id="playstation" className="image-container">
+        <figure id="playstation" onClick={(e)=>{navigationHandler(e)}} className="image-container">
           <img src={image4} />
           <figcaption>Playstation</figcaption>
         </figure>
-        <figure id="controllers" className="image-container">
+        <figure id="controllers" onClick={(e)=>{navigationHandler(e)}} className="image-container">
           <img src={image5} />
           <figcaption>Controllers</figcaption>
         </figure>

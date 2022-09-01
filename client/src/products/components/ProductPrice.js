@@ -4,7 +4,7 @@ import "./ProductPrice.css";
 const ProductPrice = (props) => {
   let finalPrice;
   if (props.discount) {
-    finalPrice = (1 - props.discount / 100) * props.listPrice;
+    finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
   } else {
     finalPrice = props.listPrice;
   }

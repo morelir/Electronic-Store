@@ -29,8 +29,14 @@ const ProductInfoBlock = (props) => {
         listPrice={props.listPrice}
         discount={props.discount}
       />
-      <hr />
-      <ProductOverview overview={props.overview} className="overview" />
+
+      {props.overview && (
+        <>
+          <hr />
+          <ProductOverview overview={props.overview} className="overview" />
+        </>
+      )}
+
       <hr />
       <div className="about">
         <span className="size-base-plus text-bold">About this item</span>

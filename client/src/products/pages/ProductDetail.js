@@ -43,7 +43,7 @@ const ProductDetail = () => {
             id={product.id}
             title={product.title}
             rating={product.rating}
-            listPrice={product.listPrice}
+            listPrice={product.listPrice.toFixed(2)}
             discount={product.discount}
             bulletsDescription={product.bulletsDescription}
             overview={product.overview}

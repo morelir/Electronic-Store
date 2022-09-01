@@ -16,15 +16,15 @@ const getProductsByCategory = async (req, res, next) => {
     products = await Product.find({ category: category });
   } catch (err) {
     const error = new HttpError(
-      "Something went wrong, could not find products for this category.",
+      "Fetching products failed, please try again later.",
       500
     );
     return next(error);
   }
 
-  if (!products || products.length === 0) {
+  if (!products) {
     const error = new HttpError(
-      "Could not find products for the provided category.",
+      "Fetching products failed.",
       404
     );
     return next(error);

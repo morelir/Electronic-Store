@@ -6,7 +6,7 @@
   justify-content: center;
   padding: 0;
 }
-.carousel .rec-slider-container{
+.carousel .rec-slider{
   margin:0;
 }
 
@@ -18,10 +18,26 @@
   width: 100%;
   background-color: #00008b;
   color: #fff;
-  
   font-size: 4em;
   
 }
+
+.carousel-custom__prev-arrow{
+  display: inline;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left:25px;
+}
+
+.carousel-custom__next-arrow{
+  display: inline;
+  position: relative;
+  top:0;
+  bottom: 0;
+  right:25px;
+}
+
 
 .carousel .image img {
   width: 100%;
