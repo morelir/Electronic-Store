@@ -27,7 +27,8 @@
   position: relative;
   top:0;
   bottom: 0;
-  left:25px;
+  left:30px;
+  background-color: transparent;  
 }
 
 .carousel-custom__next-arrow{
@@ -35,7 +36,8 @@
   position: relative;
   top:0;
   bottom: 0;
-  right:25px;
+  right:40px;
+  background-color: transparent;
 }
 
 
