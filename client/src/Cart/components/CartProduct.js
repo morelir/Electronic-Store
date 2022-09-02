@@ -5,7 +5,7 @@ import "./CartProduct.css";
 const CartProduct = (props) => {
   let finalPrice;
   if (props.discount) {
-    finalPrice = (1 - props.discount / 100) * props.listPrice;
+    finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
   } else {
     finalPrice = props.listPrice;
   }
@@ -20,35 +20,28 @@ const CartProduct = (props) => {
 
   return (
     <li className="cart-product__item">
-      <div className="left-container">
-        <div className="image-container">
-          <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
-        </div>
-        <div>
-          <h3 className="product-title">{props.title}</h3>
-          {/* <span>
-            <select name="cars" id="cars">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </span> */}
-          <div className="product-summary">
-            <span className="price">${finalPrice.toFixed(2)}</span>
-            <span className="amount">x{props.amount}</span>
+      <div className="image-container">
+        <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
+      </div>
+      <div className="detail">
+        <h3 className="product-title">{props.title}</h3>
+        <div className="product-summary">
+          <span className="price">${finalPrice}</span>
+          <div className="amount-controller">
+            <Button onClick={addProductToCart} inverse>
+              +
+            </Button>
+            <div className="amount">
+              <span>{props.amount}</span>
+            </div>
+            <Button onClick={removeProductFromCart} inverse>
+              -
+            </Button>
           </div>
+          {/* <span className="amount">x{props.amount}</span> */}
         </div>
       </div>
-      <div className="right-container">
-        <Button onClick={removeProductFromCart} inverse>
-          -
-        </Button>
-        <Button onClick={addProductToCart} inverse>
-          +
-        </Button>
-      </div>
+      {/* <div className="right-container"></div> */}
     </li>
   );
 };

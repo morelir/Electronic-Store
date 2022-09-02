@@ -17,13 +17,11 @@ const StoreProducts = () => {
     const fetchProductsByCategory = async () => {
       try {
         let responseData;
-        console.log(state, keyword);
         if (state === "CATEGORY") {
           responseData = await sendRequest(
             `${process.env.REACT_APP_BACKEND_URL}/products/category/${keyword}`
           );
         } else if (state === "SEARCH") {
-          console.log("here");
           responseData = await sendRequest(
             `${process.env.REACT_APP_BACKEND_URL}/products/search/${keyword}`
           );

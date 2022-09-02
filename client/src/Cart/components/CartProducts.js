@@ -25,6 +25,7 @@ const CartProducts = (props) => {
           );
         })}
       </ul>
+      <span>Subtotal (1 item): $54.99</span>
     </div>
   );
 };

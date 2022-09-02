@@ -1,25 +1,20 @@
 .cart-product__item {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   border-bottom: 1px solid #cacaca;
- 
   padding: 2rem 1rem;
 }
 
-.cart-product__item .left-container {
-   display: flex;
-   gap:1rem;
-   width: 80%;
-}
-
-.cart-product__item .right-container {
-    
-    width: 20%;
+/* .cart-product__item .right-container {
     text-align: right;
- }
- 
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap:8px;
+ } */
 
 .cart-product__item .image-container {
+  
 }
 
 .image-container img {
@@ -27,51 +22,57 @@
   width: 180px;
 }
 
-.cart-product__item .product-title {
-  font-weight: 400;
-  margin-bottom: 4rem;
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.cart-product__item .product-summary{
-    width:12rem;
-    display: flex;
-    justify-content: space-between;
-    
-    
+.cart-product__item .product-title {
+  font-weight: 400;
+}
+
+.cart-product__item .product-summary {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
 }
 
 .cart-product__item .price {
   font-size: 24px;
   font-weight: 600;
-  
 }
 
-.cart-product__item .amount{
-    border: 1px solid #212529;
-    border-radius: 12px;
-    padding: 5px 15px;
-    font-weight: 600;
-    color:#212529;
-    
-    
-  }
-
-.cart-product__item .right-container button {
-    font-size: 1.4rem;
-    padding:0.3rem 1.4rem;
-    font-weight: 500;
-    border: 1px solid #212529;
-    color:#212529;
-    margin: 0.25rem;
+.cart-product__item .amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-product__item .right-container button:hover,
-.cart-product__item .right-container button:active {
-    
-    background-color: #212529;
-    color:white;
-   
+.amount-controller{
+  display: flex;
+  gap: 10px;
 }
 
+.cart-product__item button {
+  font-size: 1.2rem;
+  padding: 0;
+  height: 29px;
+  width: 29px;
+  /* border: 2px solid #212529; */
+  border: none !important;
+  background: #efefef;
+  border-radius: 50%;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.cart-product__item button:hover,
+.cart-product__item button:active {
+  /* background-color: #212529;
+  color: #efefef; */
+  color:#212529;
+  background: #cbcbcb;
+}

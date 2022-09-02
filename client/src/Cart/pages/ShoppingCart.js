@@ -25,6 +25,8 @@ const ShoppingCart = (props) => {
           null,
           { Authorization: `Bearer ${auth.token}` }
         );
+        console.log(loadedProducts);
+        console.log(responseData.products);
         setLoadedProducts(responseData.products);
       } catch (err) {}
     };
@@ -62,17 +64,14 @@ const ShoppingCart = (props) => {
     );
   };
 
-  if (isLoading || cart.isLoading) {
-    return (
-      <div className="center">
-        <LoadingSpinner asOverlay />
-      </div>
-    );
-  }
-
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
+      {(isLoading || cart.isLoading) && (
+        <div className="center">
+          <LoadingSpinner asOverlay />
+        </div>
+      )}
       {loadedProducts && (
         <CartProducts
           onAddProductToCart={addProductToCartHandler}
