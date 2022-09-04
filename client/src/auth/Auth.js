@@ -125,7 +125,7 @@ const Auth = () => {
         console.log(error)
       }
     }
-    // navigate(-1);
+    navigate(-1);
     dispatch(uiActions.setChangeMainHeader({changeMainHeader:false}))
   };
 

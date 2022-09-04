@@ -1,7 +1,7 @@
 .button {
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid  rgb(77, 91, 179);
+  border:none;
   border-radius: 12px;
   background:  rgb(77, 91, 179);
   color: white;
@@ -24,6 +24,7 @@
 .button--inverse {
   background: transparent;
   color: rgb(77, 91, 179);
+  border:1px solid  rgb(77, 91, 179);
 }
 
 .button--inverse:hover,

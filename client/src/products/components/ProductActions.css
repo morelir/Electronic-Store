@@ -1,26 +1,21 @@
-.form {
+.product-detail__actions {
   margin-bottom: 10px;
 }
 
-.form button {
-  font: inherit;
+.product-detail__actions button {
   cursor: pointer;
-  background-color: #ffd500;
-  border: 2px solid #ffde38;
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
-  
-  
 }
 
-.form button:hover,
-.form button:active {
+/* .product-detail__actions button:hover,
+.product-detail__actions button:active {
   background-color: #e8c202;
   border: 2px solid #e4c62ed4;
   
 }
 
-.form button:disabled {
+.product-detail__actions button:disabled {
  
   cursor: auto;
   background-color: #ffec8f;
@@ -28,4 +23,4 @@
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
 
-}
+}  */

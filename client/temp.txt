@@ -7,3 +7,19 @@
             <option value="5">5</option>
         </select>
         </span> */}
+
+
+// dispatch(
+    //   sendCartData(
+    //     `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
+    //     "PUT",
+    //     JSON.stringify({
+    //       price: finalPrice,
+    //       amount: 1,
+    //     }),
+    //     {
+    //       "Content-Type": "application/json",
+    //       Authorization: "Bearer " + auth.token,
+    //     }
+    //   )
+    // );

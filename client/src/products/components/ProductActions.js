@@ -6,6 +6,8 @@ import { sendCartData } from "../../shared/store/cart-actions";
 import Input from "../../shared/components/UIElements/Input";
 import "./ProductActions.css";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import Button from "../../shared/components/FormElements/Button";
+import { CircularProgress } from "@mui/material";
 
 let finalPrice;
 
@@ -61,7 +63,7 @@ const ProductActions = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
+    <form className="product-detail__actions" onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -74,8 +76,8 @@ const ProductActions = (props) => {
           defaultValue: "1",
         }}
       />
-      {!cartIsLoading && <button>Add to Cart</button>}
-      {cartIsLoading && <LoadingSpinner />}
+      <Button disabled={cartIsLoading}>Add to Cart</Button>
+      {/* {cartIsLoading && <LoadingSpinner asOverlay/>} */}
 
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>

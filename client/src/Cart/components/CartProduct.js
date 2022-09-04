@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState} from "react";
 import Button from "../../shared/components/FormElements/Button";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import "./CartProduct.css";
 
 const CartProduct = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   let finalPrice;
   if (props.discount) {
     finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
@@ -10,38 +13,54 @@ const CartProduct = (props) => {
     finalPrice = props.listPrice;
   }
 
-  const addProductToCart = () => {
-    props.onAddProductToCart(props.id, finalPrice);
+  console.log(props.id, props.isLoading)
+  const addProductToCart = async() => {
+    setIsLoading(true);
+    await props.onAddProductToCart(props.id, finalPrice);
+    setIsLoading(false);
   };
 
-  const removeProductFromCart = () => {
-    props.onRemoveProductFromCart(props.removingId);
+  const removeProductFromCart = async() => {
+    setIsLoading(true);
+    await props.onRemoveProductFromCart(props.removingId);
+    setIsLoading(false);
   };
 
   return (
     <li className="cart-product__item">
+      {isLoading && <LoadingSpinner asOverlay />}
       <div className="image-container">
         <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
       </div>
       <div className="detail">
-        <h3 className="product-title">{props.title}</h3>
+        <h3 className="product-title">
+          {props.title.length > 55
+            ? props.title.substring(0, 55) + "..."
+            : props.title}
+        </h3>
         <div className="product-summary">
-          <span className="price">${finalPrice}</span>
           <div className="amount-controller">
-            <Button onClick={addProductToCart} inverse>
+            <Button
+              disabled={props.isLoading}
+              onClick={addProductToCart}
+              inverse
+            >
               +
             </Button>
             <div className="amount">
               <span>{props.amount}</span>
             </div>
-            <Button onClick={removeProductFromCart} inverse>
+            <Button
+              disabled={props.isLoading}
+              onClick={removeProductFromCart}
+              inverse
+            >
               -
             </Button>
           </div>
-          {/* <span className="amount">x{props.amount}</span> */}
+          <span className="price">${finalPrice}</span>
         </div>
       </div>
-      {/* <div className="right-container"></div> */}
     </li>
   );
 };

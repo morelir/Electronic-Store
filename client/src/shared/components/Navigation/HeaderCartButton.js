@@ -35,8 +35,8 @@ const HeaderCartButton = (props) => {
       <span>Cart</span>
 
       <span
-        className={`badge ${btnIsHighlighted ? "bump" : ""} ${
-          cart.totalQuantity > 9 ? "move-badge__left" : ""
+        className={`amount ${btnIsHighlighted ? "bump" : ""} ${
+          cart.totalQuantity > 9 ? "move-amount__left" : ""
         }`}
       >
         {cart.totalQuantity}

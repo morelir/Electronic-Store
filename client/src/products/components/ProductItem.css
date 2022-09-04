@@ -94,6 +94,14 @@
   .product-item__content{
     display: block;
   }
+
+  .container__rating-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 @media (max-width: 480px) {

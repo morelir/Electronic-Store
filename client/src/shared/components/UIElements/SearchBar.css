@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-@media (max-width:950px){
+@media (max-width:1050px){
   .search-bar {
     width: 320px;
   }

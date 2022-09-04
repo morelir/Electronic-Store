@@ -17,11 +17,18 @@ const ProductItem = (props) => {
         </Link>
         <div className="product-item__info">
           <Link className="title" to={props.id}>
-            {props.title}
+            {props.title.length > 55
+              ? props.title.substring(0, 55) + "..."
+              : props.title}
           </Link>
           {/* need to change rating */}
-          <Rating name="read-only" value={props.rating.amount} readOnly />
-          <ProductPrice discount={props.discount} listPrice={props.listPrice} />
+          <div className="container__rating-price">
+            <Rating name="read-only" value={props.rating.amount} readOnly />
+            <ProductPrice
+              discount={props.discount}
+              listPrice={props.listPrice}
+            />
+          </div>
         </div>
         <div className="product-item__actions"></div>
       </Card>
