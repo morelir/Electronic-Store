@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from "react";
-import { useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Card from "../shared/components/UIElements/Card";
 import Input from "../shared/components/FormElements/Input";
@@ -16,7 +16,7 @@ import {
 import { useForm } from "../shared/hooks/form-hook";
 import { useHttpClient } from "../shared/hooks/http-hook";
 import { authActions } from "../shared/store/auth-slice";
-import {uiActions} from "../shared/store/ui-slice";
+import { uiActions } from "../shared/store/ui-slice";
 import "./Auth.css";
 
 const Auth = () => {
@@ -40,9 +40,12 @@ const Auth = () => {
     false
   );
 
-  useEffect(()=>{
-    dispatch(uiActions.setChangeMainHeader({changeMainHeader:true}))
-  },[])
+  useEffect(() => {
+    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: true }));
+    return () => {
+      dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
+    };
+  }, []);
 
   const switchModeHandler = () => {
     if (!isLoginMode) {
@@ -97,7 +100,7 @@ const Auth = () => {
           })
         );
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     } else {
       try {
@@ -105,7 +108,7 @@ const Auth = () => {
         formData.append("email", formState.inputs.email.value);
         formData.append("name", formState.inputs.name.value);
         formData.append("password", formState.inputs.password.value);
-        if(formState.inputs.image.value){
+        if (formState.inputs.image.value) {
           formData.append("dest", "users");
           formData.append("image", formState.inputs.image.value);
         }
@@ -120,13 +123,12 @@ const Auth = () => {
             token: responseData.token,
           })
         );
-        
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
     navigate(-1);
-    dispatch(uiActions.setChangeMainHeader({changeMainHeader:false}))
+    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
 
   return (
@@ -134,8 +136,16 @@ const Auth = () => {
       <ErrorModal error={error} onClear={clearError} />
       <div className="authentication ">
         {isLoading && <LoadingSpinner asOverlay />}
-        {isLoginMode && <header className="authentication__header">Sign <span style={{color:"rgb(158, 172, 255)"}}>in</span></header>}
-        {!isLoginMode && <header className="authentication__header">Sign <span style={{color:"rgb(158, 172, 255)"}}>up</span></header>}
+        {isLoginMode && (
+          <header className="authentication__header">
+            Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>
+          </header>
+        )}
+        {!isLoginMode && (
+          <header className="authentication__header">
+            Sign <span style={{ color: "rgb(158, 172, 255)" }}>up</span>
+          </header>
+        )}
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
             <ImageUpload

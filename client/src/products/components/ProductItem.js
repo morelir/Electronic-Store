@@ -17,9 +17,7 @@ const ProductItem = (props) => {
         </Link>
         <div className="product-item__info">
           <Link className="title" to={props.id}>
-            {props.title.length > 55
-              ? props.title.substring(0, 55) + "..."
-              : props.title}
+            {props.title}
           </Link>
           {/* need to change rating */}
           <div className="container__rating-price">

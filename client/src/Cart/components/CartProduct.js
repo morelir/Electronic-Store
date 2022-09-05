@@ -1,30 +1,35 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Button from "../../shared/components/FormElements/Button";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import "./CartProduct.css";
 
 const CartProduct = (props) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [finalPrice] = useState(
+    props.discount
+      ? ((1 - props.discount / 100) * props.listPrice).toFixed(2)
+      : props.listPrice
+  );
 
-  let finalPrice;
-  if (props.discount) {
-    finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
-  } else {
-    finalPrice = props.listPrice;
-  }
+  // let finalPrice;
+  // if (props.discount) {
+  //   finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
+  // } else {
+  //   finalPrice = props.listPrice;
+  // }
 
-  console.log(props.id, props.isLoading)
-  const addProductToCart = async() => {
+  // console.log(props.id, props.isLoading)
+  const addProductToCart = React.useCallback(async () => {
     setIsLoading(true);
     await props.onAddProductToCart(props.id, finalPrice);
     setIsLoading(false);
-  };
+  }, [props.onAddProductToCart, finalPrice, props.id]);
 
-  const removeProductFromCart = async() => {
+  const removeProductFromCart = React.useCallback(async () => {
     setIsLoading(true);
     await props.onRemoveProductFromCart(props.removingId);
     setIsLoading(false);
-  };
+  }, [props.onRemoveProductFromCart, props.removingId]);
 
   return (
     <li className="cart-product__item">
@@ -33,11 +38,7 @@ const CartProduct = (props) => {
         <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
       </div>
       <div className="detail">
-        <h3 className="product-title">
-          {props.title.length > 55
-            ? props.title.substring(0, 55) + "..."
-            : props.title}
-        </h3>
+        <h3 className="product-title">{props.title}</h3>
         <div className="product-summary">
           <div className="amount-controller">
             <Button

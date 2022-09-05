@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink,useNavigate } from "react-router-dom";
+import React from "react";
+import { NavLink,useNavigate} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
 import HeaderCartButton from "./HeaderCartButton";
@@ -9,15 +9,7 @@ const NavLinks = (props) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigation = useNavigate();
-  const [cartIsShown, setCartIsShown] = useState(false);
 
-  const showCartHandler = () => {
-    setCartIsShown(true);
-  };
-
-  const hideCartHandler = () => {
-    setCartIsShown(false);
-  };
 
   const logout = () => {
     dispatch(authActions.logout());
@@ -29,7 +21,6 @@ const NavLinks = (props) => {
 
   return (
     <ul className="nav-links">
-      {/* {cartIsShown && <Cart onClose={hideCartHandler} />} */}
       {!isLoggedIn && (
         <li>
           <NavLink to="/auth">

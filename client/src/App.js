@@ -1,3 +1,4 @@
+import React,{Suspense} from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,15 +7,23 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import StoreProducts from "./products/pages/StoreProducts";
-import ProductDetail from "./products/pages/ProductDetail";
-import Auth from "./auth/Auth";
+// import StoreProducts from "./products/pages/StoreProducts";
+// import ProductDetail from "./products/pages/ProductDetail";
+// import Auth from "./auth/Auth";
+// import ShoppingCart from "./Cart/pages/ShoppingCart";
 import Category from "./products/pages/Category";
-import Notification from "./shared/components/UIElements/Notification";
-import { useSideEffects } from "./shared/hooks/sideEffects-hook";
-import ShoppingCart from "./Cart/pages/ShoppingCart";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import Footer from "./shared/components/Navigation/Footer";
+import { useSideEffects } from "./shared/hooks/sideEffects-hook";
+import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
+
+const StoreProducts = React.lazy(()=> import("./products/pages/StoreProducts"));
+const ProductDetail = React.lazy(()=> import("./products/pages/ProductDetail"));
+const Auth = React.lazy(()=> import("./auth/Auth"));
+const ShoppingCart = React.lazy(()=> import("./Cart/pages/ShoppingCart"));
+
+
+
 
 function App() {
   useSideEffects();
@@ -51,9 +60,9 @@ function App() {
 
   return (
     <Router>
-      <Notification />
+      {/* <Notification /> */}
       <MainNavigation />
-      <main>{routes}</main>
+      <main><Suspense fallback={<div className='center'><LoadingSpinner/></div>}>{routes}</Suspense></main>
       <Footer />
     </Router>
   );

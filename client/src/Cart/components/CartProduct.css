@@ -6,14 +6,6 @@
   position: relative;
 }
 
-/* .cart-product__item .right-container {
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    gap:8px;
- } */
-
 .cart-product__item .image-container {
 }
 
@@ -31,6 +23,8 @@
 
 .cart-product__item .product-title {
   font-weight: 400;
+  height: 4rem;
+  overflow: hidden;
 }
 
 .cart-product__item .product-summary {
@@ -71,8 +65,6 @@
 
 .cart-product__item button:hover,
 .cart-product__item button:active {
-  /* background-color: #212529;
-  color: #efefef; */
   color: #212529;
   background: #cbcbcb;
 }

@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
 import "./CartProducts.css";
 
-const CartProducts =(props) => {
+const CartProducts = (props) => {
   const cart = useSelector((state) => state.cart);
+
   return (
     <div className="cart-products">
       <h1 className="header">
@@ -30,7 +31,9 @@ const CartProducts =(props) => {
         })}
       </ul>
       <h3 className="subtotal">
-        Subtotal ({cart.totalQuantity} items): <span className="subtotal-price">${cart.totalAmount.toFixed(2)}</span>
+        
+        Subtotal ({cart.totalQuantity} items):{" "}
+        <span className="subtotal-price">${cart.totalAmount.toFixed(2)}</span>
       </h3>
     </div>
   );

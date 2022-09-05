@@ -28,19 +28,8 @@ const ShoppingCart = (props) => {
   },[sendRequest, auth.token, cart.id]);
 
   useEffect(() => {
-    // const fetchCartProducts = async () => {
-    //   try {
-    //     const responseData = await sendRequest(
-    //       `${process.env.REACT_APP_BACKEND_URL}/cart/${cart.id}/products`,
-    //       "GET",
-    //       null,
-    //       { Authorization: `Bearer ${auth.token}` }
-    //     );
-    //     setLoadedProducts(responseData.products);
-    //   } catch (err) {}
-    // };
     fetchCartProducts();
-  }, []);
+  }, [fetchCartProducts]);
 
   const addProductToCartHandler =React.useCallback( async (id, finalPrice) => {
     try {
@@ -67,7 +56,7 @@ const ShoppingCart = (props) => {
       );
       await fetchCartProducts();
     } catch (err) {}
-  },[auth.token]);
+  },[auth.token,sendRequest,fetchCartProducts,dispatch]);
 
   const removeProductFromCartHandler =React.useCallback( async (id) => {
     let responseData;
@@ -92,7 +81,7 @@ const ShoppingCart = (props) => {
       })
     );
     await fetchCartProducts();
-  },[auth.token]);
+  },[auth.token,sendRequest,fetchCartProducts,dispatch]);
 
   return (
     <React.Fragment>
