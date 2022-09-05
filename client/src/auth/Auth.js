@@ -95,8 +95,10 @@ const Auth = () => {
 
         dispatch(
           authActions.login({
-            userId: responseData.userId,
             token: responseData.token,
+            email: responseData.email,
+            name: responseData.name,
+            image: responseData.image,
           })
         );
       } catch (error) {
@@ -119,8 +121,10 @@ const Auth = () => {
         );
         dispatch(
           authActions.login({
-            userId: responseData.userId,
             token: responseData.token,
+            email: responseData.email,
+            name: responseData.name,
+            image: responseData.image,
           })
         );
       } catch (error) {

@@ -2,7 +2,6 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
 
@@ -21,7 +20,6 @@ const getUsers = async (req, res, next) => {
 };
 
 const signup = async (req, res, next) => {
-  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return next(
@@ -66,7 +64,7 @@ const signup = async (req, res, next) => {
     image: req.file?.path ?? null,
     password: hashedPassword,
     places: [],
-    cart:null,
+    cart: null,
   });
 
   try {
@@ -94,9 +92,12 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  res
-    .status(201)
-    .json({ userId: createdUser.id, email: createdUser.email, token: token });
+  res.status(201).json({
+    email: createdUser.email,
+    name: createdUser.name,
+    image: createdUser.image,
+    token: token,
+  });
 };
 
 const login = async (req, res, next) => {
@@ -157,8 +158,9 @@ const login = async (req, res, next) => {
   }
 
   res.json({
-    userId: existingUser.id,
     email: existingUser.email,
+    name: existingUser.name,
+    image: existingUser.image,
     token: token,
   });
 };
