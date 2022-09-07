@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import "./HeaderCartButton.css";
+import "./CartButton.css";
 
-const HeaderCartButton = (props) => {
+const CartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const cart = useSelector((state) => state.cart);
 
@@ -24,15 +24,15 @@ const HeaderCartButton = (props) => {
     };
   }, [cart.totalQuantity]);
 
-  
-
   return (
-    <button className={btnClasses} >
-      <span className="icon">
-        {/* <CartIcon /> */}
-        <ShoppingCartOutlinedIcon style={{ fontSize: "30px" }} />
-      </span>
-      <span>Cart</span>
+    <button className={btnClasses}>
+      <div className="container">
+        <span className="icon">
+          {/* <CartIcon /> */}
+          <ShoppingCartOutlinedIcon style={{ fontSize: "30px" }} />
+        </span>
+        <span className="cart-name">Cart</span>
+      </div>
 
       <span
         className={`amount ${btnIsHighlighted ? "bump" : ""} ${
@@ -45,4 +45,4 @@ const HeaderCartButton = (props) => {
   );
 };
 
-export default HeaderCartButton;
+export default CartButton;

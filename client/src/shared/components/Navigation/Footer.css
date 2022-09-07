@@ -1,38 +1,66 @@
 .page-footer {
   margin-top: auto;
+
   width: 100%;
-  padding: 100px 15%;
+  padding: 100px 0;
   background: #212529;
   /* #333 */
   color: #efefef;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8rem;
+  justify-content: baseline;
+  padding-bottom: 0px;
+}
+
+.page-footer .container-1 {
+  display: flex;
+  padding: 0 15%;
   gap: 2rem;
 }
 
-.page-footer div {
+.page-footer .container-2 {
+  font-size: 14px;
+  padding-bottom: 20px;
+  padding-top: 25px;
+  padding-left: 15%;
+  padding-right: 15%;
+  /* background-color: #16191c;
+  box-shadow: 0 2px 6px #16191c; */
+  border-top: 1px #ccc solid;
+  color: #ccc;
+  background-color: #191c1f;
+}
+
+.page-footer .container-1 div {
   text-align: center;
 }
 
-.page-footer div h3 {
+.page-footer .container-1 div h3 {
   font-weight: 300;
   margin-bottom: 30px;
   letter-spacing: 1px;
-  color: rgb(158, 172, 255);
+  color: #ccc;
 }
 
-.page-footer .col-1 a {
+.page-footer .container-1 .col-1 a {
   display: block;
   text-decoration: none;
   color: #efefef;
   margin-bottom: 10px;
 }
 
-.page-footer .col-2 {
+.page-footer .container-1 .col-1 a:hover,
+.page-footer .container-1 .col-1 a:active {
+  color: rgb(185, 196, 251);
+}
+
+.page-footer .container-1 .col-2 {
   flex-grow: 2;
 }
 
-
-.page-footer form input {
+.page-footer .container-1 form input {
   width: 400px;
   height: 45px;
   border-radius: 4px;
@@ -43,8 +71,7 @@
   border: none;
 }
 
-
-.page-footer form button {
+.page-footer .container-1 form button {
   background: transparent;
   border: 2px solid #fff;
   color: #fff;
@@ -54,32 +81,44 @@
   cursor: pointer;
 }
 
-.page-footer .social-icons {
+.page-footer .container-1 form button:hover,
+.page-footer .container-1 form button:active {
+  color: rgb(185, 196, 251);
+  border-color: rgb(185, 196, 251);
+}
+
+.page-footer .container-1 .social-icons {
   margin-top: 30px;
 }
 
-.page-footer .social-icons svg {
+.page-footer .container-1 .social-icons svg {
   font-size: 22px;
   margin: 10px;
   cursor: pointer;
+  color: #efefef;
+}
+
+.page-footer .container-1 .social-icons svg:hover,
+.page-footer .container-1 .social-icons svg:active {
+  color: rgb(185, 196, 251);
 }
 
 @media (max-width: 1120px) {
-  .page-footer form input {
+  .page-footer .container-1 form input {
     width: 270px;
   }
 }
 
 @media (max-width: 940px) {
-  .page-footer {
+  .container-1 {
     flex-direction: column;
   }
-  .page-footer div h3 {
+  .page-footer .container-1 div h3 {
     margin-bottom: 10px;
     letter-spacing: 1px;
   }
 
-  .page-footer form input {
+  .page-footer .container-1 form input {
     margin-top: 10px;
     margin-bottom: 20px;
     width: 270px;

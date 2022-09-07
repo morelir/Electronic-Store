@@ -28,7 +28,7 @@ const ProductItem = (props) => {
             />
           </div>
         </div>
-        <div className="product-item__actions"></div>
+        {/* <div className="product-item__actions"></div> */}
       </Card>
     </li>
   );

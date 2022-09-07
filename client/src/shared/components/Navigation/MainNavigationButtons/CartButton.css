@@ -10,6 +10,16 @@
   border-radius: 25px;
   font-weight: bold;
   position: relative;
+  padding:1rem 0.5rem !important;
+}
+
+.cart-button .container{
+  display: flex;
+  gap:3px;
+}
+
+.cart-name{
+  align-self: end;
 }
 
 

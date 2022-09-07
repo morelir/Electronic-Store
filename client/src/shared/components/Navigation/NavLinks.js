@@ -1,17 +1,23 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
-import HeaderCartButton from "./HeaderCartButton";
+import CartButton from "./MainNavigationButtons/CartButton";
+import AccountButton from "./MainNavigationButtons/AccountButton";
+
 import "./NavLinks.css";
 
 const NavLinks = (props) => {
-  const { isLoggedIn ,image,name} = useSelector((state) => state.auth);
+  const { isLoggedIn, image, name, email } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigation = useNavigate();
 
-  const logout = () => {
+  const logoutHandler = () => {
     dispatch(authActions.logout());
+  };
+
+  const authClickHandler = () => {
+    navigation("/auth", { replace: true });
   };
 
   const cartClickHandler = () => {
@@ -22,28 +28,22 @@ const NavLinks = (props) => {
     <ul className="nav-links">
       {!isLoggedIn && (
         <li>
-          <NavLink to="/auth">
-            Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>
-          </NavLink>
+          <AccountButton isLoggedIn={isLoggedIn} onClick={authClickHandler} />
         </li>
       )}
       {isLoggedIn && (
         <React.Fragment>
           <li>
-            <div style={{ textAlign: "center",position:"relative" }} >
-              {image && <img className="profile" src={`${process.env.REACT_APP_ASSET_URL}/${image}`} />}
-              <span style={{color:"white"}}>
-                Hello, {name}
-              </span>
-            </div>
-          </li>
-          <li>
-            <button onClick={logout}>
-              Sign <span style={{ color: "rgb(158, 172, 255)" }}>out</span>
-            </button>
+            <AccountButton
+              isLoggedIn={isLoggedIn}
+              name={name}
+              image={image}
+              email={email}
+              onLogout={logoutHandler}
+            />
           </li>
           <li onClick={cartClickHandler}>
-            <HeaderCartButton />
+            <CartButton />
           </li>
         </React.Fragment>
       )}

@@ -23,7 +23,7 @@ const ProductDetail = () => {
       } catch (err) {}
     };
     fetchProductById();
-  }, []);
+  }, [sendRequest,productId]);
 
   if (isLoading) {
     return (

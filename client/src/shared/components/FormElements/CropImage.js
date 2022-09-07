@@ -2,8 +2,7 @@ import React from "react";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 import ModDialog from "../UIElements/ModDialog";
-// import Spinner from "react-bootstrap/Spinner";
-import { height } from "@mui/system";
+import LoadingSpinner from "../UIElements/LoadingSpinner";
 
 const PIXEL_RATIO = 4;
 export default function CropImage(props) {
@@ -11,7 +10,7 @@ export default function CropImage(props) {
     unit: "%",
     width: 75,
     height: 50,
-    aspect: 16/9,
+    aspect: 16 / 9,
   });
 
   const [src, setSrc] = React.useState("");
@@ -70,7 +69,9 @@ export default function CropImage(props) {
 
     canvas.toBlob((blob) => {
       const previewUrl = URL.createObjectURL(blob);
-      const newFile = new File([blob], props.selectedFile.name,{type:"image/png"});
+      const newFile = new File([blob], props.selectedFile.name, {
+        type: "image/png",
+      });
       setPreview(previewUrl);
       setCroppedFile(newFile);
     }, "image/jpg");
@@ -116,13 +117,7 @@ export default function CropImage(props) {
         {preview && <image src={preview} />}
         {!src && (
           <>
-            {/* <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              aria-hidden="true"
-            /> */}
-            <span> Loading...</span>
+            <LoadingSpinner asOverlay />
           </>
         )}
       </ModDialog>

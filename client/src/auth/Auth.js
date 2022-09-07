@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import Card from "../shared/components/UIElements/Card";
 import Input from "../shared/components/FormElements/Input";
 import Button from "../shared/components/FormElements/Button";
 import ErrorModal from "../shared/components/UIElements/ErrorModal";
@@ -12,6 +11,7 @@ import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
+  VALIDATOR_MATCH,
 } from "../shared/util/validators";
 import { useForm } from "../shared/hooks/form-hook";
 import { useHttpClient } from "../shared/hooks/http-hook";
@@ -40,12 +40,14 @@ const Auth = () => {
     false
   );
 
+  const confPasswordInput=useRef();
+
   useEffect(() => {
     dispatch(uiActions.setChangeMainHeader({ changeMainHeader: true }));
     return () => {
       dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
     };
-  }, []);
+  }, [dispatch]);
 
   const switchModeHandler = () => {
     if (!isLoginMode) {
@@ -54,6 +56,7 @@ const Auth = () => {
           ...formState.inputs,
           name: undefined,
           image: undefined,
+          confPassword: undefined,
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -68,6 +71,10 @@ const Auth = () => {
           image: {
             value: null,
             isValid: true,
+          },
+          confPassword: {
+            value: "",
+            isValid: false,
           },
         },
         false
@@ -119,6 +126,7 @@ const Auth = () => {
           "POST",
           formData
         );
+        console.log(responseData.name)
         dispatch(
           authActions.login({
             token: responseData.token,
@@ -131,9 +139,31 @@ const Auth = () => {
         console.log(error);
       }
     }
-    navigate(-1);
+    // navigate(-1);
     dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
+
+  useEffect(() => {
+    if (isLoginMode) {
+      return;
+    }
+    const {confPassword,password}=formState.inputs
+    
+    if (
+      password.value === confPassword.value &&
+      !confPassword.isValid
+    ) {
+      console.log(confPassword.isValid)
+      confPasswordInput.current.checkInput();
+    }
+    else if (
+      password.value !== confPassword.value &&
+      confPassword.isValid
+    ) {
+      console.log(confPassword.isValid)
+      confPasswordInput.current.checkInput();
+    }
+  }, [formState.inputs.password.value]);
 
   return (
     <React.Fragment>
@@ -164,7 +194,11 @@ const Auth = () => {
               element="input"
               id="name"
               type="text"
-              label="Your Name"
+              label={
+                <span>
+                  Your Name <span style={{ color: "orange" }}>*</span>
+                </span>
+              }
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a name."
               onInput={inputHandler}
@@ -174,7 +208,11 @@ const Auth = () => {
             element="input"
             id="email"
             type="email"
-            label="E-Mail"
+            label={
+              <span>
+                E-Mail <span style={{ color: "orange" }}>*</span>
+              </span>
+            }
             validators={[VALIDATOR_EMAIL()]}
             errorText="Please enter a valid email address."
             onInput={inputHandler}
@@ -183,11 +221,31 @@ const Auth = () => {
             element="input"
             id="password"
             type="password"
-            label="Password"
+            label={
+              <span>
+                Password <span style={{ color: "orange" }}>*</span>
+              </span>
+            }
             validators={[VALIDATOR_MINLENGTH(6)]}
             errorText="Please enter a valid password, at least 6 characters."
             onInput={inputHandler}
           />
+          {!isLoginMode && (
+            <Input
+              ref={confPasswordInput}
+              element="input"
+              id="confPassword"
+              type="password"
+              label={
+                <span>
+                  Re-enter password <span style={{ color: "orange" }}>*</span>
+                </span>
+              }
+              validators={[VALIDATOR_MATCH(formState.inputs.password.value)]}
+              errorText="Passwords must match."
+              onInput={inputHandler}
+            />
+          )}
           <div className="buttons-container">
             <Button type="submit" disabled={!formState.isValid}>
               {isLoginMode ? "LOGIN" : "SIGNUP"}

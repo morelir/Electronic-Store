@@ -70,6 +70,10 @@ body {
   line-height: 40px;
 }
 
+.size-small {
+  font-size: 14px;
+}
+
 .text-bold {
   font-weight: 700;
 }

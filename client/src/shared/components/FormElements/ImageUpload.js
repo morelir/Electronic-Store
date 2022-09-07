@@ -13,31 +13,10 @@ const ImageUpload = (props) => {
 
   const filePickerRef = useRef();
 
-  useEffect(() => {
-    // if (!file || !cropFile) {
-    //   return;
-    // }
-    // const fileReader = new FileReader();
-    // fileReader.onload = () => {
-    //   setPreviewUrl(fileReader.result);
-    // };
-    // fileReader.readAsDataURL(file);
-  }, [file]);
-
   const onCropSave = ({ file, preview }) => {
-    console.log(file)
     setCropFile(file)
     setPreviewUrl(preview)
     props.onInput(props.id, file, isValid)
-    // setState((prevState) => {
-    //   return {
-    //     ...prevState,
-    //     cropFile: {
-    //       name: file.name,
-    //       file: file,
-    //     },
-    //   };
-    // });
   };
 
   const pickedHandler = (event) => {
