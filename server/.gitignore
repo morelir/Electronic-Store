@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/nodemon.json
 /.pnp
 .pnp.js
 
@@ -13,7 +14,6 @@
 
 # misc
 .DS_Store
-/nodemon
 .env
 .env.production
 .env.development.local
