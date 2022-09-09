@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+/nodemon
 .env
 .env.production
 .env.development.local
