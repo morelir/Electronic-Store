@@ -50,7 +50,12 @@
 
 @media (max-width: 480px) {
   .category-images .image-container {
-    height: 15rem;
+    height: 12rem;
     font-size: 21px;
+  }
+
+  .category-images .image-container figcaption {
+    bottom: 50px;
+   
   }
 }

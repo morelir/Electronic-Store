@@ -1,0 +1,21 @@
+
+
+.privacy-policy__wrap{
+    width:80%;
+    margin:50px auto;
+}
+
+.privacy-policy__wrap h1,h2,h3{
+    line-height: 28px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.privacy-policy__wrap p{
+    margin-bottom: 0.7rem;
+}
+
+.privacy-policy__wrap li{
+    margin-bottom: 0.7rem;
+}

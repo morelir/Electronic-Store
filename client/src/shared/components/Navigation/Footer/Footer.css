@@ -1,10 +1,8 @@
-.page-footer {
+/* .page-footer {
   margin-top: auto;
-
   width: 100%;
   padding: 100px 0;
   background: #212529;
-  /* #333 */
   color: #efefef;
   display: flex;
   flex-direction: column;
@@ -26,8 +24,6 @@
   padding-top: 25px;
   padding-left: 15%;
   padding-right: 15%;
-  /* background-color: #16191c;
-  box-shadow: 0 2px 6px #16191c; */
   border-top: 1px #ccc solid;
   color: #ccc;
   background-color: #191c1f;
@@ -122,5 +118,132 @@
     margin-top: 10px;
     margin-bottom: 20px;
     width: 270px;
+  }
+} */
+
+.main-wrap {
+  width: 100%;
+  background: #fff;
+  margin-top: auto;
+}
+.footer-wrap {
+  position: relative;
+  /* margin-top:320px;  */
+  /*you can remove or edit this margin-top property when you are using this footer on your project. */
+  width: 100%;
+  padding: 40px;
+  /* background: rgb(46, 44, 44); */
+  background: #212529;
+}
+.footer-wrap-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.footer-section {
+  text-align: center;
+  width: 35%;
+  display: block;
+  padding: 10px 35px;
+}
+
+.footer-section p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 28px;
+}
+.footer-section h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 3rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.footer-section a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding: 4px 0px;
+}
+
+.footer-wrap .line {
+  margin-top: 20px;
+  width: 100%;
+  height: 1px;
+  background: rgb(143, 142, 142);
+}
+.social-link {
+  padding-top: 25px;
+  text-align: center;
+}
+.social-link a {
+  text-decoration: none;
+  height: 26px;
+  display: inline-block;
+  width: 26px;
+  padding: 5px;
+  border-radius: 20px;
+  margin: 5px;
+  background: rgb(224, 222, 222);
+}
+
+.social-link a:hover,
+.social-link a:active {
+  background: rgb(185, 196, 251);
+}
+
+.social-link a img {
+  width: 14px;
+  height: 14px;
+}
+
+.footer-bottom {
+  background: rgb(12, 12, 12);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-bottom a,
+.footer-bottom span {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:active {
+  color: rgb(185, 196, 251);
+}
+
+.first-box {
+  margin-left: 20px;
+  display: flex;
+  gap: 20px;
+}
+.last-box {
+  margin-right: 20px;
+}
+
+@media (max-width: 1120px) {
+  .footer-section {
+    width: 400px;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .first-box {
+    margin-left: 0;
+  }
+  .last-box {
+    margin-right: 0;
   }
 }

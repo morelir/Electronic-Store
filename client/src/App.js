@@ -1,4 +1,4 @@
-import React,{Suspense} from "react";
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,22 +7,24 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-// import StoreProducts from "./products/pages/StoreProducts";
-// import ProductDetail from "./products/pages/ProductDetail";
-// import Auth from "./auth/Auth";
-// import ShoppingCart from "./Cart/pages/ShoppingCart";
 import Category from "./products/pages/Category";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import Footer from "./shared/components/Navigation/Footer";
+import Footer from "./shared/components/Navigation/Footer/Footer";
 import { useSideEffects } from "./shared/hooks/sideEffects-hook";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
-
-const StoreProducts = React.lazy(()=> import("./products/pages/StoreProducts"));
-const ProductDetail = React.lazy(()=> import("./products/pages/ProductDetail"));
-const Auth = React.lazy(()=> import("./auth/Auth"));
-const ShoppingCart = React.lazy(()=> import("./Cart/pages/ShoppingCart"));
+import { Terminal } from "@mui/icons-material";
 
 
+const StoreProducts = React.lazy(() =>
+  import("./products/pages/StoreProducts")
+);
+const ProductDetail = React.lazy(() =>
+  import("./products/pages/ProductDetail")
+);
+const Auth = React.lazy(() => import("./auth/Auth"));
+const ShoppingCart = React.lazy(() => import("./Cart/pages/ShoppingCart"));
+const TermsAndConditions = React.lazy(() => import("./policy/TermsAndConditions"));
+const PrivacyPolicy = React.lazy(() => import("./policy/PrivacyPolicy"));
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
         <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
@@ -47,6 +51,8 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
         <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
@@ -60,9 +66,18 @@ function App() {
 
   return (
     <Router>
-      {/* <Notification /> */}
       <MainNavigation />
-      <main><Suspense fallback={<div className='center'><LoadingSpinner/></div>}>{routes}</Suspense></main>
+      <main>
+        <Suspense
+          fallback={
+            <div className="center">
+              <LoadingSpinner />
+            </div>
+          }
+        >
+          {routes}
+        </Suspense>
+      </main>
       <Footer />
     </Router>
   );
