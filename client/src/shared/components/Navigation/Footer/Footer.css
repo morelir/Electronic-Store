@@ -127,12 +127,8 @@
   margin-top: auto;
 }
 .footer-wrap {
-  position: relative;
-  /* margin-top:320px;  */
-  /*you can remove or edit this margin-top property when you are using this footer on your project. */
   width: 100%;
   padding: 40px;
-  /* background: rgb(46, 44, 44); */
   background: #212529;
 }
 .footer-wrap-1 {
