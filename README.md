@@ -2,7 +2,7 @@
 <h1 align="center" style="border-bottom: none">Electronic Store</h1>
 
 ## ***About***
-Online Electronic Store with a variety of electronics where you can register for the system and management a personal shopping cart, with responsive and interactive design.
+Online Electronic Store with a variety of electronic products where you can register for the system and management a personal shopping cart, with responsive and interactive design.
 
 </br>
 
