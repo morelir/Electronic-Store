@@ -26,7 +26,9 @@ Online Electronic Store with a variety of electronic products where you can regi
 </br>
 
 
-
 ## Technologies
-![Technologies](https://user-images.githubusercontent.com/58606266/179725061-1459a74d-aa69-4b06-bd86-5a9f65f9c5e2.PNG)
+- React.js 
+- Node.js
+- Express.js
+- MongoDB
 
