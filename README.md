@@ -1,6 +1,6 @@
 
-<h1 align="center" style="border-bottom: none">Electronic Store - 
-<a href="https://test-9b5eb.web.app/">Link</a> </br></h1>
+<h1 align="center" style="border-bottom: none"><a href="https://test-9b5eb.web.app/" target="_blank">Electronic Store</a> </h1>
+</br>
 
 ## ***About***
 Online Electronic Store with a variety of electronic products where you can register for the system and management a personal shopping cart, with responsive and interactive design.
