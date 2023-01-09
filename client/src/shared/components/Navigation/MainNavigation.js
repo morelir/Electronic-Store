@@ -45,7 +45,7 @@ const MainNavigation = (props) => {
           <Link to="/">
             {/* <img src={logo} height={50} /> */}
             <span>Electronic</span>{" "}
-            <span style={{ color: "rgb(158, 172, 255)" }}>Store</span>
+            <span style={{ color: "#9eacff" }}>Store</span>
           </Link>
         </h1>
         <SearchBar className="search-bar" />

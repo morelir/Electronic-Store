@@ -4,7 +4,7 @@
   top: 65px;
   width: 340px;
   transform: translateX(-35%);
-  background-color: #20323d;
+  background-color: #2e343a;
   /* border: #474a4d; */
   border-radius: 8px;
   /* overflow: hidden; */
@@ -23,11 +23,11 @@
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #20323d;
+  border-bottom: 10px solid #2e343a;
 
   position: absolute;
   top: -9px;
-  left: 198px;
+  left: 208px;
   color: #474a4d;
 }
 
@@ -86,8 +86,8 @@
 
 @media (max-width: 768px) {
   .dropdown {
-    top: 0px;
-    left: 160px;
+    top: 19px;
+    left: 165px;
     width: 150px;
   }
   
@@ -97,9 +97,9 @@
 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid #20323d;
+    border-right: 15px solid #2e343a;
 
-    top: 30px;
+    top: 23px;
     left: -22px;
     color: #474a4d;
   }

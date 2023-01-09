@@ -6,13 +6,15 @@
 }
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins","Roboto", sans-serif;
+ 
   height: 100%;
 }
 
 body {
   margin: 0;
   height: 100%;
+  background-color: #fafafa;
   /* background-image:url('./shared/images/background-svg.svg');
   background-repeat: no-repeat;
   background-size: cover; */

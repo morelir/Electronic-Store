@@ -10,17 +10,15 @@ const MainHeader = (props) => {
   const dispatch = useDispatch();
 
   const changeMainHeaderHandler = () => {
-    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false}));
+    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
 
   if (ui.changeMainHeader) {
     return (
       <header className="main-header-change">
-        <Link
-          onClick={changeMainHeaderHandler}
-          to="/"
-        >
-          <span>Electronic</span> <span style={{ color: "rgb(158, 172, 255)" }}>Store</span>
+        <Link onClick={changeMainHeaderHandler} to="/">
+          <span>Electronic</span>{" "}
+          <span style={{ color: "#9eacff" }}>Store</span>
         </Link>
       </header>
     );
