@@ -7,9 +7,9 @@ const Button = props => {
   if (props.href) {
     return (
       <a
-        className={`button button--${props.size || 'default'} ${props.inverse &&
+        className={`button button--${props.size || 'default'} ${props.className} ${props.inverse &&
           'button--inverse'} ${props.danger && 'button--danger'}`}
-        href={props.href}
+        href={props.href}  style={props.style} target="_blank" rel="noreferrer"
       >
         {props.children}
       </a>
