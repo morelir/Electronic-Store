@@ -27,7 +27,8 @@ Online Electronic Store with a variety of electronic products where you can regi
 
 
 ## Technologies
-- React.js 
+- React.js
+- Redux
 - Node.js
 - Express.js
 - MongoDB
