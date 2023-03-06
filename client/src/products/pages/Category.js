@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "../../shared/components/UIElements/Carousel";
-import image1 from "../../shared/images/Category_Laptops.jpg";
-import image2 from "../../shared/images/Category_Headset.jpg";
-import image3 from "../../shared/images/Category_Nintendo.jpg";
-import image4 from "../../shared/images/Category_ps5.jpg";
-import image5 from "../../shared/images/Category_Controllers.jpg";
-import image6 from "../../shared/images/Category_mouses.jpg";
+import image1 from "../../shared/images/Category_Laptops.webp";
+import image2 from "../../shared/images/Category_Headset.webp";
+import image3 from "../../shared/images/Category_Nintendo.webp";
+import image4 from "../../shared/images/Category_ps5.webp";
+import image5 from "../../shared/images/Category_Controllers.webp";
+import image6 from "../../shared/images/Category_mouses.webp";
 import Button from "../../shared/components/FormElements/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IoLayers } from "react-icons/io5";
@@ -17,37 +17,31 @@ let category_images = [
     src: image1,
     id: "laptops",
     name: "Laptops",
-    mouseIsEnter: false,
   },
   {
     src: image2,
     id: "headsets",
     name: "Headsets",
-    mouseIsEnter: false,
   },
   {
     src: image3,
     id: "mouses",
     name: "Mouses",
-    mouseIsEnter: false,
   },
   {
     src: image4,
     id: "nintendo",
     name: "Nintendo",
-    mouseIsEnter: false,
   },
   {
     src: image5,
     id: "playstation",
     name: "Playstation",
-    mouseIsEnter: false,
   },
   {
     src: image6,
     id: "controllers",
     name: "Controllers",
-    mouseIsEnter: false,
   },
 ];
 
@@ -72,19 +66,11 @@ const Category = () => {
     });
   };
 
-  const categoryMouseIsLeave = (src, pos) => {
-    setImages((prev) => {
-      return [
-        ...prev.slice(0, pos),
-        { ...prev[pos], mouseIsEnter: false },
-        ...prev.slice(pos + 1),
-      ];
-    });
-  };
-
+  
   return (
     <React.Fragment>
-      <Carousel />
+      {/* <Carousel /> */}
+
       <div className="home__container">
         <div className="home__mainTextContainer">
           <h1>Electronic Store</h1>
@@ -100,7 +86,10 @@ const Category = () => {
             shopping cart and enjoy a responsive and interactive design.
           </p>
           <div className="home-container__buttons">
-            <Button className="source-button" href="https://github.com/morelir/Electronic-Store">
+            <Button
+              className="source-button"
+              href="https://github.com/morelir/Electronic-Store"
+            >
               <GitHubIcon /> Source Code
             </Button>
             <Button href="https://github.com/morelir">
@@ -110,26 +99,18 @@ const Category = () => {
           </div>
         </div>
         <div className="category-images">
-          {images.map((img, pos) => {
+          {images.map((img) => {
             return (
               <figure
-                key={pos}
+                key={img.id}
                 id={img.id}
-                onMouseEnter={() => {
-                  categoryMouseIsEnter(img.src, pos);
-                }}
-                onMouseLeave={() => {
-                  categoryMouseIsLeave(img.src, pos);
-                }}
                 onClick={(e) => {
                   navigationHandler(e);
                 }}
                 className="card__container"
               >
                 <div
-                  className={`image-container ${
-                    img.mouseIsEnter ? "mouseIsEnter" : ""
-                  }`}
+                  className="image-container"
                 >
                   <img src={img.src} />
                 </div>
