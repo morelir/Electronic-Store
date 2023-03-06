@@ -35,7 +35,7 @@ const Footer = () => {
               <img src={require("./images/fb.png")} alt="Facebook" />
             </a>
             <a
-              href="https://www.google.com/"
+              href="https://github.com/morelir"
               target="_blank"
               rel="noreferrer"
             >

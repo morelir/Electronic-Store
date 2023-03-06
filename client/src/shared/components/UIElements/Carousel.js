@@ -14,7 +14,7 @@ let TEMP_carouselImages = [];
 for (let i = 1; i <= 10; i++) {
   TEMP_carouselImages.push(
     <div className="image">
-      <img src={require(`../../images/${i}.jpg`)}></img>
+      <img src={require(`../../images/${i}.webp`)}></img>
     </div>
   );
 }
