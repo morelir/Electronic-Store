@@ -49,6 +49,8 @@ const Category = () => {
   const navigate = useNavigate();
   const [images, setImages] = useState(category_images);
 
+  
+
   const navigationHandler = (e) => {
     navigate(`/${e.currentTarget.id}/products`, {
       replace: true,

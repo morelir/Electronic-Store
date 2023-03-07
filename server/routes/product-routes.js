@@ -7,6 +7,7 @@ const productsControllers = require('../controllers/products-controllers');
 
 const router = express.Router();
 
+router.get('/randomProducts', productsControllers.getRandomProducts);
 router.get('/category/:category', productsControllers.getProductsByCategory);
 router.get('/:productId', productsControllers.getProductById);
 router.get('/search/:input', productsControllers.getProductsByInputSearch);
