@@ -16,17 +16,11 @@ body {
   margin: 0;
   height: 100%;
   background-color: #fafafa;
-  /* background-image:url('./shared/images/background-svg.svg');
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 #root{
   height: 100%;
   display: grid;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* min-height: 100vh; */
 }
 
 .background-color-dark {

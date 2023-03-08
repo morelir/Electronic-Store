@@ -31,13 +31,7 @@
   width: 25rem;
   height: 100%;
   border-radius: 16px;
-  /* background-color:#f7f7f7 */
-  /* object-fit: cover; */
 }
-
-/* .product-item__info .title{
-  margin-bottom: 1rem;
-} */
 
 .product-item__info a {
   margin-bottom: 1rem;

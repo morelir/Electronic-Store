@@ -67,12 +67,9 @@ function App() {
 
   return (
     <Router>
-      {/* <div className="main-container"> */}
       <main>
         <div className="main-box">
           <MainNavigation />
-
-          {/* <main> */}
           <Suspense
             fallback={
               <div className="center">
@@ -84,7 +81,6 @@ function App() {
           </Suspense>
         </div>
       </main>
-      {/* </div> */}
       <Footer />
     </Router>
   );
