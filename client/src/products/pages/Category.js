@@ -11,45 +11,50 @@ import Button from "../../shared/components/FormElements/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IoLayers } from "react-icons/io5";
 import "./Category.css";
+import MainNavigation from "../../shared/components/Navigation/MainNavigation";
 
 let category_images = [
   {
     src: image1,
     id: "laptops",
     name: "Laptops",
+    alt:"laptops"
   },
   {
     src: image2,
     id: "headsets",
     name: "Headsets",
+    alt:"headsets"
   },
   {
     src: image3,
     id: "mouses",
     name: "Mouses",
+    alt:"mouses"
   },
   {
     src: image4,
     id: "nintendo",
     name: "Nintendo",
+    alt:"nintendo"
   },
   {
     src: image5,
     id: "playstation",
     name: "Playstation",
+    alt:"playstation"
   },
   {
     src: image6,
     id: "controllers",
     name: "Controllers",
+    alt:"controllers"
   },
 ];
 
 const Category = () => {
   const navigate = useNavigate();
   const [images, setImages] = useState(category_images);
-
-  
 
   const navigationHandler = (e) => {
     navigate(`/${e.currentTarget.id}/products`, {
@@ -68,12 +73,11 @@ const Category = () => {
     });
   };
 
-  
   return (
     <React.Fragment>
-      {/* <Carousel /> */}
-
+      {/* <MainNavigation /> */}
       <div className="home__container">
+        {/* <Carousel /> */}
         <div className="home__mainTextContainer">
           <h1>Electronic Store</h1>
           <p>
@@ -111,10 +115,8 @@ const Category = () => {
                 }}
                 className="card__container"
               >
-                <div
-                  className="image-container"
-                >
-                  <img src={img.src} />
+                <div className="image-container">
+                  <img src={img.src} alt={img.alt} />
                 </div>
                 <figcaption>
                   <span>{img.name}</span>

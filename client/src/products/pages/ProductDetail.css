@@ -1,14 +1,18 @@
-
 .product-detail {
-  margin: 9rem auto;
+  margin: 10rem auto;
   width: 90%;
   max-width: 120rem;
   display: flex;
-}
-.buy-container{
-  filter:brightness(98%);
+  /* color: #fff; */
+  background: rgba(255, 255, 255, 0.85);
+  padding:4rem 3rem;
+  border-radius: 16px;
+  backdrop-filter: blur(2px) saturate(180%);
 }
 
+.buy-container {
+  filter: brightness(98%);
+}
 
 @media (max-width: 1200px) {
   .product-detail {

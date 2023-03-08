@@ -1,8 +1,9 @@
 .store-product-list {
   list-style: none;
-  margin: 6rem auto;
+  margin: 10rem auto;
   padding: 0;
   width: 90%;
   max-width: 75rem;
+  padding-bottom: 5rem;
 }
 

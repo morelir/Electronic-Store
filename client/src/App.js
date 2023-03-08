@@ -13,7 +13,7 @@ import Footer from "./shared/components/Navigation/Footer/Footer";
 import { useSideEffects } from "./shared/hooks/sideEffects-hook";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
 import { Terminal } from "@mui/icons-material";
-
+import "./App.css";
 
 const StoreProducts = React.lazy(() =>
   import("./products/pages/StoreProducts")
@@ -23,9 +23,10 @@ const ProductDetail = React.lazy(() =>
 );
 const Auth = React.lazy(() => import("./auth/Auth"));
 const ShoppingCart = React.lazy(() => import("./Cart/pages/ShoppingCart"));
-const TermsAndConditions = React.lazy(() => import("./policy/TermsAndConditions"));
+const TermsAndConditions = React.lazy(() =>
+  import("./policy/TermsAndConditions")
+);
 const PrivacyPolicy = React.lazy(() => import("./policy/PrivacyPolicy"));
-
 
 function App() {
   useSideEffects();
@@ -36,8 +37,8 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
-        <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
@@ -51,8 +52,8 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Category />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
-        <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/:keyword/products" element={<StoreProducts />} />
         <Route
           path="/:categoryId/products/:productId"
@@ -66,18 +67,24 @@ function App() {
 
   return (
     <Router>
-      <MainNavigation />
+      {/* <div className="main-container"> */}
       <main>
-        <Suspense
-          fallback={
-            <div className="center">
-              <LoadingSpinner />
-            </div>
-          }
-        >
-          {routes}
-        </Suspense>
+        <div className="main-box">
+          <MainNavigation />
+
+          {/* <main> */}
+          <Suspense
+            fallback={
+              <div className="center">
+                <LoadingSpinner />
+              </div>
+            }
+          >
+            {routes}
+          </Suspense>
+        </div>
       </main>
+      {/* </div> */}
       <Footer />
     </Router>
   );

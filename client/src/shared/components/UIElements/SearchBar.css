@@ -8,6 +8,7 @@
   border-radius: 60px;
   padding: 5px 20px;
   backdrop-filter: blur(4px) saturate(180%);
+  
 }
 
 .search-bar input {
@@ -20,6 +21,8 @@
   padding: 10px 20px;
   font-size: 20px;
   color: #cac7ff;
+  cursor: default;
+  
 }
 
 .search-bar input::placeholder {

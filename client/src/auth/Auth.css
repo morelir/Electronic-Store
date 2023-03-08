@@ -1,12 +1,17 @@
 .authentication {
   max-width: 27rem;
-  margin: 7rem auto;
+  /* margin: 7rem auto; */
   padding-bottom: 8px;
   border-radius: 15px;
   width: 800px;
   margin: 30px auto;
   box-shadow: 0 4px 5px -2px gray;
 
+  margin-top: 10rem;
+  /* background: #fff; */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px) saturate(180%);
+  color: #333;
 }
 
 .authentication__header {
@@ -26,6 +31,8 @@
   margin-bottom: 1rem;
   margin: 0 auto;
   max-width: 320px;
+  
+  
 }
 
 .authentication form input {
@@ -57,8 +64,7 @@
     max-width: 20rem;
   }
 
-  .authentication form{
+  .authentication form {
     max-width: 15rem;
-
   }
 }

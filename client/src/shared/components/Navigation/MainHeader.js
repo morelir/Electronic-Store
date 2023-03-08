@@ -23,7 +23,11 @@ const MainHeader = (props) => {
       </header>
     );
   }
-  return <header className="main-header">{props.children}</header>;
+  return (
+    <header className="main-header">
+      <div className="main-header-container">{props.children}</div>
+    </header>
+  );
 };
 
 export default MainHeader;

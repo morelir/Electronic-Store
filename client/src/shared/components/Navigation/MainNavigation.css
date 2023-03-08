@@ -11,7 +11,7 @@
 
 .main-navigation__title {
   color: white;
-  margin: 1rem;
+  /* margin: 1rem; */
   font-size: 2.1rem;
   font-weight: 500;
 }
@@ -29,13 +29,13 @@
   height: 100%;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1090px) {
   .main-navigation__title {
     font-size: 1.8rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .search-bar {
     display: none;
   }

@@ -15,7 +15,7 @@ const SearchBar = () => {
     <form onSubmit={searchHandler} className="search-bar">
       <input ref={searchInput} type="text" placeholder="Type to search" name="q" />
       <button type="submit">
-        <img src={searchIcon} />
+        <img src={searchIcon} alt="search"/>
       </button>
     </form>
   );
