@@ -7,3 +7,15 @@
   padding-bottom: 5rem;
 }
 
+
+@media (max-width: 800px) {
+  .store-product-list{
+    width: 75%;
+
+
+
+  }
+
+
+}
+ 

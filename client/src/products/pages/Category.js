@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Carousel from "../../shared/components/UIElements/Carousel";
 import image1 from "../../shared/images/Category_Laptops.webp";
 import image2 from "../../shared/images/Category_Headset.webp";
-import image3 from "../../shared/images/Category_Nintendo.webp";
+import image3 from "../../shared/images/Category_mouses.webp";
 import image4 from "../../shared/images/Category_ps5.webp";
 import image5 from "../../shared/images/Category_Controllers.webp";
-import image6 from "../../shared/images/Category_mouses.webp";
+import image6 from "../../shared/images/Category_Nintendo.webp";
 import Button from "../../shared/components/FormElements/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IoLayers } from "react-icons/io5";

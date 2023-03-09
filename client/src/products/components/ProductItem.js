@@ -10,11 +10,12 @@ const ProductItem = (props) => {
   return (
     <li className="product-item">
       <Card className="product-item__content">
-        <Link to={props.id}>
-          <div className="product-item__image">
+        <div className="product-item__image">
+          <Link to={props.id}>
             <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} />
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <div className="product-item__info">
           <Link className="title" to={props.id}>
             {props.title}

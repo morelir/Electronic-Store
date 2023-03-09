@@ -2,7 +2,8 @@
   position: relative;
   justify-self: end;
   width: 40%;
-  margin-left: 2rem;
+  flex-grow: 1;
+  /* margin-left: 2rem; */
 }
 
 .info .title {
@@ -38,9 +39,9 @@
   margin-bottom: 0.5rem;
 }
 
-@media  (max-width: 1200px) {
+/* @media  (max-width: 1200px) {
   .info {
     margin: 0;
     width: 100%;
   }
-}
+} */

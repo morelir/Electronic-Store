@@ -3,6 +3,7 @@
   width: 90%;
   max-width: 120rem;
   display: flex;
+  gap:2rem;
   background: rgba(255, 255, 255, 0.85);
   padding:4rem 3rem;
   border-radius: 16px;
@@ -14,7 +15,19 @@
 }
 
 @media (max-width: 1200px) {
+  /* .product-detail .image-container{
+    height: 20rem;
+  } */
+
   .product-detail {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
+
+@media  (max-width: 1200px) {
+  /* .info {
+    margin: 0;
+    width: 100%;
+  } */
+}
+
