@@ -6,17 +6,17 @@
 
 .prices .discount {
   color: #cc0c39 !important;
-  font-size: 28px;
+  font-size: 1.7rem;
   font-weight: 300;
   
 }
 
 .prices .final-price {
-  font-size: 28px;
+  font-size: 1.7rem;
 }
 
 .prices .list-price {
-  font-size: 14px;
+  font-size: 1rem;
   text-decoration: line-through;
   color: #565959;
   align-self: flex-end;
@@ -24,7 +24,7 @@
 }
 
 .list-price__detail {
-  font-size: 14px;
+  font-size: 1rem;
   color: #565959;
 }
 

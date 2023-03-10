@@ -11,12 +11,14 @@ const ProductInfoBlock = (props) => {
       <div className="title">
         <span className="size-large">{props.title}</span>
       </div>
-      <Rating
-        className="rating"
-        name="read-only"
-        value={props.rating.amount}
-        readOnly
-      />
+      <div className="rating">
+        <Rating
+          // className="rating"
+          name="read-only"
+          value={props.rating.amount}
+          readOnly
+        />
+      </div>
       <hr />
       <ProductPrice
         className="price"

@@ -62,9 +62,9 @@ const ProductImageBlock = (props) => {
           );
         })}
       </ul>
-      <div className="image-container">
-        <img src={`${process.env.REACT_APP_ASSET_URL}/${pickedImage.src}`} />
-      </div>
+        <div className="image-container">
+          <img src={`${process.env.REACT_APP_ASSET_URL}/${pickedImage.src}`} />
+        </div>
     </div>
   );
 };
