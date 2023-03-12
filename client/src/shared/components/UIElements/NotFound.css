@@ -1,0 +1,15 @@
+.error-modal {
+    text-align: center;
+  }
+  
+  .error-modal button {
+    background: #444c53;
+    border-color: #444c53;
+  }
+  
+  .error-modal button:hover,
+  .error-modal button:active {
+    background: #444c53c9;
+    border-color: #444c53c9;
+  }
+  

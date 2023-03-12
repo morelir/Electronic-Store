@@ -6,6 +6,7 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ProductList from "../components/ProductList";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./StoreProducts.css";
+import NotFound from "../../shared/components/UIElements/NotFound";
 
 const StoreProducts = () => {
   const { keyword } = useParams();
@@ -41,7 +42,7 @@ const StoreProducts = () => {
   }
 
   if (loadedProducts && loadedProducts.length === 0) {
-    return <p  className="center size-large products-not__found" >No results for {keyword}.</p>;
+    return <NotFound show onClear={clearError}>No results for {keyword}.</NotFound>
   }
 
   return (

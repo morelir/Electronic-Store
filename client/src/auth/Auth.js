@@ -108,6 +108,8 @@ const Auth = () => {
             image: responseData.image,
           })
         );
+        navigate(`/`,{replace:true})
+        
       } catch (error) {
         console.log(error);
       }
@@ -165,11 +167,19 @@ const Auth = () => {
     }
   }, [formState.inputs.password.value]);
 
+  
+  if (isLoading) {
+    return (
+      <div className="center">
+        <LoadingSpinner asOverlay />
+      </div>
+    );
+  }
+
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
       <div className="authentication ">
-        {isLoading && <LoadingSpinner asOverlay />}
         {isLoginMode && (
           <header className="authentication__header">
             Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>

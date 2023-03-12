@@ -9,7 +9,7 @@ const SearchBar = () => {
 
   const searchHandler = (e) => {
     e.preventDefault();
-    navigate(`/${searchInput.current.value}/products`,{replace:true,state:"SEARCH"})
+    navigate(`/${searchInput.current.value}`,{replace:true,state:"SEARCH"})
   };
   return (
     <form onSubmit={searchHandler} className="search-bar">
