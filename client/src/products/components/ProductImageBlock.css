@@ -4,15 +4,15 @@
   width: 55%;
   position: sticky;
   top: 9rem;
-  max-height: 25rem;
+  /* height: fit-content; */
 }
 
 .images-container .image-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap:0.3rem;
   list-style: none;
   width: 15%;
+  height: fit-content;
 }
 
 .images-container .image-list .image {
@@ -40,6 +40,7 @@
 
 .images-container .image-container{
   width: 85%;
+  max-height: 25rem;
 }
 
 .images-container .image-container img {

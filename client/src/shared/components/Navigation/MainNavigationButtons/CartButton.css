@@ -78,3 +78,14 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 1150px){
+
+  .cart-button .amount {
+   
+    top: -2px;
+    left: 13px;
+  }
+
+
+}

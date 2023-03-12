@@ -33,21 +33,21 @@ let category_images = [
   },
   {
     src: image4,
-    id: "nintendo",
-    name: "Nintendo",
-    alt:"nintendo"
-  },
-  {
-    src: image5,
     id: "playstation",
     name: "Playstation",
     alt:"playstation"
   },
   {
-    src: image6,
+    src: image5,
     id: "controllers",
     name: "Controllers",
     alt:"controllers"
+  },
+  {
+    src: image6,
+    id: "nintendo",
+    name: "Nintendo",
+    alt:"nintendo"
   },
 ];
 

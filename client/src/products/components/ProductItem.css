@@ -14,7 +14,6 @@
 .product-item__info {
   width: 65%;
   padding: 1rem;
-  align-self: center;
 }
 
 .product-item__info .title {
@@ -36,7 +35,7 @@
 
 .product-item__image img {
   width: 100%;
-  max-height: 25rem;
+  max-height: 17rem;
   border-radius: 16px;
 }
 

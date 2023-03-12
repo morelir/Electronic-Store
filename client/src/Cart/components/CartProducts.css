@@ -18,7 +18,7 @@
   background-color: #212529;
   color: white;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 1.7rem;
 }
 
 .cart-products .product-list {
@@ -40,9 +40,4 @@
   font-weight: 600;
 }
 
-@media(max-width: 768px){
-  .cart-products .header {
-    
-    font-size: 26px;
-  }
-}
+

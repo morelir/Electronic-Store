@@ -9,7 +9,7 @@ const ProductImageBlock = (props) => {
 
   useEffect(() => {
     if (!props.images || props.images.length === 0) return;
-
+    
     const images = props.images.map((img, pos) => {
       if (pos === 0) return { src: img, isActive: true };
       else return { src: img, isActive: false };
