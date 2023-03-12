@@ -11,14 +11,6 @@ const CartProduct = (props) => {
       : props.listPrice
   );
 
-  // let finalPrice;
-  // if (props.discount) {
-  //   finalPrice = ((1 - props.discount / 100) * props.listPrice).toFixed(2);
-  // } else {
-  //   finalPrice = props.listPrice;
-  // }
-
-  // console.log(props.id, props.isLoading)
   const addProductToCart = React.useCallback(async () => {
     setIsLoading(true);
     await props.onAddProductToCart(props.id, finalPrice);
@@ -33,7 +25,7 @@ const CartProduct = (props) => {
 
   return (
     <li className="cart-product__item">
-      {isLoading && <LoadingSpinner asOverlay />}
+      {/* {isLoading && <LoadingSpinner asOverlay />} */}
       <div className="image-container">
         <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
       </div>
