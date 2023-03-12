@@ -20,7 +20,7 @@ html {
 body {
   margin: 0;
   height: 100%;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
 }
 
 #root{
@@ -28,9 +28,6 @@ body {
   display: grid;
 }
 
-.background-color-dark {
-  background-color: #eaeded !important;
-}
 
 .slide-in-left-enter {
   transform: translateX(-100%);

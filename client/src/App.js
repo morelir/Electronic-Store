@@ -12,7 +12,6 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import Footer from "./shared/components/Navigation/Footer/Footer";
 import { useSideEffects } from "./shared/hooks/sideEffects-hook";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
-import { Terminal } from "@mui/icons-material";
 import "./App.css";
 
 const StoreProducts = React.lazy(() =>
@@ -39,9 +38,9 @@ function App() {
         <Route path="/" element={<Category />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/:keyword/products" element={<StoreProducts />} />
+        <Route path="/:keyword" element={<StoreProducts />} />
         <Route
-          path="/:categoryId/products/:productId"
+          path="/:categoryId/:productId"
           element={<ProductDetail />}
         />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
@@ -51,12 +50,12 @@ function App() {
   } else {
     routes = (
       <Routes>
-        <Route path="/" element={<Category />} />
+        <Route path="/" element={<Category />}/>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/:keyword/products" element={<StoreProducts />} />
+        <Route path="/:keyword" element={<StoreProducts />} />
         <Route
-          path="/:categoryId/products/:productId"
+          path="/:categoryId/:productId"
           element={<ProductDetail />}
         />
         <Route path="/auth" element={<Auth />} />

@@ -1,8 +1,10 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
+  const navigate=useNavigate();
 
   const activeHttpRequests = useRef([]);
 
@@ -42,6 +44,7 @@ export const useHttpClient = () => {
 
   const clearError = () => {
     setError(null);
+    navigate(`/`,{replace:true})
   };
 
   useEffect(() => {
