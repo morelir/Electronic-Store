@@ -5,7 +5,7 @@
 <p align="center">🎉 The app is live, try it <a href="https://test-9b5eb.web.app/" target="_blank">here</a>. </p> 
 
 ## ***About***
-Online Electronic Store with a variety of electronic products where you can register for the system and management a personal shopping cart, with responsive and interactive design.
+An Online Store that demonstrates the selling of consumer electronic products. Including Authentications, Rest API, File Uploading, and Data-Base maintenance, with responsive and interactive design.
 
 ## ***Screenshots***
 
