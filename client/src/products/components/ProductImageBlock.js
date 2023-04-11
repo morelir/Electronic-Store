@@ -57,13 +57,13 @@ const ProductImageBlock = (props) => {
               }}
               key={pos}
             >
-              <img src={`${process.env.REACT_APP_ASSET_URL}/${img.src}`} />
+              <img src={`${process.env.REACT_APP_ASSET_URL}/${img.src}`} alt="" />
             </li>
           );
         })}
       </ul>
         <div className="image-container">
-          <img src={`${process.env.REACT_APP_ASSET_URL}/${pickedImage.src}`} />
+          <img src={`${process.env.REACT_APP_ASSET_URL}/${pickedImage.src}`} alt="" />
         </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import image1 from "../../shared/images/Category_Laptops.webp";
 import image2 from "../../shared/images/Category_Headset.webp";
 import image3 from "../../shared/images/Category_mouses.webp";
@@ -51,26 +51,8 @@ let category_images = [
 ];
 
 const Category = () => {
-  const navigate = useNavigate();
-  const [images, setImages] = useState(category_images);
-
-  const navigationHandler = (e) => {
-    navigate(`/${e.currentTarget.id}`, {
-      replace: true,
-      state: "CATEGORY",
-    });
-  };
-
-  const categoryMouseIsEnter = (src, pos) => {
-    setImages((prev) => {
-      return [
-        ...prev.slice(0, pos),
-        { ...prev[pos], mouseIsEnter: true },
-        ...prev.slice(pos + 1),
-      ];
-    });
-  };
-
+  const [images] = useState(category_images);
+ 
   return (
     <div className="home__container">
       {/* <Carousel /> */}
@@ -103,21 +85,16 @@ const Category = () => {
       <div className="category-images">
         {images.map((img) => {
           return (
-            <figure
-              key={img.id}
-              id={img.id}
-              onClick={(e) => {
-                navigationHandler(e);
-              }}
-              className="card__container"
-            >
-              <div className="image-container">
-                <img src={img.src} alt={img.alt} />
-              </div>
-              <figcaption>
-                <span>{img.name}</span>
-              </figcaption>
-            </figure>
+            <Link style={{textDecoration:"none"}} key={img.id} to={`products?category=${img.id}`}>
+              <figure id={img.id} className="card__container">
+                <div className="image-container">
+                  <img src={img.src} alt=''  />
+                </div>
+                <figcaption>
+                  <span>{img.name}</span>
+                </figcaption>
+              </figure>
+            </Link>
           );
         })}
       </div>

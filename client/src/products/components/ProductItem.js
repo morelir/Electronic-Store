@@ -12,7 +12,7 @@ const ProductItem = (props) => {
       <Card className="product-item__content">
         <div className="product-item__image">
           <Link to={`${props.id}`}>
-            <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} />
+            <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt="" />
           </Link>
         </div>
 

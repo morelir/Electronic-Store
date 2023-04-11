@@ -38,11 +38,9 @@ function App() {
         <Route path="/" element={<Category />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/:keyword" element={<StoreProducts />} />
-        <Route
-          path="/:categoryId/:productId"
-          element={<ProductDetail />}
-        />
+        <Route path="/products" element={<StoreProducts />} />
+        {/* <Route path="/:keyword" element={<StoreProducts />} /> */}
+        <Route path="/:categoryId/:productId" element={<ProductDetail />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
@@ -50,14 +48,11 @@ function App() {
   } else {
     routes = (
       <Routes>
-        <Route path="/" element={<Category />}/>
+        <Route path="/" element={<Category />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/:keyword" element={<StoreProducts />} />
-        <Route
-          path="/:categoryId/:productId"
-          element={<ProductDetail />}
-        />
+        <Route path="/:categoryId/:productId" element={<ProductDetail />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
@@ -72,7 +67,7 @@ function App() {
           <Suspense
             fallback={
               <div className="center">
-                <LoadingSpinner asOverlay/>
+                <LoadingSpinner asOverlay />
               </div>
             }
           >
@@ -86,5 +81,3 @@ function App() {
 }
 
 export default App;
-
-
