@@ -1,19 +1,26 @@
-import React,{useRef} from "react";
-import { useNavigate } from "react-router-dom";
+import React,{useEffect, useState} from "react";
+import { useNavigate,useSearchParams } from "react-router-dom";
 import "./SearchBar.css";
 import searchIcon from "../../images/search.png";
 
 const SearchBar = () => {
   const navigate = useNavigate();
-  const searchInput=useRef()
+  const [searchParams] = useSearchParams();
+  const [search,setSearch]=useState('')
 
   const searchHandler = (e) => {
     e.preventDefault();
-    navigate(`/${searchInput.current.value}`,{replace:true,state:"SEARCH"})
+
+    navigate(`/products?search=${search}`)
   };
+
+  useEffect(()=>{
+    setSearch(searchParams.get('search') ?? '')
+  },[searchParams])
+
   return (
     <form onSubmit={searchHandler} className="search-bar">
-      <input ref={searchInput} type="text" placeholder="Type to search" name="q" />
+      <input onChange={(e)=>setSearch(e.target.value)} value={search} type="text"  placeholder="Type to search" name="q" />
       <button type="submit">
         <img src={searchIcon} alt="search"/>
       </button>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import {useSearchParams } from "react-router-dom";
 
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
@@ -9,29 +9,22 @@ import "./StoreProducts.css";
 import NotFound from "../../shared/components/UIElements/NotFound";
 
 const StoreProducts = () => {
-  const { keyword } = useParams();
-  const { state } = useLocation();
+  const [searchParams] = useSearchParams();
   const [loadedProducts, setLoadedProducts] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  
+
   useEffect(() => {
     const fetchProductsByCategory = async () => {
+      const search=Object.fromEntries([...searchParams]);
       try {
-        let responseData;
-        if (state === "CATEGORY") {
-          responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/products/category/${keyword}`
-          );
-        } else if (state === "SEARCH") {
-          responseData = await sendRequest(
-            `${process.env.REACT_APP_BACKEND_URL}/products/search/${keyword}`
-          );
-        }
+        let responseData = await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/products`,undefined,undefined,undefined,search
+        );
         setLoadedProducts(responseData.products);
       } catch (err) {}
     };
     fetchProductsByCategory();
-  }, [sendRequest,keyword]);
+  }, [sendRequest,searchParams]);
 
   if (isLoading) {
     return (
@@ -42,7 +35,11 @@ const StoreProducts = () => {
   }
 
   if (loadedProducts && loadedProducts.length === 0) {
-    return <NotFound show onClear={clearError}>No results for {keyword}.</NotFound>
+    return (
+      <NotFound show onClear={clearError}>
+        No results found.
+      </NotFound>
+    );
   }
 
   return (

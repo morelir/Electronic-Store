@@ -1,15 +1,10 @@
-const express = require('express');
-const { check } = require('express-validator');
+const express = require("express");
 
-const productsControllers = require('../controllers/products-controllers');
-// const fileUpload = require('../middleware/file-upload');
-// const checkAuth = require('../middleware/check-auth');
+const productsControllers = require("../controllers/products-controllers");
 
 const router = express.Router();
-
-router.get('/randomProducts', productsControllers.getRandomProducts);
-router.get('/category/:category', productsControllers.getProductsByCategory);
-router.get('/:productId', productsControllers.getProductById);
-router.get('/search/:input', productsControllers.getProductsByInputSearch);
+router.get("/", productsControllers.getProducts);
+router.get("/randomProducts", productsControllers.getRandomProducts);
+router.get("/:productId", productsControllers.getProductById);
 
 module.exports = router;

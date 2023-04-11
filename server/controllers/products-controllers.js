@@ -22,17 +22,33 @@ const getRandomProducts = async (req, res, next) => {
   });
 };
 
-const getProductsByCategory = async (req, res, next) => {
-  const category = req.params.category;
+const applyFiltersOnProducts = async ({ search, category }) => {
   let products;
   try {
-    products = await Product.find({ category: category });
+    if (category) products = await Product.find({ category: category });
+    else if (search)
+      products = await Product.find({
+        $or: [
+          { title: { $regex: search, $options: "i" } },
+          { category: { $regex: search, $options: "i" } },
+        ],
+      });
+    return products;
   } catch (err) {
     const error = new HttpError(
       "Fetching products failed, please try again later.",
       500
     );
-    return next(error);
+    return error;
+  }
+};
+
+const getProducts = async (req, res, next) => {
+  let products;
+  try {
+    products = await applyFiltersOnProducts(req.query);
+  } catch (err) {
+    return next(err);
   }
 
   if (!products) {
@@ -44,6 +60,8 @@ const getProductsByCategory = async (req, res, next) => {
     products: products.map((product) => product.toObject({ getters: true })),
   });
 };
+
+
 
 const getProductById = async (req, res, next) => {
   const productId = req.params.productId;
@@ -71,30 +89,8 @@ const getProductById = async (req, res, next) => {
   });
 };
 
-const getProductsByInputSearch = async (req, res, next) => {
-  const input = req.params.input;
-  let products;
-  try {
-    products = await Product.find({ title: { $regex: input, $options: "i" } });
-  } catch (err) {
-    const error = new HttpError(
-      "Fetching products failed, please try again later.",
-      500
-    );
-    return next(error);
-  }
 
-  if (!products) {
-    const error = new HttpError("Fetching products failed.", 404);
-    return next(error);
-  }
-
-  res.json({
-    products: products.map((product) => product.toObject({ getters: true })),
-  });
-};
-
+exports.getProducts = getProducts;
 exports.getRandomProducts = getRandomProducts;
 exports.getProductById = getProductById;
-exports.getProductsByCategory = getProductsByCategory;
-exports.getProductsByInputSearch = getProductsByInputSearch;
+
