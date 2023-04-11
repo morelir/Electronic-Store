@@ -128,7 +128,6 @@ const Auth = () => {
           "POST",
           formData
         );
-        console.log(responseData.name)
         dispatch(
           authActions.login({
             token: responseData.token,
@@ -155,14 +154,12 @@ const Auth = () => {
       password.value === confPassword.value &&
       !confPassword.isValid
     ) {
-      console.log(confPassword.isValid)
       confPasswordInput.current.checkInput();
     }
     else if (
       password.value !== confPassword.value &&
       confPassword.isValid
     ) {
-      console.log(confPassword.isValid)
       confPasswordInput.current.checkInput();
     }
   }, [formState.inputs.password.value]);

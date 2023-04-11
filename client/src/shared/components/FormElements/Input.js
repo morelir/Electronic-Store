@@ -51,7 +51,6 @@ const Input = React.forwardRef((props, ref) => {
   };
 
   const checkInput = () => {
-    console.log("check")
     dispatch({
       type: "CHANGE",
       val: value,
