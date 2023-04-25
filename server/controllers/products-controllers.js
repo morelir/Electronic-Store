@@ -1,5 +1,6 @@
 const HttpError = require("../models/http-error");
 const Product = require("../models/product");
+const APIFeatures = require("../utils/apiFeatures");
 
 const getRandomProducts = async (req, res, next) => {
   let products;
@@ -44,24 +45,33 @@ const applyFiltersOnProducts = async ({ search, category }) => {
 };
 
 const getProducts = async (req, res, next) => {
-  let products;
+  let data;
   try {
-    products = await applyFiltersOnProducts(req.query);
+    const features = new APIFeatures(Product.find(), req.query)
+      .filter()
+      .search()
+      .sort()
+      .limitFields()
+      .paginate();
+
+    data = await features.getData() //data object include products with additional information
+
   } catch (err) {
     return next(err);
   }
 
-  if (!products) {
+  if (!data) {
     const error = new HttpError("Fetching products failed.", 404);
     return next(error);
   }
 
-  res.json({
-    products: products.map((product) => product.toObject({ getters: true })),
+
+  res.status(200).json({
+    status: "success",
+    data
   });
+
 };
-
-
 
 const getProductById = async (req, res, next) => {
   const productId = req.params.productId;
@@ -89,8 +99,6 @@ const getProductById = async (req, res, next) => {
   });
 };
 
-
 exports.getProducts = getProducts;
 exports.getRandomProducts = getRandomProducts;
 exports.getProductById = getProductById;
-

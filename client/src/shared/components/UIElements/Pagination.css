@@ -1,0 +1,62 @@
+.pagination {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagination button {
+  background: none;
+  /* border: none; */
+  /* color: #343a40; */
+  color: #fff;
+  border: 1.5px solid #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination button:hover,
+.pagination button:active,
+.pagination .clicked-page {
+  background-color: #fff;
+  color: #212529;
+}
+
+.pagination .arrow-btn {
+  border: 1.5px solid #fff;
+}
+
+.pagination .arrow-btn:disabled {
+  background-color: transparent !important;
+  cursor: auto;
+}
+
+.pagination .arrow-btn:hover,
+.pagination .arrow-btn:active {
+  background-color: #fff;
+}
+
+/*when hover on btn the icon changes his color */
+.pagination .arrow-btn:hover .btn-icon,
+.pagination .arrow-btn:active .btn-icon {
+  stroke: #212529;
+}
+
+.pagination .arrow-btn:disabled .btn-icon {
+  stroke: #fff;
+}
+
+.btn-icon {
+  height: 24px;
+  width: 24px;
+  stroke: #fff;
+}

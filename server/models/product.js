@@ -11,20 +11,26 @@ let Rating = {
   },
 };
 
-const productSchema = new mongoose.Schema({
-  category: { type: String, required: true },
-  title: { type: String, required: true },
-  rating: { type: Rating, required: true },
-  images: { type: [String], required: true },
-  listPrice: { type: Number, required: true },
-  discount: { type: Number, required: true },
-  overview: { type: [[String]], required: true },
-  bulletsDescription: { type: [String], required: true },
-  cart: {
-    type: mongoose.Types.ObjectId,
-    ref: "carts",
+const productSchema = new mongoose.Schema(
+  {
+    category: { type: String, required: true },
+    title: { type: String, required: true },
+    rating: { type: Rating, required: true },
+    images: { type: [String], required: true },
+    listPrice: { type: Number, required: true },
+    discount: { type: Number, required: true },
+    overview: { type: [[String]], required: true },
+    bulletsDescription: { type: [String], required: true },
+    cart: {
+      type: mongoose.Types.ObjectId,
+      ref: "carts",
+    },
   },
-});
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
 
 // productSchema.methods.finalPrice = function() {
 //   if (this.discount) {
