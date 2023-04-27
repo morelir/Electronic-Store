@@ -14,8 +14,8 @@
   /* color: #343a40; */
   color: #fff;
   border: 1.5px solid #fff;
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   cursor: pointer;
 
@@ -29,6 +29,10 @@
 .pagination .clicked-page {
   background-color: #fff;
   color: #212529;
+}
+
+.pagination .clicked-page {
+  font-weight: 700;
 }
 
 .pagination .arrow-btn {

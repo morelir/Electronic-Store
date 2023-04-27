@@ -1,3 +1,8 @@
+/* 
+FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
 main {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -14,4 +19,3 @@ main {
   min-height: 100vh;
   max-width: 1600px;
 }
-
