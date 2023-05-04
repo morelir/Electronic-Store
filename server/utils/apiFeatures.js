@@ -59,29 +59,8 @@ class APIFeatures {
   paginate() {
     const page = +this.queryString.page || 1;
     const limit = +this.queryString.limit || 3;
-
     this.paginateQuery = this.query.clone();
-    // const countDocs = query.countDocuments();
-    // this.data.totalPages = Math.ceil(countDocs / limit);
-    // this.data.totalResults = countDocs;
-
-    // e.g. page=2&limit=10 , 1-10 page 1, 11-20 page 2 ...
     const skip = limit * (page - 1);
-    // const startIndex = limit * (page - 1);
-    // const endIndex = limit * page;
-
-    // if (endIndex < countDocs) {
-    //   this.data.next = {
-    //     page: selectedPage + 1,
-    //     limit: limit,
-    //   };
-    // }
-    // if (startIndex > 0) {
-    //   this.data.previous = {
-    //     page: selectedPage - 1,
-    //     limit: limit,
-    //   };
-    // }
 
     this.query = this.query.skip(skip).limit(limit);
 
