@@ -10,9 +10,13 @@ let Product = {
 };
 
 const productSchema = new mongoose.Schema({
-  user:{ type: mongoose.Types.ObjectId, required: true, ref: 'users' },
+  user: { type: mongoose.Types.ObjectId, required: true, ref: "users" },
   products: [Product],
-  totalAmount: { type: Number, required: true },
+  totalAmount: {
+    type: Number,
+    set: (val) => Math.round(val * 100) / 100,
+    required: true,
+  },
   totalQuantity: { type: Number, required: true },
 });
 
