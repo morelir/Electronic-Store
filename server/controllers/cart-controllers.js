@@ -171,7 +171,6 @@ const removeProductFromCart = async (req, res, next) => {
   let product = cartProduct.product;
 
   user.cart.totalQuantity--;
-  console.log(user.cart.totalAmount,(1 - product.discount / 100) * product.listPrice)
   user.cart.totalAmount -= product.discount
     ? (1 - product.discount / 100) * product.listPrice
     : product.listPrice;
@@ -183,11 +182,6 @@ const removeProductFromCart = async (req, res, next) => {
   } else {
     cartProduct.amount--;
   }
-
-  // if (user.cart.totalQuantity === 1) {
-  //   user.cart.totalQuantity--;
-  //   await Cart.findOneAndDelete(user.cart._id);
-  // }
 
   try {
     await user.cart.save();

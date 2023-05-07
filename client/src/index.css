@@ -95,6 +95,14 @@ hr {
 }
 
 
+@media (min-width:1150px){
+  html {
+    /* 14px / 16px = 0.5625 = 56.25% */
+    font-size: 87.5%;
+  }
+
+}
+
 @media (max-width:1150px){
   html {
     /* 9px / 16px = 0.5625 = 56.25% */
