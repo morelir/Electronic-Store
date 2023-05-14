@@ -9,9 +9,9 @@ An Online Store that demonstrates the selling of consumer electronic products. I
 
 ## ***Desktop Screenshots***
 
-#### Home page:
+#### Home Page:
 ![Capture](https://user-images.githubusercontent.com/58606266/224555514-f6543117-f717-481b-90f4-597faf23f17f.PNG)
-#### Category products:
+#### Category Products:
 ![Capture2](https://user-images.githubusercontent.com/58606266/224555519-4b7a131c-e751-4d32-a579-98dd402e7de5.PNG)
 #### Product Details:
 ![Capture3](https://user-images.githubusercontent.com/58606266/224555522-b0d00834-a77c-4357-aa84-0ca025db1422.PNG)
