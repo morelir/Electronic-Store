@@ -8,6 +8,7 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./StoreProducts.css";
 import NotFound from "../../shared/components/UIElements/NotFound";
 import Pagination from "../../shared/components/UIElements/Pagination";
+import Filters from "../components/Filters";
 
 const StoreProducts = () => {
   const [searchParams] = useSearchParams();
@@ -35,13 +36,13 @@ const StoreProducts = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [isLoading]);
 
-  if (isLoading) {
-    return (
-      <div className="center">
-        <LoadingSpinner asOverlay />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="center">
+  //       <LoadingSpinner asOverlay />
+  //     </div>
+  //   );
+  // }
 
   if (loadedData && loadedData.products.length === 0) {
     return (
@@ -54,15 +55,22 @@ const StoreProducts = () => {
   return (
     <section className="section-store">
       <ErrorModal error={error} onClear={clearError} />
-      {loadedData && <ProductList products={loadedData.products} />}
-      {loadedData && (
-        <Pagination
-          currentPage={loadedData.page}
-          next={loadedData?.next}
-          previous={loadedData?.previous}
-          totalPages={loadedData.totalPages}
-        />
-      )}
+      <div className="store-container">
+        <Filters />
+        {isLoading && <LoadingSpinner asOverlay />}
+        
+        {!isLoading && loadedData && (
+          <ProductList products={loadedData.products} />
+        )}
+        {!isLoading && loadedData && (
+          <Pagination
+            currentPage={loadedData.page}
+            next={loadedData?.next}
+            previous={loadedData?.previous}
+            totalPages={loadedData.totalPages}
+          />
+        )}
+      </div>
     </section>
   );
 };

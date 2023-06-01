@@ -12,7 +12,8 @@ const ProductList = (props) => {
           id={product.id}
           title={product.title}
           image={product.images[0]}
-          rating={product.rating}
+          ratingsAverage={product.ratingsAverage}
+          ratingsQuantity={product.ratingsQuantity}
           listPrice={product.listPrice.toFixed(2)}
           discount={product.discount}
         />

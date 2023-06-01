@@ -1,8 +1,15 @@
 .section-store{
   margin: 10rem auto;
-  width: 90%;
-  max-width: 75rem;
+  /* width: 100%; */
+  /* max-width: 200rem; */
   margin-bottom: 15rem;
+}
+
+.store-container{
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  gap:3.2rem
+
 }
 
 

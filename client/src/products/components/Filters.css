@@ -1,0 +1,68 @@
+.products-filter {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  filter: brightness(98%);
+  backdrop-filter: blur(2px) saturate(180%);
+  border-radius: 16px;
+  padding-bottom: 0.8rem;
+  overflow: hidden;
+  color: #0f1111;
+}
+
+.filter-header {
+  background: #212529;
+  padding: 0.8rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.filter-box {
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.products-filter .filter-item label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight:500
+}
+
+.price-range-dollars {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-actions .btn {
+  padding: 0.5rem 5rem;
+  font-size: 1.2rem;
+}
+
+.filter-actions .btn-discard {
+  background-color: #495057;
+}
+
+.filter-actions .btn-discard:hover,
+.filter-actions .btn-discard:active {
+  background-color: #495057c1;
+}
+
+.filter-actions .btn-apply {
+  background-color: #1974ce;
+}
+.filter-actions .btn-apply:hover,
+.filter-actions .btn-apply:active {
+  background-color: #1973cec1;
+}

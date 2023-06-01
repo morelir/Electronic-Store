@@ -1,0 +1,931 @@
+[
+  {
+    "category": "laptops",
+    "title": "Dell Inspiron 15 5510 15.6 Inch Laptop, FHD Non-Touch Display - Intel Core i7-11390H, 8GB DDR4 RAM, 512GB SSD, Windows 11 Home, NVIDIA GeForce MX450 Graphics",
+    "discount": 0,
+    "images": [
+      "uploads\\category\\laptops\\4cc8aac1-a3c6-496d-83c6-139b192b1ba4.webp",
+      "uploads\\category\\laptops\\8f835a15-eecc-46b1-9efb-dbbaa8a1560c.webp",
+      "uploads\\category\\laptops\\2d4c795b-c15f-4bf2-a0b1-2afeb4a22a0a.webp"
+    ],
+    "overview": [
+      ["Brand", "Dell"],
+      ["Series", "Inspiron 15 5510"],
+      ["Screen Size", "15.6 inches"],
+      ["Color", "Silver"],
+      ["Hard Disk Size", "512 GB"],
+      ["CPU Model", "Core i7 Family"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Geforce MX450"],
+      ["Grapgics Coprocessor", "NVIDIA GeFirce MX450"]
+    ],
+    "bulletsDescription": [
+      "STUNNING FROM EVERY ANGLE: Your laptop’s all-around narrow borders and compact size result in an expansive screen-to-body ratio and delightful viewing experience. ",
+      "KEEPS IT COOL: A redesigned thermal system moves heat away from your CPU and GPU, more fan blades move more air and a drop-hinge allows air to circulate underneath your laptop. ",
+      "READY TO GO: A lid-open sensor gets your laptop started when opened, even if completely off or hibernating, and a fingerprint reader will verify identity before logging in. ",
+      "POWERFUL GRAPHICS: The NVIDIA GeForce MX450 graphics card accelerates your laptop with 2.5x faster performance for quicker photo editing, video editing, and light gaming. ",
+      "Next-Gen Vapor Chamber Cooling: Upgraded with more exhaust fins, quieter fans, and a larger liquid capacity, the new Blade 17 performs cooler and quieter than ever before ",
+      "POWER UP: The latest 11th Generation Intel Core i7 processors deliver incredible responsiveness and smooth, seamless multitasking. "
+    ],
+    "listPrice": 820.22
+  },
+  {
+    "category": "mouses",
+    "title": "Logitech MX Master - Wireless Performance Mouse with Ultra-fast Scrolling, Ergo, 8K DPI, Track on Glass, Quiet Clicks, USB-C, Bluetooth - Graphite ",
+    "discount": 29,
+    "images": [
+      "uploads\\category\\mouses\\28238947-e4f6-4edc-8dda-19b9f382d734.webp",
+      "uploads\\category\\mouses\\8bab932a-6418-48ef-b18f-93eefbc0c2a2.webp",
+      "uploads\\category\\mouses\\1389346c-14d3-45a8-b80a-97f1583de680.webp",
+      "uploads\\category\\mouses\\e78023e6-cc03-4680-a1b4-4355ffd26ec5.webp"
+    ],
+    "overview": [
+      ["Brand", "Logitech"],
+      ["Series", "MX Master"],
+      ["Color", "Grapgite"],
+      ["Connectivity", "Bluetooth, USB, Radop Frequency"],
+      [
+        "Special Feature",
+        "Wireless, Lightweight, Ergonomic Design, Rechargeable"
+      ],
+      ["Number of Buttons", "7"],
+      ["Movment Detection Technology", "Optical"]
+    ],
+    "bulletsDescription": [
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "The Multi-Touch surface allows you to perform simple gestures such as swiping between web pages and scrolling through documents. ",
+      "It’s ready to go right out of the box and pairs automatically with your Mac, and it includes a woven USB-C to Lightning Cable that lets you pair and charge by connecting to a USB-C port on your Mac. ",
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "System Requirements: Bluetooth-enabled Mac with OS X 10.11 or later , iPad with iPadOS 13.4 or later "
+    ],
+    "listPrice": 99.99
+  },
+  {
+    "category": "controllers",
+    "title": "DualShock 4 Wireless Controller for PlayStation 4",
+    "discount": 0,
+    "images": [
+      "uploads\\category\\controllers\\dcd5f56c-7a02-43ab-ab07-eaf922709346.webp",
+      "uploads\\category\\controllers\\4f067de3-c1e8-4f2b-a643-52ce7bc597e1.webp",
+      "uploads\\category\\controllers\\8c5c9f01-3a3a-4fd9-88a7-b368969ff9c2.webp",
+      "uploads\\category\\controllers\\76112537-42b1-4c54-a628-fa3589d13f24.webp",
+      "uploads\\category\\controllers\\3c33c0ad-2676-458d-bbe9-19675ac11ab0.webp",
+      "uploads\\category\\controllers\\76112537-42b1-4c54-a628-fa3589d13f24.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "The DualShock 4 Wireless Controller features a built in speaker and stereo headset jack, putting several new audio options in the player's hands ",
+      "The feel, shape, and sensitivity of the dual analog sticks and trigger buttons have been improved to provide a greater sense of control, no matter what you play  ",
+      "The new multi touch and clickable touch pad on the face of the DualShock 4 Wireless Controller opens up worlds of new gameplay possibilities for both newcomers and veteran gamers  ",
+      "The Dualshock 4 wireless controller can be easily recharged by plugging it into your PlayStation 4 system, even when in rest mode, or with any standard charger using a USB cable (type A to micro B sold separately) ",
+      "DualShock 4 Wireless Controller PS4 and PC compatible. Item PS5 compatible only when playing PS4 games. "
+    ],
+    "listPrice": 58.99
+  },
+  {
+    "category": "playstation",
+    "title": "PlayStation 4",
+
+    "discount": 5,
+    "images": [
+      "uploads\\category\\playstation\\a4472889-8a0c-4b84-9ada-144a49f1ad72.webp",
+      "uploads\\category\\playstation\\ac894fb9-c82e-4d84-873e-8c0e7a2a32fe.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "\"Suspend mode\" eliminates the load time on your saved game and allows you to immediately return to where you left off by pressing the power button. ",
+      "Engage in endless personal challenges between you and your community, and share your epic moments for the world to see. ",
+      "Enables the greatest game developers in the world to unlock their creativity and push the boundaries of play through a platform that is tuned specifically to their needs. ",
+      "Gamers can share their epic triumphs by hitting the \"SHARE button\" on the controller, scan through the last few minutes of gameplay, tag it and return to the game. ",
+      "Engage in endless personal challenges between you and your community, and share your epic moments for the world to see. "
+    ],
+    "listPrice": 366.99
+  },
+  {
+    "category": "laptops",
+    "title": "Dell Inspiron Laptop",
+    "discount": 0,
+    "images": [
+      "uploads\\category\\laptops\\09cc58e7-e9ef-4bc4-87bc-832428ebc215.webp",
+      "uploads\\category\\laptops\\28f3fcec-54f2-4ef1-9d5a-1cb87270c3dc.webp",
+      "uploads\\category\\laptops\\10cf2630-1b8e-4252-867a-97353a952e9a.webp"
+    ],
+    "overview": [
+      ["Brand", "Dell"],
+      ["Series", "Inspiron 15 5510"],
+      ["Screen Size", "15.6 inches"],
+      ["Color", "Silver"],
+      ["Hard Disk Size", "512 GB"],
+      ["CPU Model", "Core i7 Family"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Geforce MX450"],
+      ["Grapgics Coprocessor", "NVIDIA GeFirce MX450"]
+    ],
+    "bulletsDescription": [
+      "STUNNING FROM EVERY ANGLE: Your laptop’s all-around narrow borders and compact size result in an expansive screen-to-body ratio and delightful viewing experience. ",
+      "KEEPS IT COOL: A redesigned thermal system moves heat away from your CPU and GPU, more fan blades move more air and a drop-hinge allows air to circulate underneath your laptop. ",
+      "READY TO GO: A lid-open sensor gets your laptop started when opened, even if completely off or hibernating, and a fingerprint reader will verify identity before logging in. ",
+      "POWERFUL GRAPHICS: The NVIDIA GeForce MX450 graphics card accelerates your laptop with 2.5x faster performance for quicker photo editing, video editing, and light gaming. ",
+      "Next-Gen Vapor Chamber Cooling: Upgraded with more exhaust fins, quieter fans, and a larger liquid capacity, the new Blade 17 performs cooler and quieter than ever before ",
+      "POWER UP: The latest 11th Generation Intel Core i7 processors deliver incredible responsiveness and smooth, seamless multitasking. "
+    ],
+    "listPrice": 550.22
+  },
+  {
+    "category": "controllers",
+    "title": "DualShock Controller",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\controllers\\76112537-42b1-4c54-a628-fa3589d13f24.webp",
+      "uploads\\category\\controllers\\3c33c0ad-2676-458d-bbe9-19675ac11ab0.webp",
+      "uploads\\category\\controllers\\76112537-42b1-4c54-a628-fa3589d13f24.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "The DualShock 4 Wireless Controller features a built in speaker and stereo headset jack, putting several new audio options in the player's hands ",
+      "The feel, shape, and sensitivity of the dual analog sticks and trigger buttons have been improved to provide a greater sense of control, no matter what you play  ",
+      "The new multi touch and clickable touch pad on the face of the DualShock 4 Wireless Controller opens up worlds of new gameplay possibilities for both newcomers and veteran gamers  ",
+      "The Dualshock 4 wireless controller can be easily recharged by plugging it into your PlayStation 4 system, even when in rest mode, or with any standard charger using a USB cable (type A to micro B sold separately) ",
+      "DualShock 4 Wireless Controller PS4 and PC compatible. Item PS5 compatible only when playing PS4 games. "
+    ],
+    "listPrice": 43.99
+  },
+  {
+    "category": "headsets",
+    "title": "Sony ZX Series Wired On-Ear Headphones, White",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\headsets\\ade31a18-0716-43e8-9537-a8d7311025a4.webp",
+      "uploads\\category\\headsets\\23941e25-0a90-4be4-8f47-992ce01597d2.webp",
+      "uploads\\category\\headsets\\f66b06e5-82c1-4835-8d1a-1b905c1a4fb1.webp"
+    ],
+    "overview": [
+      ["Brand", "Sony"],
+      ["Model Name", "MDRZX110/BLK ZX"],
+      ["Color", "Black"],
+      ["Connectivity Technology", "Wired"],
+      ["Form Factor", "On Ear"]
+    ],
+    "bulletsDescription": [
+      "Cushioned earpads for total comfort and enfolding closed-back design seals in sound  ",
+      "The swiveling earcup design allows easy storage when you’re not using them, and enhances portability when you’re traveling ",
+      "Lightweight 1.38 in neodymium dynamic drivers deliver a punchy, rhythmic response to even the most demanding tracks. Driver Unit: Dome type ",
+      "The wide frequency range—spanning 12 Hz to 22 kHz—delivers deep bass, rich midrange, and soaring highs ",
+      "Plug: L-shaped stereo mini plug 3.5mm "
+    ],
+    "listPrice": 9.34
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo Switch",
+
+    "discount": 15,
+    "images": [
+      "uploads\\category\\nintendo\\3c213744-9859-404b-8a19-78a782eb20dd.webp",
+      "uploads\\category\\nintendo\\c9586722-171e-4092-a8b0-16e49edd8af4.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Item Dimensions LxWxH", "9.5 x 0.55 x 4 inches"],
+      ["Color", "Yellow"],
+      ["Connector Type", "Normally Closed"],
+      ["Operation Mode", "ON-OFF"],
+      ["Actuator Type", "Push Button"]
+    ],
+    "bulletsDescription": [
+      "Optimized for personal, handheld play, Nintendo Switch Lite is a small and light Nintendo Switch system ",
+      "For every member of your family, there’s a member of ours ",
+      "Handheld Nintendo Switch gaming at a great price ",
+      "Features a sleek, unibody design with fully integrated controls and a built-in plus Control Pad ",
+      "Compatible with all physical and digital Nintendo Switch games that support Handheld mode "
+    ],
+    "listPrice": 100.99
+  },
+  {
+    "category": "laptops",
+    "title": "Acer Nitro 5 AN515-55-53E5 Gaming Laptop | NVIDIA GeForce RTX 3050 Laptop GPU | Intel Core i5-10300H  | 15.6\" FHD 144Hz IPS Display | 8GB DDR4 | 256GB NVMe SSD | Intel Wi-Fi 6 | Backlit Keyboard",
+
+    "discount": 9,
+    "images": [
+      "uploads\\category\\laptops\\26ebe766-e5b2-4ad1-bd7e-1e0545333e70.webp",
+      "uploads\\category\\laptops\\9ab3acef-9ad3-4714-af84-3ae617472694.webp",
+      "uploads\\category\\laptops\\ede4ddcc-22d6-47af-ba6a-ef969933685b.webp"
+    ],
+    "overview": [
+      ["Brand", "Acer"],
+      ["Series", "AN515-55-53E5"],
+      ["Screen Size", "15.6 inches"],
+      ["Color", "Black"],
+      ["Hard Disk Size", "256 GB"],
+      ["CPU Model", "Core i5"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Windows 11 Home"],
+      ["Card Description", "Dedicated"],
+      ["Graphics", "NVIDIA GeForce RTX 3050"]
+    ],
+    "bulletsDescription": [
+      "Dominate the Game: With the 10th Gen Intel Core i5-10300H processor,your Nitro 5 is packed with incredible power for all your games",
+      "RTX, It's On: The latest NVIDIA GeForce RTX 3050 (4GB dedicatedGDDR6 VRAM) is powered by award-winning architecture with new RayTracing Cores, Tensor Cores, and streaming multiprocessors support DirectX 12 Ultimate for the ultimate gaming performance",
+      "Visual Intensity: Explore game worlds in Full HD detail on the 15.6\" widescreen LED-backlit IPS display with 1920 x 1080 resolution, 144Hz refresh rate and 80% screen-to-body, 16:9 aspect ratio",
+      "Internal Specifications: 8GB DDR4 2933MHz Memory (2 DDR4 Slots Total, Maximum 32GB); 256GB NVMe SSD (2 x PCIe M.2 Slots, 1 x 2.5\" Hard Drive Bay Available) ",
+      "Prioritize Your Gameplay: Killer Ethernet E2600 and Intel Wi-Fi 6 AX201 gives you an edge online by taking control of your network and prioritizing your gameplay ",
+      "Stay Cool Under Pressure: When heavy use requires an added boost, Acer CoolBoost technology increases fan speed by 10% and CPU, GPU cooling by 9% compared to auto mode, overall increasing thermal performance by 25% for better gaming comfort ",
+      "Take Control of Your Gaming Laptop: The NitroSense UI can be called up with the dedicated keyboard button so you can instantly visualize your PC's component temperature, fan speed, loading performance, power plan, and more ",
+      "With Alexa Show Mode, you can use your PC as a full-screen interactive experience that features rich visuals and lets you talk to Alexa from across the room.",
+      "Ports For All Your Accessories: USB 3.2 Gen 2 Type-C, 2 USB 3.2 Gen 1, USB 3.2 Gen 2 (Power-off Charging), HDMI 2.0 with HDCP support, Headphone, Speaker, Line-out Jack, Ethernet (RJ-45), DC-in for AC adapter",
+      "The Right Fit: 14.31\" W x 10.04\" D x 0.94\" H; 5.07 lbs; One-Year International Travelers Limited Warranty (ITW); Up to 11 hours of Battery Life"
+    ],
+    "listPrice": 835.55
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo Switch with Neon Blue and Neon Red Joy‑Con",
+    "rating": {
+      "amount": 0,
+      "stars": {
+        "oneStars": 0,
+        "twoStars": 0,
+        "threeStars": 0,
+        "fourStars": 0,
+        "fiveStars": 0
+      }
+    },
+    "discount": 0,
+    "images": [
+      "uploads\\category\\nintendo\\ff9310c2-7518-407b-8f77-fb9c2b989200.webp",
+      "uploads\\category\\nintendo\\0b9acc67-9bdc-4903-bef1-c2cb0b7d99ec.webp",
+      "uploads\\category\\nintendo\\8120d578-db4c-4c12-a4d0-a25900904025.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Model Name", "Nintendo Switch with Neon Blue and Neon Red Joy‑Con"],
+      ["Color", "Neon Blue and Red"],
+      ["Connectivity", "HDMI"],
+      ["Platform", "Nintendo Switch"],
+      ["Input Device", "Gamepad"]
+    ],
+    "bulletsDescription": [
+      "4.5-9 plus Hours of Battery Life will vary depending on software usage conditions ",
+      "6.2-inch, multi-touch capacitive touch screen",
+      "3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode",
+      "Pure adaptive noise canceling (pure ANC) actively blocks external noise ",
+      "Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer"
+    ],
+    "listPrice": 279.99
+  },
+  {
+    "category": "headsets",
+    "title": "Bose QuietComfort Bluetooth Wireless Noise Cancelling Headphones - Triple Black ",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\headsets\\4c40815d-5663-4f7c-a8cd-ae4b7be20075.webp",
+      "uploads\\category\\headsets\\647e3eae-1ca4-4f5f-8587-d675eb3c49ee.webp",
+      "uploads\\category\\headsets\\7fc3c0ee-4961-4f6f-82e5-36a4fdd9bed8.webp"
+    ],
+    "overview": [
+      ["Brand", "Bose"],
+      ["Model Name", "QuietComfort 45-Headphones"],
+      ["Color", "Triple Black"],
+      ["Connectivity", "Wireless,Bluetooth"],
+      ["Form Factor", "Over Ear"]
+    ],
+    "bulletsDescription": [
+      "Quiet and Aware Modes – Choose Quiet Mode for full noise cancelling, or Aware Mode to bring the outside into the around ear headphones and hear your environment and your music at the same time. ",
+      "Personalize your audio. Adjustable EQ allows you to set the bass, mid-range, and treble levels to your personal preferences or select one of several preset options. ",
+      "Noise cancelling wireless headphones – The perfect balance of quiet, comfort, and sound. Bose uses tiny mics to measure, compare, and react to outside noise, cancelling it with opposite signals. ",
+      "High-fidelity audio – The TriPort acoustic architecture offers depth and fullness. Volume-optimized Active EQ maintains balanced performance at any volume, so bass stays consistent when turned down and the music remains clear when turned up. ",
+      "Personalize your audio. Adjustable EQ allows you to set the bass, mid-range, and treble levels to your personal preferences or select one of several preset options. ",
+      "Up to 24 hours battery life – Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when you’re on the go, or plug in the included audio cable to listen for even longer in wired mode."
+    ],
+    "listPrice": 99.99
+  },
+  {
+    "category": "playstation",
+    "title": "Sony Playstation PS One",
+
+    "discount": 10,
+    "images": [
+      "uploads\\category\\playstation\\ed2807b0-050e-468b-af8b-391080dac5b8.webp",
+      "uploads\\category\\playstation\\5dc2ef93-da4d-4d45-bbae-92db76fc15cc.webp",
+      "uploads\\category\\playstation\\5378bdd9-22aa-4013-92ec-158f0fea4f04.webp",
+      "uploads\\category\\playstation\\eca1045c-a0d7-4fda-9b25-1c40ecda73be.webp",
+      "uploads\\category\\playstation\\06c10fd1-788a-4e9e-9543-e71f449ad275.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Sony Psone (Ps1) Console Scph-101 /94015 ",
+      "Package Quantity-1 ",
+      "Product Type-Video Game Hardware ",
+      "Package Weight-3.17245195018 Lbs "
+    ],
+    "listPrice": 139.99
+  },
+  {
+    "category": "headsets",
+    "title": "Bose QuietComfort Headphones - Triple Black ",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\headsets\\0dba380c-2e47-49ad-983f-0d357523e6c4.webp",
+      "uploads\\category\\headsets\\7b3e556c-e89a-4d04-8133-f7fbf2fbbba3.webp",
+      "uploads\\category\\headsets\\271da21e-0a32-40ab-94a6-743219503cf8.webp"
+    ],
+    "overview": [
+      ["Brand", "Bose"],
+      ["Model Name", "QuietComfort 45-Headphones"],
+      ["Color", "Triple Black"],
+      ["Connectivity", "Wireless,Bluetooth"],
+      ["Form Factor", "Over Ear"]
+    ],
+    "bulletsDescription": [
+      "Quiet and Aware Modes – Choose Quiet Mode for full noise cancelling, or Aware Mode to bring the outside into the around ear headphones and hear your environment and your music at the same time. ",
+      "Personalize your audio. Adjustable EQ allows you to set the bass, mid-range, and treble levels to your personal preferences or select one of several preset options. ",
+      "Noise cancelling wireless headphones – The perfect balance of quiet, comfort, and sound. Bose uses tiny mics to measure, compare, and react to outside noise, cancelling it with opposite signals. ",
+      "High-fidelity audio – The TriPort acoustic architecture offers depth and fullness. Volume-optimized Active EQ maintains balanced performance at any volume, so bass stays consistent when turned down and the music remains clear when turned up. ",
+      "Personalize your audio. Adjustable EQ allows you to set the bass, mid-range, and treble levels to your personal preferences or select one of several preset options. ",
+      "Up to 24 hours battery life – Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when you’re on the go, or plug in the included audio cable to listen for even longer in wired mode."
+    ],
+    "listPrice": 99.99
+  },
+  {
+    "category": "mouses",
+    "title": "Apple Magic Mouse (Wireless, Rechargable) - Silver",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\mouses\\6ae392fb-b1eb-4e91-9f32-01755a1d54db.webp",
+      "uploads\\category\\mouses\\7c6187df-d70d-4324-b803-47a26c867710.webp",
+      "uploads\\category\\mouses\\7fc412b3-ebb9-4179-b8af-fddf07903041.webp"
+    ],
+    "overview": [
+      ["Brand", "Apple"],
+      ["Series", "G Superlight"],
+      ["Color", "Silver"],
+      ["Connectivity", "Bluetooth, USB"],
+      [
+        "Special Feature",
+        "Wireless, Lightweight, Ergonomic Design, Rechargeable"
+      ],
+      ["Number of Buttons", "2"],
+      ["Movment Detection Technology", "Laser"]
+    ],
+    "bulletsDescription": [
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "The Multi-Touch surface allows you to perform simple gestures such as swiping between web pages and scrolling through documents. ",
+      "It’s ready to go right out of the box and pairs automatically with your Mac, and it includes a woven USB-C to Lightning Cable that lets you pair and charge by connecting to a USB-C port on your Mac. ",
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "System Requirements: Bluetooth-enabled Mac with OS X 10.11 or later , iPad with iPadOS 13.4 or later "
+    ],
+    "listPrice": 78.23
+  },
+  {
+    "category": "laptops",
+    "title": "Acer Nitro Laptop",
+
+    "discount": 9,
+    "images": [
+      "uploads\\category\\laptops\\a9ebb57f-c1a2-46f2-8e48-7f55e6ae5520.webp",
+      "uploads\\category\\laptops\\a48ad4be-a519-49cb-a270-67bd4df4898f.webp",
+      "uploads\\category\\laptops\\ddfc7719-41b7-4254-aecb-9fbd0411500b.webp"
+    ],
+    "overview": [
+      ["Brand", "Acer"],
+      ["Series", "AN515-55-53E5"],
+      ["Screen Size", "15.6 inches"],
+      ["Color", "Black"],
+      ["Hard Disk Size", "256 GB"],
+      ["CPU Model", "Core i5"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Windows 11 Home"],
+      ["Card Description", "Dedicated"],
+      ["Graphics", "NVIDIA GeForce RTX 3050"]
+    ],
+    "bulletsDescription": [
+      "Dominate the Game: With the 10th Gen Intel Core i5-10300H processor,your Nitro 5 is packed with incredible power for all your games",
+      "RTX, It's On: The latest NVIDIA GeForce RTX 3050 (4GB dedicatedGDDR6 VRAM) is powered by award-winning architecture with new RayTracing Cores, Tensor Cores, and streaming multiprocessors support DirectX 12 Ultimate for the ultimate gaming performance",
+      "Visual Intensity: Explore game worlds in Full HD detail on the 15.6\" widescreen LED-backlit IPS display with 1920 x 1080 resolution, 144Hz refresh rate and 80% screen-to-body, 16:9 aspect ratio",
+      "Internal Specifications: 8GB DDR4 2933MHz Memory (2 DDR4 Slots Total, Maximum 32GB); 256GB NVMe SSD (2 x PCIe M.2 Slots, 1 x 2.5\" Hard Drive Bay Available) ",
+      "Prioritize Your Gameplay: Killer Ethernet E2600 and Intel Wi-Fi 6 AX201 gives you an edge online by taking control of your network and prioritizing your gameplay ",
+      "Stay Cool Under Pressure: When heavy use requires an added boost, Acer CoolBoost technology increases fan speed by 10% and CPU, GPU cooling by 9% compared to auto mode, overall increasing thermal performance by 25% for better gaming comfort ",
+      "Take Control of Your Gaming Laptop: The NitroSense UI can be called up with the dedicated keyboard button so you can instantly visualize your PC's component temperature, fan speed, loading performance, power plan, and more ",
+      "With Alexa Show Mode, you can use your PC as a full-screen interactive experience that features rich visuals and lets you talk to Alexa from across the room.",
+      "Ports For All Your Accessories: USB 3.2 Gen 2 Type-C, 2 USB 3.2 Gen 1, USB 3.2 Gen 2 (Power-off Charging), HDMI 2.0 with HDCP support, Headphone, Speaker, Line-out Jack, Ethernet (RJ-45), DC-in for AC adapter",
+      "The Right Fit: 14.31\" W x 10.04\" D x 0.94\" H; 5.07 lbs; One-Year International Travelers Limited Warranty (ITW); Up to 11 hours of Battery Life"
+    ],
+    "listPrice": 650.55
+  },
+  {
+    "category": "laptops",
+    "title": "Apple MacBook Pro Laptop with M2 chip: 13-inch Retina Display, 8GB RAM, Touch Bar, Backlit Keyboard, FaceTime HD Camera. Works with iPhone and iPad; Space Gray ",
+
+    "discount": 20,
+    "images": [
+      "uploads\\category\\laptops\\0f9b46a3-1bc9-4f1a-bc95-e14423cdc90d.webp",
+      "uploads\\category\\laptops\\3639a461-7bef-4dbd-bd63-cfa39980960b.webp",
+      "uploads\\category\\laptops\\5116965f-3a0d-4a76-9226-8782ae435134.webp"
+    ],
+    "overview": [
+      ["Brand", "Apple"],
+      ["Series", "MacBook Pro"],
+      ["Screen Size", "13.3 inches"],
+      ["Color", "GRAY"],
+      ["Hard Disk Size", "256 GB"],
+      ["CPU Model", "Unknown"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Mac OS"]
+    ],
+    "bulletsDescription": [
+      "BRILLIANT DISPLAY — The 13.3-inch Retina display features 500 nits of brightness and P3 wide colour for vibrant images and incredible detail. ",
+      "SUSTAINED PERFORMANCE — Thanks to its active cooling system, the 13-inch MacBook Pro can sustain pro levels of performance, so you can run CPU- and GPU-intensive tasks for hours on end. ",
+      "SUPERCHARGED BY M2 — The 13-inch MacBook Pro laptop is a portable powerhouse. Get more done faster with a next-generation 8-core CPU, 10-core GPU and up to 24GB of unified memory.",
+      "UP TO 20 HOURS OF BATTERY LIFE — Go all day and into the night, thanks to the power-efficient performance of the Apple M2 chip. ",
+      "EASY TO USE — Your Mac feels familiar from the moment you turn it on, and it works seamlessly with all your Apple devices. ",
+      "HD CAMERA AND STUDIO-QUALITY MICS — Look sharp and sound great with a FaceTime HD camera and three-mic array. ",
+      "VERSATILE CONNECTIVITY — Two Thunderbolt ports let you connect and power high-speed accessories. "
+    ],
+    "listPrice": 999.99
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo Switch Lite - Yellow ",
+
+    "discount": 15,
+    "images": [
+      "uploads\\category\\nintendo\\cdff4a53-3a49-4b38-9f2d-ddea43efaffe.webp",
+      "uploads\\category\\nintendo\\85798f93-5837-4680-a5d8-54579ca99367.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Item Dimensions LxWxH", "9.5 x 0.55 x 4 inches"],
+      ["Color", "Yellow"],
+      ["Connector Type", "Normally Closed"],
+      ["Operation Mode", "ON-OFF"],
+      ["Actuator Type", "Push Button"]
+    ],
+    "bulletsDescription": [
+      "Optimized for personal, handheld play, Nintendo Switch Lite is a small and light Nintendo Switch system ",
+      "For every member of your family, there’s a member of ours ",
+      "Handheld Nintendo Switch gaming at a great price ",
+      "Features a sleek, unibody design with fully integrated controls and a built-in plus Control Pad ",
+      "Compatible with all physical and digital Nintendo Switch games that support Handheld mode "
+    ],
+    "listPrice": 179.99
+  },
+  {
+    "category": "playstation",
+    "title": "PlayStation 4 500GB Console",
+
+    "discount": 5,
+    "images": [
+      "uploads\\category\\playstation\\49d667c6-c033-45ab-b651-2fa9c0de28b6.webp",
+      "uploads\\category\\playstation\\6a604616-74e1-474b-aa65-f2c8702b9598.webp",
+      "uploads\\category\\playstation\\73cf0f8c-2f6f-48f1-a36b-29832d0f0ed9.webp",
+      "uploads\\category\\playstation\\a4472889-8a0c-4b84-9ada-144a49f1ad72.webp",
+      "uploads\\category\\playstation\\ac894fb9-c82e-4d84-873e-8c0e7a2a32fe.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "\"Suspend mode\" eliminates the load time on your saved game and allows you to immediately return to where you left off by pressing the power button. ",
+      "Engage in endless personal challenges between you and your community, and share your epic moments for the world to see. ",
+      "Enables the greatest game developers in the world to unlock their creativity and push the boundaries of play through a platform that is tuned specifically to their needs. ",
+      "Gamers can share their epic triumphs by hitting the \"SHARE button\" on the controller, scan through the last few minutes of gameplay, tag it and return to the game. ",
+      "Engage in endless personal challenges between you and your community, and share your epic moments for the world to see. "
+    ],
+    "listPrice": 388.99
+  },
+  {
+    "category": "headsets",
+    "title": "Beats Studio Headphones",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\headsets\\313271ad-3b9a-49f3-bce9-a71fa5052949.webp",
+      "uploads\\category\\headsets\\fa43db4b-4a47-49c7-ab34-cbc7b8af3677.webp",
+      "uploads\\category\\headsets\\6a45d6b1-7f7f-445e-ba8c-51af3d7a93bb.webp"
+    ],
+    "overview": [
+      ["Brand", "Beats"],
+      ["Model Name", "Studio3"],
+      ["Color", "White"],
+      ["Connectivity", "Wireless, Bluetooth, Wired, NFC"],
+      ["Form Factor", "Over Ear"]
+    ],
+    "bulletsDescription": [
+      "Up to 22 hours of battery life enables full-featured all-day wireless playback ",
+      "Real-time Audio calibration preserves a Premium listening experience ",
+      "High-performance wireless noise cancelling headphones ",
+      "Pure adaptive noise canceling (pure ANC) actively blocks external noise ",
+      "Compatible with iOS and Android devices. ",
+      "Apple's W1 chip and industry-leading Bluetooth technology keep you connected farther with fewer drop-outs"
+    ],
+    "listPrice": 189.99
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo 3DS",
+
+    "discount": 10,
+    "images": [
+      "uploads\\category\\nintendo\\a131eb17-f735-468b-ad4d-c6202d8ea85a.webp",
+      "uploads\\category\\nintendo\\fe5e029e-79cc-4753-866a-da04fea6828b.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Item Dimensions LxWxH", "9.5 x 0.55 x 4 inches"],
+      ["Color", "White"],
+      ["Connector Type", "Normally Closed"],
+      ["Operation Mode", "ON-OFF"],
+      ["Actuator Type", "Push Button"]
+    ],
+    "bulletsDescription": [
+      "Connect to a deeper wireless experience with SpotPass and StreetPass, giving you more exclusive content and connecting you with other Nintendo 3DS users. ",
+      "Nintendo 3DS offers a new way to play, 3D without the need for special glasses. The 3D Depth Slider lets your determine how much 3D you want to see. ",
+      "Play 3D games and take 3D pictures with Nintendo 3DS. One inner camera and two outer cameras. Resolutions are 640 x 480 for each camera. Lens are single focus and uses the CMOS capture element.",
+      "Complete with an adjustable stylus, 6 AR cards, and fun built-in software such as Face Raiders, Nintendo 3DS Sound, and the Mii Maker application. ",
+      "Use Parental Controls to restrict 3D mode for children 6 and under. "
+    ],
+    "listPrice": 299.99
+  },
+  {
+    "category": "headsets",
+    "title": "Sony Wired Headphones",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\headsets\\8e52b275-4d8f-408f-a325-90a224773a9b.webp",
+      "uploads\\category\\headsets\\4a9f4aea-1be1-4e3c-a39d-cd8c9314ebd1.webp",
+      "uploads\\category\\headsets\\436a3b27-3434-414d-9400-a017bbb1ece7.webp"
+    ],
+    "overview": [
+      ["Brand", "Sony"],
+      ["Model Name", "MDRZX110/BLK ZX"],
+      ["Color", "Black"],
+      ["Connectivity Technology", "Wired"],
+      ["Form Factor", "On Ear"]
+    ],
+    "bulletsDescription": [
+      "Cushioned earpads for total comfort and enfolding closed-back design seals in sound  ",
+      "The swiveling earcup design allows easy storage when you’re not using them, and enhances portability when you’re traveling ",
+      "Lightweight 1.38 in neodymium dynamic drivers deliver a punchy, rhythmic response to even the most demanding tracks. Driver Unit: Dome type ",
+      "The wide frequency range—spanning 12 Hz to 22 kHz—delivers deep bass, rich midrange, and soaring highs ",
+      "Plug: L-shaped stereo mini plug 3.5mm "
+    ],
+    "listPrice": 5.34
+  },
+  {
+    "category": "playstation",
+    "title": "PlayStation 5",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\playstation\\fc8d767a-5150-41c9-ba7b-1e345d409144.webp",
+      "uploads\\category\\playstation\\4369bd30-17d5-4320-8d81-76a9b5ea8aa6.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Stunning Visuals: Experience the vast world of Horizon Forbidden West in stunning 4K and HDR.* From mountain tops to small sprigs of leaves, everything is realized to incredible detail at an enormous scale. Targeting 60FPS, Performance Mode further enhances smoothness of movement, animations and controls. ",
+      "Faster Loading: Fast-travel across the map and get back into the game almost instantly with the PlayStation5 console’s ultra-high-speed SSD and fast load times. ",
+      "Breathtaking Immersion - Discover a deeper gaming experience with support for haptic feedback, adaptive triggers, and 3D Audio technology",
+      "Haptic Feedback: Get closer to each fight Aloy takes on with the DualSense wireless controller’s haptic feedback. Feel the sensation of blades of grass you brush past when making a stealth approach, melee swipes you make against machines and armoured humans, and the directional impact from enemy attacks when you attempt to evade. ",
+      "Adaptive Triggers: Enjoy a new level of immersion when you interact with different objects using the DualSense wireless controller’s adaptive triggers. Feel the tension in the string of your bow, the pull of your new grappling tool and the resistance of the triggers on heavy tribal and mechanical weapons. "
+    ],
+    "listPrice": 488.99
+  },
+  {
+    "category": "mouses",
+    "title": "Apple Mouse - Silver",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\mouses\\82abd40a-ff26-44c1-bce2-0d14b8a36a11.webp",
+      "uploads\\category\\mouses\\35465e31-1c2c-43e9-a401-3aa0e1657eb8.webp",
+      "uploads\\category\\mouses\\35465e31-1c2c-43e9-a401-3aa0e1657eb8.webp"
+    ],
+    "overview": [
+      ["Brand", "Apple"],
+      ["Series", "G Superlight"],
+      ["Color", "Silver"],
+      ["Connectivity", "Bluetooth, USB"],
+      [
+        "Special Feature",
+        "Wireless, Lightweight, Ergonomic Design, Rechargeable"
+      ],
+      ["Number of Buttons", "2"],
+      ["Movment Detection Technology", "Laser"]
+    ],
+    "bulletsDescription": [
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "The Multi-Touch surface allows you to perform simple gestures such as swiping between web pages and scrolling through documents. ",
+      "It’s ready to go right out of the box and pairs automatically with your Mac, and it includes a woven USB-C to Lightning Cable that lets you pair and charge by connecting to a USB-C port on your Mac. ",
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "System Requirements: Bluetooth-enabled Mac with OS X 10.11 or later , iPad with iPadOS 13.4 or later "
+    ],
+    "listPrice": 58.99
+  },
+  {
+    "category": "headsets",
+    "title": "Beats Studio3 Wireless Noise Cancelling Over-Ear Headphones",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\headsets\\77939901-d64e-4756-86ce-ac4150c2f154.webp",
+      "uploads\\category\\headsets\\38ee7601-6255-4d55-b226-27acb5a8200c.webp",
+      "uploads\\category\\headsets\\e0971996-2ba4-4047-b79c-b5212d0927f0.webp"
+    ],
+    "overview": [
+      ["Brand", "Beats"],
+      ["Model Name", "Studio3"],
+      ["Color", "White"],
+      ["Connectivity", "Wireless, Bluetooth, Wired, NFC"],
+      ["Form Factor", "Over Ear"]
+    ],
+    "bulletsDescription": [
+      "Up to 22 hours of battery life enables full-featured all-day wireless playback ",
+      "Real-time Audio calibration preserves a Premium listening experience ",
+      "High-performance wireless noise cancelling headphones ",
+      "Pure adaptive noise canceling (pure ANC) actively blocks external noise ",
+      "Compatible with iOS and Android devices. ",
+      "Apple's W1 chip and industry-leading Bluetooth technology keep you connected farther with fewer drop-outs"
+    ],
+    "listPrice": 319.99
+  },
+  {
+    "category": "mouses",
+    "title": "LogitechGaming Mouse",
+
+    "discount": 15,
+    "images": [
+      "uploads\\category\\mouses\\bbd05622-9b42-4c4f-ad5c-89e37953f28f.webp",
+      "uploads\\category\\mouses\\eae7cbdb-49de-41f3-8528-d2dde5868cdd.webp",
+      "uploads\\category\\mouses\\78b2f9f8-e391-49cf-848c-239236ec2ea9.webp"
+    ],
+    "overview": [
+      ["Brand", "Logitech G"],
+      ["Series", "G Superlight"],
+      ["Connectivity", "USB"],
+      ["Special Feature", "Wireless"],
+      ["Recommended Uses For Product", "Gaming"],
+      ["Movment Detection Technology", "Optical"],
+      ["Number of Buttons", "5"],
+      ["Hand Orientation", "Right"],
+      ["Operation System", "Windows 8"]
+    ],
+    "bulletsDescription": [
+      "Incredibly precise, fast and consistent control with Hero Sensor, designed from the ground up by Logitech G engineers for the best possible gaming performance. ",
+      "Powered by Lightspeed, PRO X Superlight is our fastest and most reliable PRO mouse yet. ",
+      "Meticulously designed in collaboration with many of the world’s leading esports pros. Engineered to win, being the pinnacle of our continued pursuit for the highest levels of performance. ",
+      "Ultra-lightweight at under 63 grams, with hyper-minimal redesign achieving nearly 25% weight reduction compared to standard PRO Wireless mouse. ",
+      "Large, zero-additive PTFE feet deliver a smooth glide for a pure, fluid connection with the game. System Requirements-Windows 8 or later, macOS 10.11 or later "
+    ],
+    "listPrice": 75.55
+  },
+  {
+    "category": "mouses",
+    "title": "Logitech MX",
+
+    "discount": 29,
+    "images": [
+      "uploads\\category\\mouses\\e78023e6-cc03-4680-a1b4-4355ffd26ec5.webp",
+      "uploads\\category\\mouses\\9c3f73b8-6e31-41cb-884d-b8d3be7a5f23.webp",
+      "uploads\\category\\mouses\\ca935f6c-0c2d-46e6-935b-b7167484e25a.webp"
+    ],
+    "overview": [
+      ["Brand", "Logitech"],
+      ["Series", "MX Master"],
+      ["Color", "Grapgite"],
+      ["Connectivity", "Bluetooth, USB, Radop Frequency"],
+      [
+        "Special Feature",
+        "Wireless, Lightweight, Ergonomic Design, Rechargeable"
+      ],
+      ["Number of Buttons", "7"],
+      ["Movment Detection Technology", "Optical"]
+    ],
+    "bulletsDescription": [
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "The Multi-Touch surface allows you to perform simple gestures such as swiping between web pages and scrolling through documents. ",
+      "It’s ready to go right out of the box and pairs automatically with your Mac, and it includes a woven USB-C to Lightning Cable that lets you pair and charge by connecting to a USB-C port on your Mac. ",
+      "The incredibly long-lasting internal battery will power your Magic Mouse for about a month or more between charges ",
+      "System Requirements: Bluetooth-enabled Mac with OS X 10.11 or later , iPad with iPadOS 13.4 or later "
+    ],
+    "listPrice": 79.99
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo Neon",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\nintendo\\18caf3b9-e811-4b36-9f7e-21c3a1332e79.webp",
+      "uploads\\category\\nintendo\\5d6878eb-42cc-43bf-857a-6a0204824e3d.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Model Name", "Nintendo Switch with Neon Blue and Neon Red Joy‑Con"],
+      ["Color", "Neon Blue and Red"],
+      ["Connectivity", "HDMI"],
+      ["Platform", "Nintendo Switch"],
+      ["Input Device", "Gamepad"]
+    ],
+    "bulletsDescription": [
+      "4.5-9 plus Hours of Battery Life will vary depending on software usage conditions ",
+      "6.2-inch, multi-touch capacitive touch screen",
+      "3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode",
+      "Pure adaptive noise canceling (pure ANC) actively blocks external noise ",
+      "Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer"
+    ],
+    "listPrice": 189.99
+  },
+  {
+    "category": "nintendo",
+    "title": "Nintendo 3",
+
+    "discount": 10,
+    "images": [
+      "uploads\\category\\nintendo\\703346c5-c343-48d0-bbab-ea6b7d118536.webp",
+      "uploads\\category\\nintendo\\69731f0f-2bd0-4d60-9989-4ded5597d4d0.webp"
+    ],
+    "overview": [
+      ["Brand", "Nintendo"],
+      ["Item Dimensions LxWxH", "9.5 x 0.55 x 4 inches"],
+      ["Color", "White"],
+      ["Connector Type", "Normally Closed"],
+      ["Operation Mode", "ON-OFF"],
+      ["Actuator Type", "Push Button"]
+    ],
+    "bulletsDescription": [
+      "Connect to a deeper wireless experience with SpotPass and StreetPass, giving you more exclusive content and connecting you with other Nintendo 3DS users. ",
+      "Nintendo 3DS offers a new way to play, 3D without the need for special glasses. The 3D Depth Slider lets your determine how much 3D you want to see. ",
+      "Play 3D games and take 3D pictures with Nintendo 3DS. One inner camera and two outer cameras. Resolutions are 640 x 480 for each camera. Lens are single focus and uses the CMOS capture element.",
+      "Complete with an adjustable stylus, 6 AR cards, and fun built-in software such as Face Raiders, Nintendo 3DS Sound, and the Mii Maker application. ",
+      "Use Parental Controls to restrict 3D mode for children 6 and under. "
+    ],
+    "listPrice": 199.99
+  },
+  {
+    "category": "playstation",
+    "title": "Sony Playstation One",
+    "discount": 10,
+    "images": [
+      "uploads\\category\\playstation\\eca1045c-a0d7-4fda-9b25-1c40ecda73be.webp",
+      "uploads\\category\\playstation\\06c10fd1-788a-4e9e-9543-e71f449ad275.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Sony Psone (Ps1) Console Scph-101 /94015 ",
+      "Package Quantity-1 ",
+      "Product Type-Video Game Hardware ",
+      "Package Weight-3.17245195018 Lbs "
+    ],
+    "listPrice": 129.99
+  },
+  {
+    "category": "controllers",
+    "title": "Xbox Controller",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\controllers\\d29700b8-91ef-4e9e-ad39-03147a01eb39.webp",
+      "uploads\\category\\controllers\\efeb02c2-580b-4752-910a-08497aea4a50.webp",
+      "uploads\\category\\controllers\\16941df5-eeaa-435b-b5ac-74af4c1cc783.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Connect using the USB-C port for direct plug and play to console or PC. Support for AA batteries is included on the rear. ",
+      "Stay on target with the hybrid D-pad, textured grip on the triggers, bumpers, and back-case. Plug in any compatible headset with the 3.5mm audio headset jack. ",
+      "Experience the modernized design of the Xbox Wireless Controller in Robot White, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay with battery usage up to 40 hours. ",
+      "Use Xbox Wireless or Bluetooth to play across Xbox Series X|S, Xbox One, and Windows 10/11 devices. ",
+      "Seamlessly capture and share content with the Share button. ",
+      "Compatible with Xbox Series X|S, Xbox One, and Windows 10/11 devices. "
+    ],
+    "listPrice": 45.99
+  },
+  {
+    "category": "mouses",
+    "title": "Logitech G SUPERLIGHT Wireless Gaming Mouse, Ultra-Lightweight, HERO 25K Sensor, 25,600 DPI, 5 Programmable Buttons, Long Battery Life, Compatible with PC / Mac - Black ",
+    "rating": {
+      "amount": 0,
+      "stars": {
+        "oneStars": 0,
+        "twoStars": 0,
+        "threeStars": 0,
+        "fourStars": 0,
+        "fiveStars": 0
+      }
+    },
+    "discount": 15,
+    "images": [
+      "uploads\\category\\mouses\\4219cfca-3f92-4954-8fce-16e140d66914.webp",
+      "uploads\\category\\mouses\\60bf7f74-5a2e-4a35-a21d-7a46ce12e3f1.webp",
+      "uploads\\category\\mouses\\15cbe675-b4c3-4f10-beb5-ebadc63e4e3d.webp"
+    ],
+    "overview": [
+      ["Brand", "Logitech G"],
+      ["Series", "G Superlight"],
+      ["Connectivity", "USB"],
+      ["Special Feature", "Wireless"],
+      ["Recommended Uses For Product", "Gaming"],
+      ["Movment Detection Technology", "Optical"],
+      ["Number of Buttons", "5"],
+      ["Hand Orientation", "Right"],
+      ["Operation System", "Windows 8"]
+    ],
+    "bulletsDescription": [
+      "Incredibly precise, fast and consistent control with Hero Sensor, designed from the ground up by Logitech G engineers for the best possible gaming performance. ",
+      "Powered by Lightspeed, PRO X Superlight is our fastest and most reliable PRO mouse yet. ",
+      "Meticulously designed in collaboration with many of the world’s leading esports pros. Engineered to win, being the pinnacle of our continued pursuit for the highest levels of performance. ",
+      "Ultra-lightweight at under 63 grams, with hyper-minimal redesign achieving nearly 25% weight reduction compared to standard PRO Wireless mouse. ",
+      "Large, zero-additive PTFE feet deliver a smooth glide for a pure, fluid connection with the game. System Requirements-Windows 8 or later, macOS 10.11 or later "
+    ],
+    "listPrice": 139.55
+  },
+  {
+    "category": "playstation",
+    "title": "PlayStation 5 Console",
+    "rating": {
+      "amount": 0,
+      "stars": {
+        "oneStars": 0,
+        "twoStars": 0,
+        "threeStars": 0,
+        "fourStars": 0,
+        "fiveStars": 0
+      }
+    },
+    "discount": 0,
+    "images": [
+      "uploads\\category\\playstation\\ce1ca21e-b1e1-49b1-b623-ee8ecbf3832d.webp",
+      "uploads\\category\\playstation\\b1097805-c834-48d0-9024-fc66bace9ba5.webp",
+      "uploads\\category\\playstation\\b5dab0f7-cd9c-4be9-8343-e539cb520588.webp",
+      "uploads\\category\\playstation\\fc8d767a-5150-41c9-ba7b-1e345d409144.webp",
+      "uploads\\category\\playstation\\4369bd30-17d5-4320-8d81-76a9b5ea8aa6.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Stunning Visuals: Experience the vast world of Horizon Forbidden West in stunning 4K and HDR.* From mountain tops to small sprigs of leaves, everything is realized to incredible detail at an enormous scale. Targeting 60FPS, Performance Mode further enhances smoothness of movement, animations and controls. ",
+      "Faster Loading: Fast-travel across the map and get back into the game almost instantly with the PlayStation5 console’s ultra-high-speed SSD and fast load times. ",
+      "Breathtaking Immersion - Discover a deeper gaming experience with support for haptic feedback, adaptive triggers, and 3D Audio technology",
+      "Haptic Feedback: Get closer to each fight Aloy takes on with the DualSense wireless controller’s haptic feedback. Feel the sensation of blades of grass you brush past when making a stealth approach, melee swipes you make against machines and armoured humans, and the directional impact from enemy attacks when you attempt to evade. ",
+      "Adaptive Triggers: Enjoy a new level of immersion when you interact with different objects using the DualSense wireless controller’s adaptive triggers. Feel the tension in the string of your bow, the pull of your new grappling tool and the resistance of the triggers on heavy tribal and mechanical weapons. "
+    ],
+    "listPrice": 499.99
+  },
+  {
+    "category": "controllers",
+    "title": "Xbox Core Wireless Controller – Robot White ",
+
+    "discount": 0,
+    "images": [
+      "uploads\\category\\controllers\\48d2fbef-dd6b-454d-8854-92bc488e1dd3.webp",
+      "uploads\\category\\controllers\\1c10978c-82a0-483e-91c7-71cfac5f940d.webp",
+      "uploads\\category\\controllers\\aee0c748-ea63-40bf-94fc-eecb13e40c41.webp",
+      "uploads\\category\\controllers\\d29700b8-91ef-4e9e-ad39-03147a01eb39.webp",
+      "uploads\\category\\controllers\\efeb02c2-580b-4752-910a-08497aea4a50.webp",
+      "uploads\\category\\controllers\\16941df5-eeaa-435b-b5ac-74af4c1cc783.webp"
+    ],
+    "overview": null,
+    "bulletsDescription": [
+      "Connect using the USB-C port for direct plug and play to console or PC. Support for AA batteries is included on the rear. ",
+      "Stay on target with the hybrid D-pad, textured grip on the triggers, bumpers, and back-case. Plug in any compatible headset with the 3.5mm audio headset jack. ",
+      "Experience the modernized design of the Xbox Wireless Controller in Robot White, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay with battery usage up to 40 hours. ",
+      "Use Xbox Wireless or Bluetooth to play across Xbox Series X|S, Xbox One, and Windows 10/11 devices. ",
+      "Seamlessly capture and share content with the Share button. ",
+      "Compatible with Xbox Series X|S, Xbox One, and Windows 10/11 devices. "
+    ],
+    "listPrice": 58.99
+  },
+  {
+    "category": "laptops",
+    "title": "Apple MacBook Laptop",
+
+    "discount": 20,
+    "images": [
+      "uploads\\category\\laptops\\5771eca7-9908-4a27-81eb-3374b029828b.webp",
+      "uploads\\category\\laptops\\aec35f53-bed4-43eb-9412-044a5e9f7968.webp",
+      "uploads\\category\\laptops\\3b948878-52f7-4f1d-afbb-418e096f5409.webp"
+    ],
+    "overview": [
+      ["Brand", "Apple"],
+      ["Series", "MacBook Pro"],
+      ["Screen Size", "13.3 inches"],
+      ["Color", "GRAY"],
+      ["Hard Disk Size", "256 GB"],
+      ["CPU Model", "Unknown"],
+      ["Ram Memory Installed", "8GB"],
+      ["Operating System", "Mac OS"]
+    ],
+    "bulletsDescription": [
+      "BRILLIANT DISPLAY — The 13.3-inch Retina display features 500 nits of brightness and P3 wide colour for vibrant images and incredible detail. ",
+      "SUSTAINED PERFORMANCE — Thanks to its active cooling system, the 13-inch MacBook Pro can sustain pro levels of performance, so you can run CPU- and GPU-intensive tasks for hours on end. ",
+      "SUPERCHARGED BY M2 — The 13-inch MacBook Pro laptop is a portable powerhouse. Get more done faster with a next-generation 8-core CPU, 10-core GPU and up to 24GB of unified memory.",
+      "UP TO 20 HOURS OF BATTERY LIFE — Go all day and into the night, thanks to the power-efficient performance of the Apple M2 chip. ",
+      "EASY TO USE — Your Mac feels familiar from the moment you turn it on, and it works seamlessly with all your Apple devices. ",
+      "HD CAMERA AND STUDIO-QUALITY MICS — Look sharp and sound great with a FaceTime HD camera and three-mic array. ",
+      "VERSATILE CONNECTIVITY — Two Thunderbolt ports let you connect and power high-speed accessories. "
+    ],
+    "listPrice": 829.99
+  }
+]
