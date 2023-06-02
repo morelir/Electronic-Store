@@ -7,7 +7,7 @@ import Button from "../../shared/components/FormElements/Button";
 
 const sortDefaultProps = {
   options: [
-    { label: "Rating", value: "rating" },
+    { label: "Top rating", value: "-ratingsAverage" },
     { label: "Price: Low to High", value: "listPrice" },
     { label: "Price: High to Low", value: "-listPrice" },
   ],

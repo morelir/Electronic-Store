@@ -94,6 +94,11 @@ hr {
   margin-top: 0;
 }
 
+.error{
+  font-size: 1.6rem;
+  text-align: center;
+}
+
 
 @media (min-width:1150px){
   html {
