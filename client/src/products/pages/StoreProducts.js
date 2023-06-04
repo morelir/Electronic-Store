@@ -6,12 +6,12 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ProductList from "../components/ProductList";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./StoreProducts.css";
-import NotFound from "../../shared/components/UIElements/NotFound";
 import Pagination from "../../shared/components/UIElements/Pagination";
+import Filters from "../components/Filters";
 
 const StoreProducts = () => {
   const [searchParams] = useSearchParams();
-  const [loadedData, setLoadedData] = useState();
+  const [loadedData, setLoadedData] = useState({});
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
@@ -35,34 +35,30 @@ const StoreProducts = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [isLoading]);
 
-  if (isLoading) {
-    return (
-      <div className="center">
-        <LoadingSpinner asOverlay />
-      </div>
-    );
-  }
 
-  if (loadedData && loadedData.products.length === 0) {
-    return (
-      <NotFound show onClear={clearError}>
-        No results found.
-      </NotFound>
-    );
-  }
+  const dataIsEmpty = Object.keys(loadedData).length === 0;
 
   return (
     <section className="section-store">
       <ErrorModal error={error} onClear={clearError} />
-      {loadedData && <ProductList products={loadedData.products} />}
-      {loadedData && (
-        <Pagination
-          currentPage={loadedData.page}
-          next={loadedData?.next}
-          previous={loadedData?.previous}
-          totalPages={loadedData.totalPages}
-        />
-      )}
+      <div className="store-container">
+        <Filters />
+        {isLoading && <LoadingSpinner asOverlay />}
+        {!isLoading && !dataIsEmpty && loadedData?.totalResults !== 0 && (
+          <ProductList products={loadedData.products} />
+        )}
+        {!isLoading && !dataIsEmpty && (
+          <Pagination
+            currentPage={loadedData.page}
+            next={loadedData?.next}
+            previous={loadedData?.previous}
+            totalPages={loadedData.totalPages}
+          />
+        )}
+        {!isLoading && !dataIsEmpty && loadedData?.totalResults === 0 && (
+          <div className="error">No results found</div>
+        )}
+      </div>
     </section>
   );
 };

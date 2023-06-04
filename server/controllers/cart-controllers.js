@@ -64,7 +64,7 @@ const updateCart = async (req, res, next) => {
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  
+
   const productId = req.params.prodId;
   const { price, amount } = req.body;
 
@@ -100,15 +100,10 @@ const updateCart = async (req, res, next) => {
     try {
       await user.cart.save();
     } catch (err) {
-      const error = new HttpError(
-        "Saving cart failed, please try again.",
-        500
-      );
+      const error = new HttpError("Saving cart failed, please try again.", 500);
       return next(error);
     }
-
   } else {
-
     let newCart = new Cart({
       user: user.id,
       products: [
@@ -152,10 +147,10 @@ const removeProductFromCart = async (req, res, next) => {
   try {
     user = await User.findById(req.userData.userId).populate({
       path: "cart",
-      populate:{
+      populate: {
         path: "products.product",
-        model:"products"
-      }
+        model: "products",
+      },
     });
   } catch (err) {
     const error = new HttpError(
@@ -174,6 +169,7 @@ const removeProductFromCart = async (req, res, next) => {
     (prod) => prod._id.toString() === productId
   );
   let product = cartProduct.product;
+
   user.cart.totalQuantity--;
   user.cart.totalAmount -= product.discount
     ? (1 - product.discount / 100) * product.listPrice
@@ -189,8 +185,12 @@ const removeProductFromCart = async (req, res, next) => {
 
   try {
     await user.cart.save();
+
   } catch (err) {
-    const error = new HttpError("Saving cart after removing product failed, please try again.", 500);
+    const error = new HttpError(
+      "Saving cart after removing product failed, please try again.",
+      500
+    );
     return next(error);
   }
 

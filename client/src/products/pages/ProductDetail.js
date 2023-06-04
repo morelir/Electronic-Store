@@ -42,7 +42,8 @@ const ProductDetail = () => {
           <ProductInfoBlock
             id={product.id}
             title={product.title}
-            rating={product.rating}
+            ratingsAverage={product.ratingsAverage}
+            ratingsQuantity={product.ratingsQuantity}
             listPrice={product.listPrice.toFixed(2)}
             discount={product.discount}
             bulletsDescription={product.bulletsDescription}

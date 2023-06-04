@@ -15,7 +15,8 @@ const ProductInfoBlock = (props) => {
         <Rating
           // className="rating"
           name="read-only"
-          value={props.rating.amount}
+          value={props.ratingsAverage}
+          precision={0.5}
           readOnly
         />
       </div>

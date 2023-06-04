@@ -49,7 +49,7 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
   };
 
   if (pages.length === 0) {
-    return <h2>Loading...</h2>;
+    return <></>;
   }
   return (
     <div className="pagination">

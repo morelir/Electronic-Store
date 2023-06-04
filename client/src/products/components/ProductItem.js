@@ -22,7 +22,7 @@ const ProductItem = (props) => {
           </Link>
           {/* need to change rating */}
           <div className="container__rating-price">
-            <Rating name="read-only" value={props.rating.amount} readOnly />
+            <Rating name="read-only" value={props.ratingsAverage} precision={0.5} readOnly />
             <ProductPrice
               discount={props.discount}
               listPrice={props.listPrice}
