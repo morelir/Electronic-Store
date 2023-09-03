@@ -35,11 +35,11 @@ const StoreProducts = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [isLoading]);
 
-
+  const category = searchParams.get("category") ?? null;
   const dataIsEmpty = Object.keys(loadedData).length === 0;
 
   return (
-    <section className="section-store">
+    <section className="section-store" data-testid="products-store">
       <ErrorModal error={error} onClear={clearError} />
       <div className="store-container">
         <Filters />
