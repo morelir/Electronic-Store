@@ -25,10 +25,6 @@ const Filters = () => {
 
   const handlePriceRangeChange = (event, newValue) => {
     setPriceRange(newValue);
-    // search.set("listPrice[gt]", newValue[0]);
-    // setSearch(search, {
-    //   replace: true,
-    // });
   };
 
   const handleApply = () => {
@@ -53,21 +49,26 @@ const Filters = () => {
   };
 
   return (
-    <div className="products-filter">
+    <div className="products-filter" data-testid="filter-id">
+      <span style={{ display: "none" }}>{search.toString()}</span>
       <header className="filter-header">Filters</header>
       <div className="filter-box">
         <div className="filter-item">
           <label htmlFor="sort">Sort by</label>
           <Autocomplete
+            label="Sort by"
             {...sortDefaultProps}
             onChange={(event, newValue) => {
               setSortBy(newValue);
-              console.log(newValue);
             }}
             id="sort"
             clearOnEscape
             renderInput={(params) => (
-              <TextField {...params} variant="standard" />
+              <TextField
+                {...params}
+                variant="standard"
+                data-testid="autocomplete-input"
+              />
             )}
           />
         </div>
@@ -79,7 +80,7 @@ const Filters = () => {
           </span>
           <Slider
             id="price"
-            getAriaLabel={() => "Price range"}
+            getAriaLabel={() => "price-range"}
             value={priceRange}
             onChange={handlePriceRangeChange}
             valueLabelDisplay="auto"

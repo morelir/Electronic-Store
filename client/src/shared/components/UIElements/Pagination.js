@@ -1,19 +1,20 @@
 
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./Pagination.css";
 
 const createPages = (currentPage, totalPages, onPageClick) => {
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
     pages.push(
-      <button
+      <Link
         key={i}
-        onClick={() => onPageClick(i)}
+        onClick={(event) => onPageClick(event,i)}
         className={currentPage === i ? "clicked-page" : ""}
+        to="/"
       >
         {i}
-      </button>
+      </Link>
     );
   }
   return pages;
@@ -27,21 +28,24 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
     setPages(createPages(currentPage, totalPages, pageClickHandler));
   }, [currentPage, totalPages]);
 
-  const pageClickHandler = async (page) => {
+  const pageClickHandler =  (event,page) => {
+    event.preventDefault();
     search.set("page", page.toString());
     setSearch(search, {
       replace: true,
     });
   };
 
-  const nextPageHandler = async () => {
+  const nextPageHandler =  (event) => {
+    event.preventDefault();
     search.set("page", (currentPage + 1).toString());
     setSearch(search, {
       replace: true,
     });
   };
 
-  const prevPageHandler = async () => {
+  const prevPageHandler =  (event) => {
+    event.preventDefault();
     search.set("page", (currentPage - 1).toString());
     setSearch(search, {
       replace: true,
@@ -52,11 +56,12 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
     return <></>;
   }
   return (
-    <div className="pagination">
+    <div className="pagination" data-testid="pagination-id">
       <button
         disabled={!previous}
         className="arrow-btn btn-left"
         onClick={prevPageHandler}
+        to="/"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +84,7 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
         disabled={!next}
         className="arrow-btn btn-right"
         onClick={nextPageHandler}
+        to="/"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

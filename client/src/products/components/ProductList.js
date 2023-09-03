@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import ProductItem from "./ProductItem";
+import "./ProductList.css";
 
-import ProductItem from './ProductItem'
-import "./ProductList.css"
 
 const ProductList = (props) => {
   return (
-    <ul className="store-product-list">
-      {props.products.map(product => (
+    <ul className="store-product-list" data-testid="products-list">
+      {props.products.map((product) => (
         <ProductItem
           key={product.id}
           id={product.id}
@@ -19,7 +19,7 @@ const ProductList = (props) => {
         />
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;

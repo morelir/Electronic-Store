@@ -85,7 +85,7 @@ const Category = () => {
       <div className="category-images">
         {images.map((img) => {
           return (
-            <Link style={{textDecoration:"none"}} key={img.id} to={`products?category=${img.id}`}>
+            <Link style={{textDecoration:"none"}} key={img.id} to={`products?category=${img.id}`} data-testid={img.id}>
               <figure id={img.id} className="card__container">
                 <div className="image-container">
                   <img src={img.src} alt=''  />

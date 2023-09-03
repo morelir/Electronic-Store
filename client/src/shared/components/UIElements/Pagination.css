@@ -9,12 +9,15 @@
   gap: 12px;
 }
 
-.pagination button {
+.pagination button,
+.pagination a {
   background: none;
+  text-decoration: none;
+  font-weight: 500;
   /* border: none; */
   /* color: #343a40; */
   color: #fff;
-  border: 1.5px solid #fff;
+  border: 2px solid #fff;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -27,17 +30,20 @@
 
 .pagination button:hover,
 .pagination button:active,
+.pagination a:hover,
+.pagination a:active,
 .pagination .clicked-page {
   background-color: #fff;
   color: #212529;
 }
 
 .pagination .clicked-page {
-  font-weight: 700;
+  
 }
 
 .pagination .arrow-btn {
-  border: 1.5px solid #fff;
+  border: 2px solid #fff;
+  
 }
 
 .pagination .arrow-btn:disabled {
