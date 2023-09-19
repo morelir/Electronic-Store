@@ -12,7 +12,7 @@ Including Authentications, Rest API, File Uploading, and Data-Base maintenance, 
 ## ***Desktop Screenshots***
 
 #### Home Page:
-![Capture](https://user-images.githubusercontent.com/58606266/224555514-f6543117-f717-481b-90f4-597faf23f17f.PNG)
+![Capture](https://github.com/morelir/Electronic-Store/assets/58606266/47ebcac5-5bad-404e-9e69-77a846c15175)
 #### Laptop Category:
 ![Capture2](https://github.com/morelir/Electronic-Store/assets/58606266/bf98d45c-15c2-4284-a601-1fb9bc7864f4)
 #### Product Details:
