@@ -99,6 +99,8 @@
   width: 100%;
 }
 
+
+
 @media (max-width: 1300px) {
   .category-images .card__container {
     height: 16rem;

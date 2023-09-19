@@ -60,7 +60,6 @@ let category_images = [
   },
 ];
 
-
 const Slider = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -76,26 +75,50 @@ const Slider = () => {
     autoplaySpeed: 3500,
     cssEase: "linear",
     pauseOnHover: true,
-    swipe:false,
+    swipe: false,
     beforeChange: (current, next) => {
       setImageIndex(next);
     },
-    
+    responsive: [
+      //   {
+      //     breakpoint: 1700,
+      //     settings: {
+      //       slidesToShow: 2,
+      //       slidesToScroll: 2,
+      //       initialSlide: 2,
+      //     },
+      //   },
+
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <div>
-      <SimpleSlider {...settings}>
-        {category_images.map((img, idx) => (
-          <Link
-            key={idx}
-            to={idx === imageIndex ? `products?category=${img.id}` : "/"}
-            className={idx === imageIndex ? "slide activeSlide" : "slide"}
-          >
-            <img src={img.src} alt="" />
-          </Link>
-        ))}
-      </SimpleSlider>
-    </div>
+    <SimpleSlider {...settings}>
+      {category_images.map((img, idx) => (
+        <Link
+          key={idx}
+          to={idx === imageIndex ? `products?category=${img.id}` : "/"}
+          className={idx === imageIndex ? "slide activeSlide" : "slide"}
+        >
+          <img src={img.src} alt="" />
+        </Link>
+      ))}
+    </SimpleSlider>
   );
 };
 
