@@ -10,6 +10,7 @@ import Button from "../../shared/components/FormElements/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IoLayers } from "react-icons/io5";
 import "./Category.css";
+import Slider from "../../shared/components/UIElements/Slider";
 
 let category_images = [
   {
@@ -52,53 +53,60 @@ let category_images = [
 
 const Category = () => {
   const [images] = useState(category_images);
- 
+
   return (
-    <div className="home__container">
-      {/* <Carousel /> */}
-      <div className="home__mainTextContainer">
-        <h1>Electronic Store</h1>
-        <p>
-          A simple online store made with <strong>ReactJS</strong>,{" "}
-          <strong>Redux</strong>, <strong>NodeJS</strong> &{" "}
-          <strong>MongoDB</strong>. Written in <strong>JavaScript</strong>, with
-          implementation of REST API, Authentication and much more!
-        </p>
-        <p>
-          This project demonstrates the selling of consumer electronic products.
-          You can register for the system, manage your personal shopping cart
-          and enjoy a responsive and interactive design.
-        </p>
-        <div className="home-container__buttons">
-          <Button
-            className="source-button"
-            href="https://github.com/morelir/Electronic-Store"
-          >
-            <GitHubIcon /> Source Code
-          </Button>
-          <Button href="https://github.com/morelir">
-            <IoLayers size="25px" />
-            More Projects
-          </Button>
+    <React.Fragment>
+      <Slider />
+      <div className="home__container">
+        <div className="home__mainTextContainer">
+          <h1>Electronic Store</h1>
+          <p>
+            A simple online store made with <strong>ReactJS</strong>,{" "}
+            <strong>Redux</strong>, <strong>NodeJS</strong> &{" "}
+            <strong>MongoDB</strong>. Written in <strong>JavaScript</strong>,
+            with implementation of REST API, Authentication and much more!
+          </p>
+          <p>
+            This project demonstrates the selling of consumer electronic
+            products. You can register for the system, manage your personal
+            shopping cart and enjoy a responsive and interactive design.
+          </p>
+          <div className="home-container__buttons">
+            <Button
+              className="source-button"
+              href="https://github.com/morelir/Electronic-Store"
+            >
+              <GitHubIcon /> Source Code
+            </Button>
+            <Button href="https://github.com/morelir">
+              <IoLayers size="25px" />
+              More Projects
+            </Button>
+          </div>
+        </div>
+        <div className="category-images">
+          {images.map((img) => {
+            return (
+              <Link
+                style={{ textDecoration: "none" }}
+                key={img.id}
+                to={`products?category=${img.id}`}
+                data-testid={img.id}
+              >
+                <figure id={img.id} className="card__container">
+                  <div className="image-container">
+                    <img src={img.src} alt="" />
+                  </div>
+                  <figcaption>
+                    <span>{img.name}</span>
+                  </figcaption>
+                </figure>
+              </Link>
+            );
+          })}
         </div>
       </div>
-      <div className="category-images">
-        {images.map((img) => {
-          return (
-            <Link style={{textDecoration:"none"}} key={img.id} to={`products?category=${img.id}`} data-testid={img.id}>
-              <figure id={img.id} className="card__container">
-                <div className="image-container">
-                  <img src={img.src} alt=''  />
-                </div>
-                <figcaption>
-                  <span>{img.name}</span>
-                </figcaption>
-              </figure>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
+    </React.Fragment>
   );
 };
 
