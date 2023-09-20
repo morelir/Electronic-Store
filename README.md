@@ -1,15 +1,16 @@
 
 <h1 align="center" style="border-bottom: none">Electronic Store</h1>
-</br>
 
 <p align="center">🎉 The app is live, try it <a href="https://test-9b5eb.web.app/" target="_blank">here</a>. </p> 
+</br>
 
-## ***About***
 An Online Store that demonstrates the selling of consumer electronic products.
-The app uses React, Node.js, Express and MongoDB to create a Full Stack Web Application.
-Including Authentications, Rest API, File Uploading, and Data-Base maintenance, with responsive and interactive design.
+The app uses **React**, **Node.js**, **Express** and **MongoDB** to create a Full Stack Web Application.
+Including Authentications, **Rest API**, File Uploading, and Data-Base maintenance, with responsive and interactive design.
 
-## ***Desktop Screenshots***
+<br/>
+
+## Desktop Screenshots
 
 #### Home Page:
 ![Capture](https://github.com/morelir/Electronic-Store/assets/58606266/47ebcac5-5bad-404e-9e69-77a846c15175)
@@ -26,6 +27,8 @@ Including Authentications, Rest API, File Uploading, and Data-Base maintenance, 
 #### Footer:
 ![Capture7](https://user-images.githubusercontent.com/58606266/224555528-1d6debb5-ba30-4abc-ab00-003f3d809278.PNG)
 
+</br>
+
 ## Mobile Screenshots
 <div align="center">
   <img src="https://user-images.githubusercontent.com/58606266/224555687-307acf82-7303-4a6d-9401-ea26d0128917.PNG" width="250">
@@ -35,18 +38,43 @@ Including Authentications, Rest API, File Uploading, and Data-Base maintenance, 
   <img src="https://user-images.githubusercontent.com/58606266/224555693-a9138b88-5041-4db5-9581-7ad9c65f4d27.PNG" width="250">
 </div>
 
-## How to run this project locally :
-- Install Node.js and NPM (Node Package Manager) on your machine. You can download and install them from the official Node.js website: https://nodejs.org/en/.
-- After downloading the source code from git repository, Open a terminal(Windows Command Prompt or PowerShell).
-- Navigate to source code folder and run the following commands both for client and server folder (for that recommended to open 2 terminal tabs one for client and another for server):
+</br>
 
-    - `npm install` (Install the project dependencies)
-    - `npm start`   (Start the development server)
+ ## Setting Up Client React.js Local Environment
+    * Clone the 'client' repo to your local machine.
+    * Using the terminal, navigate to the cloned repo.
+    * Install all the neccessary dependencies, as stipulated in the package.json file.
+    * In your .env file, set environment variables for the following:
+        * REACT_APP_BACKEND_URL=http://localhost:5000/api
+        * REACT_APP_ASSET_URL=http://localhost:5000
+
+    * Start the client.
+    * Your client app should be running just fine.
+      
+ ## Setting Up Server Node.js Local Environment
+    * Clone the 'server' repo to your local machine.
+    * Using the terminal, navigate to the cloned repo.
+    * Install all the neccessary dependencies, as stipulated in the package.json file.
+    * If you don't already have one, set up accounts with MONGODB.
+    * In your nodemon.json file, set environment variables for the following:
+        {
+          "env": {
+            "DB_USER": "your mongodb username",
+            "DB_PASSWORD": "your mongodb password",
+            "DB_NAME": "your mongodb name",
+            "JWT_KEY": "your json web token secret"
+          }
+        }
+  
+    * Start the server.
+    * Your server app should be running just fine.
+ 
+</br>
     
 ## Technologies
-- React.js
-- Redux
-- Node.js
-- Express.js
-- MongoDB
+- **React.js**
+- **Redux**
+- **Node.js**
+- **Express.js**
+- **MongoDB**
 
