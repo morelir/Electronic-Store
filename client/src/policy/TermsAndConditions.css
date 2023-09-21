@@ -2,7 +2,9 @@
 
 .terms__wrap{
     width:80%;
-    margin:50px auto;
+    margin:10rem auto;
+    background:white;
+    padding: 1rem 2rem;
 }
 
 .terms__wrap h1,h2,h3{

@@ -2,7 +2,10 @@
 
 .privacy-policy__wrap{
     width:80%;
-    margin:50px auto;
+    margin:10rem auto;
+    /* color:white; */
+    background:white;
+    padding: 1rem 2rem;
 }
 
 .privacy-policy__wrap h1,h2,h3{
