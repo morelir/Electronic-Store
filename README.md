@@ -10,6 +10,20 @@ Including Authentications, **Rest API**, File Uploading, and Data-Base maintenan
 
 <br/>
 
+## Features
+
+-   **End-to-End Creation**: Comprehensive development of the e-commerce web application, from conceptualization to deployment.
+
+-    **MongoDB Integration**: Seamlessly integrated MongoDB as the backend database for efficient data storage and retrieval.
+
+-   **Dynamic Page Navigation**: Implemented dynamic page navigation to enhance the user's browsing experience and ease of use.
+
+-    **User Authentication with JWT**: Enhanced security with user authentication using JSON Web Tokens (JWT), ensuring secure access and data protection.
+
+-    **Efficient Application State Management**: Utilized Redux to efficiently manage the application's state, resulting in a smooth and responsive user experience.
+
+<br/>
+
 ## Desktop Screenshots
 
 #### Home Page:
