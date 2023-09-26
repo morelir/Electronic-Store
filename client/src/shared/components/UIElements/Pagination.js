@@ -25,7 +25,7 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
   const [pages, setPages] = useState([]);
 
   useEffect(() => {
-    setPages(createPages(currentPage, totalPages, pageClickHandler));
+    setPages(createPages(currentPage,  totalPages <= 2 ? totalPages : 2, pageClickHandler));
   }, [currentPage, totalPages]);
 
   const pageClickHandler =  (event,page) => {
@@ -35,6 +35,8 @@ const Pagination = ({ totalPages, currentPage, previous, next }) => {
       replace: true,
     });
   };
+
+
 
   const nextPageHandler =  (event) => {
     event.preventDefault();

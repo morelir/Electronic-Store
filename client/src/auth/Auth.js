@@ -20,7 +20,6 @@ import { uiActions } from "../shared/store/ui-slice";
 import "./Auth.css";
 
 const Auth = () => {
-  // const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -140,7 +139,6 @@ const Auth = () => {
         console.log(error);
       }
     }
-    // navigate(-1);
     dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
 

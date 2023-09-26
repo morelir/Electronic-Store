@@ -7,16 +7,7 @@ import { renderWithRouter } from "../../../shared/util/test";
 
 describe("Category Component", () => {
   test("renders 'Electronic Store'", () => {
-    //Arrange
-    // render(
-    //   <MemoryRouter>
-    //     <Routes>
-    //       <Route path="/" element={<Category />} />
-    //     </Routes>
-    //   </MemoryRouter>
-    // );
     renderWithRouter(<Category />);
-
     //Assert
     const outputElement = screen.getByText("Electronic Store");
     expect(outputElement).toBeInTheDocument();

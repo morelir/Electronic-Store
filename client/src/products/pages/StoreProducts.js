@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ProductList from "../components/ProductList";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./StoreProducts.css";
-import Pagination from "../../shared/components/UIElements/Pagination";
 import Filters from "../components/Filters";
+import { Pagination } from "@mui/material";
 
 const StoreProducts = () => {
-  const [searchParams] = useSearchParams();
-  const [loadedData, setLoadedData] = useState({});
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [loadedData, setLoadedData] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
@@ -35,8 +34,13 @@ const StoreProducts = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [isLoading]);
 
-  const category = searchParams.get("category") ?? null;
-  const dataIsEmpty = Object.keys(loadedData).length === 0;
+  
+  const handlePageChange = (event, newPage) => {
+    searchParams.set("page", newPage.toString());
+    setSearchParams(searchParams, {
+      replace: true,
+    });
+  };
 
   return (
     <section className="section-store" data-testid="products-store">
@@ -44,20 +48,25 @@ const StoreProducts = () => {
       <div className="store-container">
         <Filters />
         {isLoading && <LoadingSpinner asOverlay />}
-        {!isLoading && !dataIsEmpty && loadedData?.totalResults !== 0 && (
-          <ProductList products={loadedData.products} />
+        {!isLoading && loadedData && loadedData.totalPages > 0 && (
+          <>
+            <ProductList products={loadedData.products} />
+            <Pagination
+              count={loadedData.totalPages}
+              page={loadedData.page}
+              onChange={handlePageChange}
+              variant="outlined"
+              size="large"
+              showFirstButton // Hide the "First" button
+              showLastButton // Hide the "Last" button
+              shape="rounded" // Optional: Use rounded buttons
+            />
+          </>
         )}
-        {!isLoading && !dataIsEmpty && (
-          <Pagination
-            currentPage={loadedData.page}
-            next={loadedData?.next}
-            previous={loadedData?.previous}
-            totalPages={loadedData.totalPages}
-          />
-        )}
-        {!isLoading && !dataIsEmpty && loadedData?.totalResults === 0 && (
+        {!isLoading && loadedData && loadedData.totalPages === 0 && (
           <div className="error">No results found</div>
         )}
+       
       </div>
     </section>
   );

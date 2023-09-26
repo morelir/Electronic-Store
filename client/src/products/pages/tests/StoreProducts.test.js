@@ -25,22 +25,3 @@ describe("StoreProducts Component", () => {
   
 
 });
-
-// {
-//   totalPages: 2,
-//   totalResults: 6,
-//   page: 1,
-//   next: { page: 2, limit: 3 },
-//   products: [
-//     {
-//       id: "p1",
-//       title: "p1",
-//       image:
-//         "uploads/category/controllers/dcd5f56c-7a02-43ab-ab07-eaf922709346.webp",
-//       ratingsAverage: 4,
-//       ratingsQuantity: 0,
-//       listPrice: 700,
-//       discount: 0,
-//     },
-//   ],
-// },

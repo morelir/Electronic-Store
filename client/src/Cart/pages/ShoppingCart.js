@@ -7,7 +7,6 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner.js
 import CartProducts from "../components/CartProducts";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal.js";
 
-// let initial = true;
 const ShoppingCart = (props) => {
   const [initial, setInitial] = useState(true);
   const [loadedProducts, setLoadedProducts] = useState();

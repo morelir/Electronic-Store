@@ -80,15 +80,6 @@ const Slider = () => {
       setImageIndex(next);
     },
     responsive: [
-      //   {
-      //     breakpoint: 1700,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //       initialSlide: 2,
-      //     },
-      //   },
-
       {
         breakpoint: 1150,
         settings: {
