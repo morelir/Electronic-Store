@@ -54,32 +54,17 @@ Including Authentications, **Rest API**, File Uploading, and Data-Base maintenan
 
 </br>
 
- ## Setting Up Client React.js Local Environment
+ ## Setting Up Client React.js
     * Clone the 'client' repo to your local machine.
     * Using the terminal, navigate to the cloned repo.
     * Install all the neccessary dependencies, as stipulated in the package.json file.
-    * In your .env file, set environment variables for the following:
-        * REACT_APP_BACKEND_URL=http://localhost:5000/api
-        * REACT_APP_ASSET_URL=http://localhost:5000
-
     * Start the client.
     * Your client app should be running just fine.
       
- ## Setting Up Server Node.js Local Environment
+ ## Setting Up Server Node.js
     * Clone the 'server' repo to your local machine.
     * Using the terminal, navigate to the cloned repo.
     * Install all the neccessary dependencies, as stipulated in the package.json file.
-    * If you don't already have one, set up accounts with MONGODB.
-    * In your nodemon.json file, set environment variables for the following:
-        {
-          "env": {
-            "DB_USER": "your mongodb username",
-            "DB_PASSWORD": "your mongodb password",
-            "DB_NAME": "your mongodb name",
-            "JWT_KEY": "your json web token secret"
-          }
-        }
-  
     * Start the server.
     * Your server app should be running just fine.
  
