@@ -1,0 +1,8 @@
+{
+  "env": {
+    "DB_USER": "STORE",
+    "DB_PASSWORD": "store12345",
+    "DB_NAME": "Store",
+    "JWT_KEY": "STOREEONLINE"
+  }
+}
