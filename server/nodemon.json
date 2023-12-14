@@ -3,6 +3,7 @@
     "DB_USER": "STORE",
     "DB_PASSWORD": "store12345",
     "DB_NAME": "Store",
-    "JWT_KEY": "STOREEONLINE"
+    "JWT_KEY": "STOREEONLINE",
+    "STRIPE_SECRET_KEY":"pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A"
   }
 }

@@ -22,6 +22,7 @@ exports.routesInit = (app) => {
   app.use("/api/products", productR);
   app.use("/api/cart", cartR);
   app.use("/api/users", userR);
+  app.use("/api/bookings")
 
   app.use((req, res, next) => {
     const error = new HttpError("Could not find this route.", 404);
