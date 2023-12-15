@@ -1,6 +1,7 @@
 const productR = require("./product-routes");
 const cartR = require("./cart-routes");
 const userR = require("./users-routes");
+const bookingR = require("./booking-routes");
 const fs = require("fs");
 const HttpError = require("../models/http-error");
 
@@ -22,7 +23,7 @@ exports.routesInit = (app) => {
   app.use("/api/products", productR);
   app.use("/api/cart", cartR);
   app.use("/api/users", userR);
-  app.use("/api/bookings")
+  app.use("/api/bookings",bookingR)
 
   app.use((req, res, next) => {
     const error = new HttpError("Could not find this route.", 404);

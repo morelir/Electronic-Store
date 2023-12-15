@@ -8,6 +8,8 @@ import "./ProductActions.css";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import Button from "../../shared/components/FormElements/Button";
 import { CircularProgress } from "@mui/material";
+import { loadStripe } from "@stripe/stripe-js";
+import { useHttpClient } from "../../shared/hooks/http-hook";
 
 let finalPrice;
 
@@ -18,6 +20,7 @@ const ProductActions = (props) => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
     if (props.discount) {
@@ -27,7 +30,7 @@ const ProductActions = (props) => {
     }
   }, []);
 
-  const submitHandler = (event) => {
+  const cartHandler = (event) => {
     event.preventDefault();
 
     const enteredAmount = amountInputRef.current.value;
@@ -40,7 +43,10 @@ const ProductActions = (props) => {
     ) {
       setAmountIsValid(false);
       return;
+    } else {
+      setAmountIsValid(true);
     }
+
     if (auth.isLoggedIn) {
       dispatch(
         sendCartData(
@@ -62,8 +68,26 @@ const ProductActions = (props) => {
     }
   };
 
+
+  const paymentHandler = async (event) => {
+    event.preventDefault();
+    const stripe = await loadStripe("pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A");
+   
+    const responseData = await sendRequest(
+      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session/${props.id}`
+    );
+    
+    const result = stripe.redirectToCheckout({
+      sessionId: responseData.id,
+    });
+
+    if (result.error) {
+      console.log(result.error);
+    }
+  };
+
   return (
-    <form className="product-detail__actions" onSubmit={submitHandler}>
+    <form className="product-detail__actions">
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -76,7 +100,19 @@ const ProductActions = (props) => {
           defaultValue: "1",
         }}
       />
-      <Button disabled={cartIsLoading}>Add to Cart</Button>
+      <div className="btn-container">
+        <Button
+          className="cart-btn"
+          disabled={cartIsLoading}
+          onClick={cartHandler}
+        >
+          Add to Cart
+        </Button>
+        <Button className="buy-now-btn" onClick={paymentHandler}>
+          Buy Now
+        </Button>
+      </div>
+
       {/* {cartIsLoading && <LoadingSpinner asOverlay/>} */}
 
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}

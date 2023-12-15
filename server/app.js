@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors")
 
 // const HttpError = require("./models/http-error");
 const { routesInit } = require("./routes/config-route");
@@ -9,6 +10,7 @@ const { routesInit } = require("./routes/config-route");
 const path = require("path");
 const app = express();
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join("uploads")));
 
