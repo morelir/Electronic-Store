@@ -23,7 +23,6 @@ exports.getCheckoutSession = async (req, res, next) => {
     },
   ];
 
-  console.log(`${req.get('origin')}`)
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],

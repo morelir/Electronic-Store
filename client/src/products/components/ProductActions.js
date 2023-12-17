@@ -16,11 +16,11 @@ let finalPrice;
 const ProductActions = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
-  const cartIsLoading = useSelector((state) => state.cart.isLoading);
+  const cartLoading = useSelector((state) => state.cart.isLoading);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { sendRequest, isLoading: paymentLoading } = useHttpClient();
 
   useEffect(() => {
     if (props.discount) {
@@ -68,15 +68,16 @@ const ProductActions = (props) => {
     }
   };
 
-
   const paymentHandler = async (event) => {
     event.preventDefault();
-    const stripe = await loadStripe("pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A");
-   
+    const stripe = await loadStripe(
+      "pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A"
+    );
+
     const responseData = await sendRequest(
       `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session/${props.id}`
     );
-    
+
     const result = stripe.redirectToCheckout({
       sessionId: responseData.id,
     });
@@ -103,13 +104,17 @@ const ProductActions = (props) => {
       <div className="btn-container">
         <Button
           className="cart-btn"
-          disabled={cartIsLoading}
+          disabled={cartLoading}
           onClick={cartHandler}
         >
-          Add to Cart
+          {!cartLoading ? "Add to Cart" : "Processing..."}
         </Button>
-        <Button className="buy-now-btn" onClick={paymentHandler}>
-          Buy Now
+        <Button
+          className="buy-now-btn"
+          disabled={paymentLoading}
+          onClick={paymentHandler}
+        >
+          {!paymentLoading ? "Buy Now" : "Processing..."}
         </Button>
       </div>
 

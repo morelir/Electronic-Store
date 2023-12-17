@@ -43,14 +43,6 @@
   background:  hsla(210, 78%, 45%, 0.812);
 }
 
-.product-detail__actions .btn-container button:disabled,
-.product-detail__actions .btn-container button:hover:disabled,
-.product-detail__actions .btn-container button:active:disabled {
-  background: #ccc;
-  color: white;
-  border-color: #ccc;
-  cursor: not-allowed;
-}
 
 @media (max-width: 1150px) {
   /* .product-detail .image-container{
