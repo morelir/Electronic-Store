@@ -107,7 +107,6 @@ const Auth = () => {
             image: responseData.image,
           })
         );
-
       } catch (error) {
         console.log(error);
       }
@@ -246,26 +245,16 @@ const Auth = () => {
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode ? "LOGIN" : "SIGNUP"}
           </Button>
-         
+
           {isLoginMode ? (
             <p className="auth-switcher-text">
               Dont have an account?{" "}
-              <span
-                onClick={switchModeHandler}
-                style={{ color: "#f08c00", textDecoration: "underline" }}
-              >
-                Sign up
-              </span>
+              <span onClick={switchModeHandler}>Sign up</span>
             </p>
           ) : (
             <p className="auth-switcher-text">
               Already have an account?{" "}
-              <span
-                onClick={switchModeHandler}
-                style={{ color: "#f08c00", textDecoration: "underline" }}
-              >
-                Login
-              </span>
+              <span onClick={switchModeHandler}>Login</span>
             </p>
           )}
         </form>
