@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import Input from "../shared/components/FormElements/Input";
 import Button from "../shared/components/FormElements/Button";
@@ -20,7 +19,6 @@ import { uiActions } from "../shared/store/ui-slice";
 import "./Auth.css";
 
 const Auth = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
