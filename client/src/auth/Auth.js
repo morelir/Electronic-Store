@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const Auth = () => {
     false
   );
 
-  const confPasswordInput=useRef();
+  const confPasswordInput = useRef();
 
   useEffect(() => {
     dispatch(uiActions.setChangeMainHeader({ changeMainHeader: true }));
@@ -107,8 +107,7 @@ const Auth = () => {
             image: responseData.image,
           })
         );
-        navigate(`/`,{replace:true})
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -146,23 +145,15 @@ const Auth = () => {
     if (isLoginMode) {
       return;
     }
-    const {confPassword,password}=formState.inputs
-    
-    if (
-      password.value === confPassword.value &&
-      !confPassword.isValid
-    ) {
+    const { confPassword, password } = formState.inputs;
+
+    if (password.value === confPassword.value && !confPassword.isValid) {
       confPasswordInput.current.checkInput();
-    }
-    else if (
-      password.value !== confPassword.value &&
-      confPassword.isValid
-    ) {
+    } else if (password.value !== confPassword.value && confPassword.isValid) {
       confPasswordInput.current.checkInput();
     }
   }, [formState.inputs.password.value]);
 
-  
   if (isLoading) {
     return (
       <div className="center">
@@ -251,14 +242,32 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
-          <div className="buttons-container">
-            <Button type="submit" disabled={!formState.isValid}>
-              {isLoginMode ? "LOGIN" : "SIGNUP"}
-            </Button>
-            <Button inverse type="button" onClick={switchModeHandler}>
-              SWITCH TO {isLoginMode ? "SIGNUP" : "LOGIN"}
-            </Button>
-          </div>
+
+          <Button type="submit" disabled={!formState.isValid}>
+            {isLoginMode ? "LOGIN" : "SIGNUP"}
+          </Button>
+         
+          {isLoginMode ? (
+            <p className="auth-switcher-text">
+              Dont have an account?{" "}
+              <span
+                onClick={switchModeHandler}
+                style={{ color: "#f08c00", textDecoration: "underline" }}
+              >
+                Sign up
+              </span>
+            </p>
+          ) : (
+            <p className="auth-switcher-text">
+              Already have an account?{" "}
+              <span
+                onClick={switchModeHandler}
+                style={{ color: "#f08c00", textDecoration: "underline" }}
+              >
+                Login
+              </span>
+            </p>
+          )}
         </form>
       </div>
     </React.Fragment>

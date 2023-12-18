@@ -47,35 +47,46 @@ const ProductActions = (props) => {
       setAmountIsValid(true);
     }
 
-    if (auth.isLoggedIn) {
-      dispatch(
-        sendCartData(
-          `${process.env.REACT_APP_BACKEND_URL}/cart/product/${props.id}`,
-          "PUT",
-          JSON.stringify({
-            productId: props.id,
-            price: finalPrice,
-            amount: enteredAmountNumber,
-          }),
-          {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + auth.token,
-          }
-        )
-      );
-    } else {
-      navigate(`/auth`, { replace: true });
-    }
+    dispatch(
+      sendCartData(
+        `${process.env.REACT_APP_BACKEND_URL}/cart/product/${props.id}`,
+        "PUT",
+        JSON.stringify({
+          productId: props.id,
+          price: finalPrice,
+          amount: enteredAmountNumber,
+        }),
+        {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
+        }
+      )
+    );
   };
 
   const paymentHandler = async (event) => {
     event.preventDefault();
+    const enteredAmountNumber = +amountInputRef.current.value;
+
     const stripe = await loadStripe(
       "pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A"
     );
 
     const responseData = await sendRequest(
-      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session/${props.id}`
+      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session/${props.id}`,
+      "POST",
+      JSON.stringify({
+        products: [
+          {
+            productId: props.id,
+            amount: enteredAmountNumber,
+          },
+        ],
+      }),
+      {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + auth.token,
+      }
     );
 
     const result = stripe.redirectToCheckout({
@@ -102,23 +113,27 @@ const ProductActions = (props) => {
         }}
       />
       <div className="btn-container">
-        <Button
-          className="cart-btn"
-          disabled={cartLoading}
-          onClick={cartHandler}
-        >
-          {!cartLoading ? "Add to Cart" : "Processing..."}
-        </Button>
-        <Button
-          className="buy-now-btn"
-          disabled={paymentLoading}
-          onClick={paymentHandler}
-        >
-          {!paymentLoading ? "Buy Now" : "Processing..."}
-        </Button>
+        {auth.isLoggedIn ? (
+          <>
+            <Button
+              className="cart-btn"
+              disabled={cartLoading}
+              onClick={cartHandler}
+            >
+              {!cartLoading ? "Add to Cart" : "Processing..."}
+            </Button>
+            <Button
+              className="buy-now-btn"
+              disabled={paymentLoading}
+              onClick={paymentHandler}
+            >
+              {!paymentLoading ? "Buy Now" : "Processing..."}
+            </Button>
+          </>
+        ) : (
+          <Button to="/auth">Login to Buy</Button>
+        )}
       </div>
-
-      {/* {cartIsLoading && <LoadingSpinner asOverlay/>} */}
 
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>

@@ -39,26 +39,26 @@
 }
 
 @media (max-width: 1450px) {
-  .products-filter {
-    display: none;
+  .section-store{
+    max-width: 50rem;
   }
 
   .store-product-list {
-    grid-column: 1/3;
+    grid-column: 1/-1;;
   }
 
   .MuiPagination-root {
-    grid-column: 1/3 ;
+    grid-column: 1/-1 ;
   }
 
   .store-container {
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 800px) {
-  .section-store {
-    width: 75%;
+  .section-store{
+    max-width: 40rem;
   }
 
   .product-item__image {

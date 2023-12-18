@@ -1,8 +1,9 @@
 .product-detail {
   margin: 10rem auto;
-  width: 90%;
-  max-width: 120rem;
+  /* width: 90%; */
+  max-width: 90rem;
   display: flex;
+  align-items: flex-start;
   gap:2rem;
   background: rgba(255, 255, 255, 0.85);
   padding:4rem 3rem;

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   gap: 100px;
-  padding: 5rem 2rem;
+  padding: 5rem 0rem;
 }
 
 .home__mainTextContainer {

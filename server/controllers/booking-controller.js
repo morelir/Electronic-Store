@@ -34,7 +34,7 @@ exports.getCheckoutSession = async (req, res, next) => {
     line_items: transformedItems,
     mode: "payment",
   });
-  console.log(session.id)
+  
   // 3) Create session as response
   res.status(200).json({
     status: "success",

@@ -1,8 +1,8 @@
 .authentication {
-  max-width: 27rem;
+  max-width: 28rem;
   padding-bottom: 8px;
   border-radius: 15px;
-  width: 800px;
+  /* width: 800px; */
   margin: 30px auto;
   box-shadow: 0 4px 5px -2px gray;
   margin-top: 10rem;
@@ -27,9 +27,11 @@
 .authentication form {
   margin-bottom: 1rem;
   margin: 0 auto;
-  max-width: 320px;
-  
-  
+  padding:2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
 }
 
 .authentication form input {
@@ -48,20 +50,10 @@
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-.buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+.authentication .auth-switcher-text span {
+  color: #f08c00;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .authentication {
-    max-width: 20rem;
-  }
-
-  .authentication form {
-    max-width: 15rem;
-  }
-}

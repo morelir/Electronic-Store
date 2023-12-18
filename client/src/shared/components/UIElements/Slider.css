@@ -20,7 +20,7 @@
 
 .slide {
   text-decoration: none;
-  transform: scale(0.8);
+  transform: scale(0.7);
   transition: transform 1000ms;
   opacity: 0.5;
   z-index: -1;
