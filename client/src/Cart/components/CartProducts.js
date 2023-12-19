@@ -1,11 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
 import "./CartProducts.css";
 
 const CartProducts = (props) => {
-  const cart = useSelector((state) => state.cart);
-
   return (
     <ul className="product-list">
       {props.products.map((prod) => {

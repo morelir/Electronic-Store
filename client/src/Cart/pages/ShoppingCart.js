@@ -2,19 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHttpClient } from "../../shared/hooks/http-hook.js";
 import { cartActions } from "../../shared/store/cart-slice";
-
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner.js";
 import CartProducts from "../components/CartProducts";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal.js";
-import "./ShoppingCart.css";
 import Button from "../../shared/components/FormElements/Button.js";
 import { loadStripe } from "@stripe/stripe-js";
+import "./ShoppingCart.css";
 
 const ShoppingCart = (props) => {
   const [initial, setInitial] = useState(true);
   const [loadedProducts, setLoadedProducts] = useState();
-  const { isLoading:cartLoading, error, sendRequest:sendCartRequest, clearError } = useHttpClient();
-  const { isLoading:checkoutLoading,sendRequest:sendCheckoutRequest} = useHttpClient();
+  const {
+    isLoading: cartLoading,
+    error,
+    sendRequest: sendCartRequest,
+    clearError,
+  } = useHttpClient();
+  const { isLoading: checkoutLoading, sendRequest: sendCheckoutRequest } =
+    useHttpClient();
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -153,7 +158,9 @@ const ShoppingCart = (props) => {
               Subtotal ({cart.totalQuantity} items):{" "}
               <span className="price">${cart.totalAmount.toFixed(2)}</span>
             </p>
-            <Button onClick={payNowHandler}>Pay Now</Button>
+            <Button disabled={checkoutLoading} onClick={payNowHandler}>
+              {!checkoutLoading ? "Pay Now" : "Processing..."}
+            </Button>
           </h3>
         </div>
       )}
