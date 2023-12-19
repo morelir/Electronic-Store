@@ -6,18 +6,22 @@ import { cartActions } from "../../shared/store/cart-slice";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner.js";
 import CartProducts from "../components/CartProducts";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal.js";
+import "./ShoppingCart.css";
+import Button from "../../shared/components/FormElements/Button.js";
+import { loadStripe } from "@stripe/stripe-js";
 
 const ShoppingCart = (props) => {
   const [initial, setInitial] = useState(true);
   const [loadedProducts, setLoadedProducts] = useState();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading:cartLoading, error, sendRequest:sendCartRequest, clearError } = useHttpClient();
+  const { isLoading:checkoutLoading,sendRequest:sendCheckoutRequest} = useHttpClient();
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const fetchCartProducts = React.useCallback(async () => {
     try {
-      const responseData = await sendRequest(
+      const responseData = await sendCartRequest(
         `${process.env.REACT_APP_BACKEND_URL}/cart/${cart.id}/products`,
         "GET",
         null,
@@ -25,7 +29,7 @@ const ShoppingCart = (props) => {
       );
       setLoadedProducts(responseData.products);
     } catch (err) {}
-  }, [sendRequest, auth.token, cart.id]);
+  }, [sendCartRequest, auth.token, cart.id]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +42,7 @@ const ShoppingCart = (props) => {
   const addProductToCartHandler = React.useCallback(
     async (id, finalPrice) => {
       try {
-        const responseData = await sendRequest(
+        const responseData = await sendCartRequest(
           `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
           "PUT",
           JSON.stringify({
@@ -62,14 +66,14 @@ const ShoppingCart = (props) => {
         await fetchCartProducts();
       } catch (err) {}
     },
-    [auth.token, sendRequest, fetchCartProducts, dispatch]
+    [auth.token, sendCartRequest, fetchCartProducts, dispatch]
   );
 
   const removeProductFromCartHandler = React.useCallback(
     async (id) => {
       let responseData;
       try {
-        responseData = await sendRequest(
+        responseData = await sendCartRequest(
           `${process.env.REACT_APP_BACKEND_URL}/cart/product/${id}`,
           "DELETE",
           null,
@@ -90,10 +94,43 @@ const ShoppingCart = (props) => {
       );
       await fetchCartProducts();
     },
-    [auth.token, sendRequest, fetchCartProducts, dispatch]
+    [auth.token, sendCartRequest, fetchCartProducts, dispatch]
   );
 
-  if (initial && isLoading) {
+  const payNowHandler = async (event) => {
+    event.preventDefault();
+
+    const stripe = await loadStripe(
+      "pk_test_51ONDiPEqc6N02Fa4KOnciIZNIm5Hk9JYxdjHIF5sv7o3LPO7eS6IsWTgSOiimgSkiaJ1NvmsA67jhYljBubsFlsR00BpCBeF9A"
+    );
+
+    const responseData = await sendCheckoutRequest(
+      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session`,
+      "POST",
+      JSON.stringify({
+        products: loadedProducts.map((item) => {
+          return {
+            productId: item.product._id,
+            amount: item.amount,
+          };
+        }),
+      }),
+      {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + auth.token,
+      }
+    );
+
+    const result = stripe.redirectToCheckout({
+      sessionId: responseData.id,
+    });
+
+    if (result.error) {
+      console.log(result.error);
+    }
+  };
+
+  if (initial && cartLoading) {
     return <LoadingSpinner asOverlay />;
   }
 
@@ -101,12 +138,24 @@ const ShoppingCart = (props) => {
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
       {loadedProducts && (
-        <CartProducts
-          onAddProductToCart={addProductToCartHandler}
-          onRemoveProductFromCart={removeProductFromCartHandler}
-          products={loadedProducts}
-          isLoading={isLoading}
-        />
+        <div className="cart-products">
+          <h1 className="header">
+            Shopping <span style={{ color: "rgb(158, 172, 255)" }}>Cart</span>
+          </h1>
+          <CartProducts
+            onAddProductToCart={addProductToCartHandler}
+            onRemoveProductFromCart={removeProductFromCartHandler}
+            products={loadedProducts}
+            isLoading={cartLoading}
+          />
+          <h3 className="cart-summary">
+            <p>
+              Subtotal ({cart.totalQuantity} items):{" "}
+              <span className="price">${cart.totalAmount.toFixed(2)}</span>
+            </p>
+            <Button onClick={payNowHandler}>Pay Now</Button>
+          </h3>
+        </div>
       )}
     </React.Fragment>
   );

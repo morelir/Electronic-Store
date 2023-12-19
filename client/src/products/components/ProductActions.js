@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../shared/store/cart-slice";
 import { sendCartData } from "../../shared/store/cart-actions";
@@ -19,8 +18,7 @@ const ProductActions = (props) => {
   const cartLoading = useSelector((state) => state.cart.isLoading);
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { sendRequest, isLoading: paymentLoading } = useHttpClient();
+  const { sendRequest, isLoading: buyNowLoading } = useHttpClient();
 
   useEffect(() => {
     if (props.discount) {
@@ -64,7 +62,7 @@ const ProductActions = (props) => {
     );
   };
 
-  const paymentHandler = async (event) => {
+  const buyNowHandler = async (event) => {
     event.preventDefault();
     const enteredAmountNumber = +amountInputRef.current.value;
 
@@ -73,7 +71,7 @@ const ProductActions = (props) => {
     );
 
     const responseData = await sendRequest(
-      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session/${props.id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session`,
       "POST",
       JSON.stringify({
         products: [
@@ -82,6 +80,7 @@ const ProductActions = (props) => {
             amount: enteredAmountNumber,
           },
         ],
+        fallbackUrl:window.location.href
       }),
       {
         "Content-Type": "application/json",
@@ -124,10 +123,10 @@ const ProductActions = (props) => {
             </Button>
             <Button
               className="buy-now-btn"
-              disabled={paymentLoading}
-              onClick={paymentHandler}
+              disabled={buyNowLoading}
+              onClick={buyNowHandler}
             >
-              {!paymentLoading ? "Buy Now" : "Processing..."}
+              {!buyNowLoading ? "Buy Now" : "Processing..."}
             </Button>
           </>
         ) : (

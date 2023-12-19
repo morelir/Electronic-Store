@@ -30,8 +30,9 @@ const CartProduct = (props) => {
         <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
       </div>
       <div className="detail">
-        <h3 className="product-title">{props.title}</h3>
-        <div className="product-summary">
+        <h3>{props.title}</h3>
+        <span className="price">Price: {finalPrice} x {props.amount} = ${finalPrice*props.amount}</span>
+        {/* <div className="product-summary"> */}
           <div className="amount-controller">
             <Button
               disabled={props.isLoading}
@@ -51,8 +52,8 @@ const CartProduct = (props) => {
               -
             </Button>
           </div>
-          <span className="price">${finalPrice}</span>
-        </div>
+          {/* <span className="price">${finalPrice}</span> */}
+        {/* </div> */}
       </div>
     </li>
   );
