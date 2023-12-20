@@ -1,21 +1,27 @@
 const mongoose = require("mongoose");
 
+const Product = {
+  amount: {
+    type: Number,
+    required: [true, "Booking must have an amount for each associated product"],
+  },
+  product: {
+    type: mongoose.Types.ObjectId,
+    required: [true, "Booking must have an product ID for associated product"],
+    ref: "products",
+  },
+};
+
 const bookingSchema = new mongoose.Schema({
-  products: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: "products",
-      required: [true, "Booking must belong to one or more Products!"],
-    },
-  ],
+  products: [Product],
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "users",
     required: [true, "Booking must belong to a User!"],
   },
-  price: {
+  totalAmount: {
     type: Number,
-    require: [true, "Booking must have a price."],
+    require: [true, "Booking must have a total amount."],
   },
   createdAt: {
     type: Date,

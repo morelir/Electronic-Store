@@ -1,4 +1,5 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const Booking = require("../models/booking");
 const Product = require("../models/product");
 
 exports.getCheckoutSession = async (req, res, next) => {
@@ -39,7 +40,7 @@ exports.getCheckoutSession = async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],
-    metadata: { uid: req.userData.userId },
+    metadata: { uid: req.userData.userId, products: products },
     success_url: `${req.get("origin")}`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
     // customer_email: "webappsce@gmail.com",
@@ -57,32 +58,41 @@ exports.getCheckoutSession = async (req, res, next) => {
 };
 
 const createBookingCheckout = async (event) => {
-  console.log("1");
   const session = event.data.object;
-  console.log(session);
   const user = session.metadata.uid;
-  console.log("2)" + user);
-
-  const lineItems = await stripe.checkout.sessions.listLineItems(
-    event.data.object.id,
-    {
-      limit: 100,
-      expand: ["data.price.product"],
-    }
+  const totalAmount = session.line_items.reduce(
+    (acc, product) => product.price / 100 + acc,
+    0
   );
-  console.log("3)" + lineItems);
-  const products = lineItems.data.map((item, index) => {
-    return {
-      name: item.description,
-      price: item.amount_total / 100,
-      currency: item.currency,
-      quantity: item.quantity,
-    };
-  });
+  const products = session.metadata.products.map((item) => ({
+    product: item.productId,
+    amount: item.amount,
+  }));
+
+  // const lineItems = await stripe.checkout.sessions.listLineItems(
+  //   event.data.object.id,
+  //   {
+  //     limit: 100,
+  //     expand: ["data.price.product"],
+  //   }
+  // );
+  // console.log("3)" + lineItems);
+  // const products = lineItems.data.map((item, index) => {
+  //   return {
+  //     name: item.description,
+  //     price: item.amount_total / 100,
+  //     currency: item.currency,
+  //     quantity: item.quantity,
+  //   };
+  // });
 
   console.log(products);
   console.log("+-------------------------------+");
   console.log(user);
+  console.log("+-------------------------------+");
+  console.log(totalAmount);
+
+  await Booking.create({ products, user, totalAmount });
 };
 
 exports.webhookCheckout = (req, res, next) => {
@@ -90,7 +100,7 @@ exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers["stripe-signature"];
 
   let event;
-  console.log("webhook start1");
+
   try {
     event = stripe.webhooks.constructEvent(
       req.body,
@@ -101,7 +111,6 @@ exports.webhookCheckout = (req, res, next) => {
     res.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
-  console.log("webhook start2");
 
   if (event.type === "checkout.session.completed") createBookingCheckout(event);
 

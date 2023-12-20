@@ -25,35 +25,30 @@ const CartProduct = (props) => {
 
   return (
     <li className="cart-product__item">
-      {/* {isLoading && <LoadingSpinner asOverlay />} */}
       <div className="image-container">
         <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}></img>
       </div>
       <div className="detail">
         <h3>{props.title}</h3>
-        <span className="price">Price: {finalPrice} x {props.amount} = ${finalPrice*props.amount}</span>
-        {/* <div className="product-summary"> */}
-          <div className="amount-controller">
-            <Button
-              disabled={props.isLoading}
-              onClick={addProductToCart}
-              inverse
-            >
-              +
-            </Button>
-            <div className="amount">
-              <span>{props.amount}</span>
-            </div>
-            <Button
-              disabled={props.isLoading}
-              onClick={removeProductFromCart}
-              inverse
-            >
-              -
-            </Button>
+        <span className="price">
+          Price: {finalPrice} x {props.amount} = ${finalPrice * props.amount}
+        </span>
+
+        <div className="amount-controller">
+          <Button disabled={props.isLoading} onClick={addProductToCart} inverse>
+            +
+          </Button>
+          <div className="amount">
+            <span>{props.amount}</span>
           </div>
-          {/* <span className="price">${finalPrice}</span> */}
-        {/* </div> */}
+          <Button
+            disabled={props.isLoading}
+            onClick={removeProductFromCart}
+            inverse
+          >
+            -
+          </Button>
+        </div>
       </div>
     </li>
   );
