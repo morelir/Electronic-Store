@@ -24,6 +24,7 @@ exports.getCheckoutSession = async (req, res, next) => {
             (1 - product.discount / 100) * product.listPrice * 100
           ), // multiply by 100 for converting to cent
           product_data: {
+            metadata:{productId},
             name: `${product.title} product`,
             images: [
               `https://electronic-store-online.onrender.com/${product.images[0].replace(
@@ -40,7 +41,7 @@ exports.getCheckoutSession = async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],
-    metadata: { uid: req.userData.userId, products: products },
+    metadata: { uid: req.userData.userId },
     success_url: `${req.get("origin")}`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
     // customer_email: "webappsce@gmail.com",
@@ -60,13 +61,14 @@ exports.getCheckoutSession = async (req, res, next) => {
 const createBookingCheckout = async (event) => {
   const session = event.data.object;
   const user = session.metadata.uid;
+  console.log(session.line_items)
   const totalAmount = session.line_items.reduce(
     (acc, product) => product.price / 100 + acc,
     0
   );
-  const products = session.metadata.products.map((item) => ({
-    product: item.productId,
-    amount: item.amount,
+  const products = session.line_items.map((item) => ({
+    product: item.metadata.productId,
+    amount: item.quantity,
   }));
 
   // const lineItems = await stripe.checkout.sessions.listLineItems(
