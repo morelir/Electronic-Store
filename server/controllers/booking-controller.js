@@ -17,6 +17,7 @@ exports.getCheckoutSession = async (req, res, next) => {
       }
 
       return {
+        product:productId,
         quantity: amount,
         price_data: {
           currency: "usd",
@@ -24,7 +25,6 @@ exports.getCheckoutSession = async (req, res, next) => {
             (1 - product.discount / 100) * product.listPrice * 100
           ), // multiply by 100 for converting to cent
           product_data: {
-            metadata:{productId},
             name: `${product.title} product`,
             images: [
               `https://electronic-store-online.onrender.com/${product.images[0].replace(
@@ -61,32 +61,32 @@ exports.getCheckoutSession = async (req, res, next) => {
 const createBookingCheckout = async (event) => {
   const session = event.data.object;
   const user = session.metadata.uid;
-  console.log(session.line_items[0].amount)
-  const totalAmount = session.line_items.reduce(
-    (acc, product) => product.price / 100 + acc,
-    0
-  );
-  const products = session.line_items.map((item) => ({
-    product: item.metadata.productId,
-    amount: item.quantity,
-  }));
 
-  // const lineItems = await stripe.checkout.sessions.listLineItems(
-  //   event.data.object.id,
-  //   {
-  //     limit: 100,
-  //     expand: ["data.price.product"],
-  //   }
+  // const totalAmount = session.line_items.reduce(
+  //   (acc, product) => product.price / 100 + acc,
+  //   0
   // );
-  // console.log("3)" + lineItems);
-  // const products = lineItems.data.map((item, index) => {
-  //   return {
-  //     name: item.description,
-  //     price: item.amount_total / 100,
-  //     currency: item.currency,
-  //     quantity: item.quantity,
-  //   };
-  // });
+  // const products = session.line_items.map((item) => ({
+  //   product: item.metadata.productId,
+  //   amount: item.quantity,
+  // }));
+
+  const lineItems = await stripe.checkout.sessions.listLineItems(
+    session.id,
+    {
+      limit: 100,
+      expand: ["data.price.product"],
+    }
+  );
+
+  let totalAmount=0;
+  const products = lineItems.data.map((item, index) => {
+    totalAmount+=item.amount_total / 100;
+    return {
+      product:item.price.product.id,
+      amount: item.quantity,
+    };
+  });
 
   console.log(products);
   console.log("+-------------------------------+");
