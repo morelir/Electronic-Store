@@ -4,6 +4,7 @@
     "DB_PASSWORD": "store12345",
     "DB_NAME": "Store",
     "JWT_KEY": "STOREEONLINE",
-    "STRIPE_SECRET_KEY": "sk_test_51ONDiPEqc6N02Fa4Xl4kwXe0Lbmjlmfmx8Rt4st31bgvEpquvTmi08eUJZF0uceERpq4HhyL3JV5siPF1rOoP9UF00qQ46SkOT"
+    "STRIPE_SECRET_KEY": "sk_test_51ONDiPEqc6N02Fa4Xl4kwXe0Lbmjlmfmx8Rt4st31bgvEpquvTmi08eUJZF0uceERpq4HhyL3JV5siPF1rOoP9UF00qQ46SkOT",
+    "STRIPE_WEBHOOK_SECRET":"whsec_36CKiEGZvDSyeEhbcYXMcNu23aNuUnTZ"
   }
 }

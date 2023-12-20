@@ -1,16 +1,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require("cors")
-
-// const HttpError = require("./models/http-error");
+const cors = require("cors");
 const { routesInit } = require("./routes/config-route");
+const bookingController = require("./controllers/booking-controller");
 
-// const fs = require("fs");
 const path = require("path");
 const app = express();
 
-app.use(cors())
+app.use(cors());
+
+app.post(//req.body need to be in the raw form, so its need to be before bodyParser.json() convert the body to json format
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  bookingController.webhookCheckout
+);
+
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join("uploads")));
 

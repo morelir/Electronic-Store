@@ -20,7 +20,9 @@ exports.getCheckoutSession = async (req, res, next) => {
         quantity: amount,
         price_data: {
           currency: "usd",
-          unit_amount: Math.round((1 - product.discount / 100) * product.listPrice * 100), // multiply by 100 for converting to cent
+          unit_amount: Math.round(
+            (1 - product.discount / 100) * product.listPrice * 100
+          ), // multiply by 100 for converting to cent
           product_data: {
             name: `${product.title} product`,
             images: [
@@ -38,6 +40,7 @@ exports.getCheckoutSession = async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],
+    metadata:{uid:req.userData.userId},
     success_url: `${req.get("origin")}`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
     // customer_email: "webappsce@gmail.com",
@@ -53,3 +56,51 @@ exports.getCheckoutSession = async (req, res, next) => {
     id: session.id,
   });
 };
+
+exports.webhookCheckout = (req, res, next) => {
+  const signature = request.headers["stripe-signature"];
+
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      request.body,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    response.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
+
+    if(event.type === 'checkout.session.complete')
+      createBookingCheckout(event)
+
+    // Return a 200 response to acknowledge receipt of the event (to stripe)
+    response.status(200).json({recevied:true})
+};
+
+const createBookingCheckout = async event => {
+  const session = event.data.object
+  const user = session.metadata.uid;
+
+  const lineItems = await stripe.checkout.sessions.listLineItems(
+    event.data.object.id,
+    {
+      limit:100,
+      expand: ['data.price.product'],
+    }
+  );
+  const products = lineItems.data.map((item,index)=>{
+    return{
+      name:item.description,
+      price:item.amount_total/100,
+      currency:item.currency,
+      quantity:item.quantity
+    }
+  });
+
+  console.log(products)
+  console.log("+-------------------------------+")
+  console.log(user)
+}
