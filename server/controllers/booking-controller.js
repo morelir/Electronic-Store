@@ -40,7 +40,7 @@ exports.getCheckoutSession = async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],
-    metadata:{uid:req.userData.userId},
+    metadata: { uid: req.userData.userId },
     success_url: `${req.get("origin")}`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
     // customer_email: "webappsce@gmail.com",
@@ -58,7 +58,7 @@ exports.getCheckoutSession = async (req, res, next) => {
 };
 
 exports.webhookCheckout = (req, res, next) => {
-  console.log("webhook start")
+  console.log("webhook start");
   const signature = request.headers["stripe-signature"];
 
   let event;
@@ -74,34 +74,36 @@ exports.webhookCheckout = (req, res, next) => {
     return;
   }
 
-    if(event.type === 'checkout.session.complete')
-      createBookingCheckout(event)
+  if (event.type === "checkout.session.complete") createBookingCheckout(event);
 
-    // Return a 200 response to acknowledge receipt of the event (to stripe)
-    response.status(200).json({recevied:true})
+  // Return a 200 response to acknowledge receipt of the event (to stripe)
+  response.status(200).json({ recevied: true });
 };
 
-const createBookingCheckout = async event => {
-  const session = event.data.object
+const createBookingCheckout = async (event) => {
+  console.log("1");
+  const session = event.data.object;
   const user = session.metadata.uid;
+  console.log("2)"+ user);
 
   const lineItems = await stripe.checkout.sessions.listLineItems(
     event.data.object.id,
     {
-      limit:100,
-      expand: ['data.price.product'],
+      limit: 100,
+      expand: ["data.price.product"],
     }
   );
-  const products = lineItems.data.map((item,index)=>{
-    return{
-      name:item.description,
-      price:item.amount_total/100,
-      currency:item.currency,
-      quantity:item.quantity
-    }
+  console.log("3)"+lineItems);
+  const products = lineItems.data.map((item, index) => {
+    return {
+      name: item.description,
+      price: item.amount_total / 100,
+      currency: item.currency,
+      quantity: item.quantity,
+    };
   });
 
-  console.log(products)
-  console.log("+-------------------------------+")
-  console.log(user)
-}
+  console.log(products);
+  console.log("+-------------------------------+");
+  console.log(user);
+};
