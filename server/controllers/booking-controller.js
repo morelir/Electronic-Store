@@ -61,7 +61,7 @@ exports.getCheckoutSession = async (req, res, next) => {
 const createBookingCheckout = async (event) => {
   const session = event.data.object;
   const user = session.metadata.uid;
-  console.log(session.line_items)
+  console.log(session.line_items[0].amount)
   const totalAmount = session.line_items.reduce(
     (acc, product) => product.price / 100 + acc,
     0
