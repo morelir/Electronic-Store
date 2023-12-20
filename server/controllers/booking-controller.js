@@ -56,14 +56,12 @@ exports.getCheckoutSession = async (req, res, next) => {
   });
 };
 
-
-
 const createBookingCheckout = async (event) => {
   console.log("1");
   const session = event.data.object;
-  console.log(session)
+  console.log(session);
   const user = session.metadata.uid;
-  console.log("2)"+ user);
+  console.log("2)" + user);
 
   const lineItems = await stripe.checkout.sessions.listLineItems(
     event.data.object.id,
@@ -72,7 +70,7 @@ const createBookingCheckout = async (event) => {
       expand: ["data.price.product"],
     }
   );
-  console.log("3)"+lineItems);
+  console.log("3)" + lineItems);
   const products = lineItems.data.map((item, index) => {
     return {
       name: item.description,
@@ -86,7 +84,6 @@ const createBookingCheckout = async (event) => {
   console.log("+-------------------------------+");
   console.log(user);
 };
-
 
 exports.webhookCheckout = (req, res, next) => {
   console.log("webhook start");
@@ -110,4 +107,3 @@ exports.webhookCheckout = (req, res, next) => {
   // Return a 200 response to acknowledge receipt of the event (to stripe)
   response.status(200).json({ recevied: true });
 };
-
