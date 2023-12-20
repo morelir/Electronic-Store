@@ -98,7 +98,7 @@ exports.webhookCheckout = (req, res, next) => {
       process.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    response.status(400).send(`Webhook Error: ${err.message}`);
+    res.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
   console.log("webhook start2");
@@ -106,5 +106,5 @@ exports.webhookCheckout = (req, res, next) => {
   if (event.type === "checkout.session.completed") createBookingCheckout(event);
 
   // Return a 200 response to acknowledge receipt of the event (to stripe)
-  response.status(200).json({ recevied: true });
+  res.status(200).json({ recevied: true });
 };
