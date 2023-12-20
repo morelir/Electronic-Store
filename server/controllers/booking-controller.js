@@ -1,6 +1,5 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Product = require("../models/product");
-const path = require("path");
 
 exports.getCheckoutSession = async (req, res, next) => {
   const products = req.body.products;
@@ -57,32 +56,12 @@ exports.getCheckoutSession = async (req, res, next) => {
   });
 };
 
-exports.webhookCheckout = (req, res, next) => {
-  console.log("webhook start");
-  const signature = request.headers["stripe-signature"];
 
-  let event;
-
-  try {
-    event = stripe.webhooks.constructEvent(
-      request.body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET
-    );
-  } catch (err) {
-    response.status(400).send(`Webhook Error: ${err.message}`);
-    return;
-  }
-
-  if (event.type === "checkout.session.complete") createBookingCheckout(event);
-
-  // Return a 200 response to acknowledge receipt of the event (to stripe)
-  response.status(200).json({ recevied: true });
-};
 
 const createBookingCheckout = async (event) => {
   console.log("1");
   const session = event.data.object;
+  console.log(session)
   const user = session.metadata.uid;
   console.log("2)"+ user);
 
@@ -107,3 +86,28 @@ const createBookingCheckout = async (event) => {
   console.log("+-------------------------------+");
   console.log(user);
 };
+
+
+exports.webhookCheckout = (req, res, next) => {
+  console.log("webhook start");
+  const signature = request.headers["stripe-signature"];
+
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      request.body,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    response.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
+
+  if (event.type === "checkout.session.complete") createBookingCheckout(event);
+
+  // Return a 200 response to acknowledge receipt of the event (to stripe)
+  response.status(200).json({ recevied: true });
+};
+
