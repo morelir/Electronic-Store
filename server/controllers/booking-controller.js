@@ -105,7 +105,7 @@ exports.webhookCheckout = (req, res, next) => {
     return;
   }
 
-  if (event.type === "checkout.session.complete") createBookingCheckout(event);
+  if (event.type === "checkout.session.completed") createBookingCheckout(event);
 
   // Return a 200 response to acknowledge receipt of the event (to stripe)
   response.status(200).json({ recevied: true });
