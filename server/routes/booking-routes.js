@@ -7,5 +7,5 @@ const router = express.Router();
 router.use(checkAuth); //middleware for checking authentication for all middlewares(routes) below it.
 
 router.post("/checkout-session", bookingController.getCheckoutSession);
-
+router.get("/",bookingController.getAllBooking)
 module.exports = router;

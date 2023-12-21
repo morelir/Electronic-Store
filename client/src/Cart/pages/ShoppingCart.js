@@ -114,7 +114,7 @@ const ShoppingCart = (props) => {
       "POST",
       JSON.stringify({
         cartId: cart.id,
-        // fallbackUrl: window.location.href,
+        fallbackUrl: window.location.href,
       }),
       {
         "Content-Type": "application/json",
