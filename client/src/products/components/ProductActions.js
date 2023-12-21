@@ -74,13 +74,9 @@ const ProductActions = (props) => {
       `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session`,
       "POST",
       JSON.stringify({
-        products: [
-          {
-            productId: props.id,
-            amount: enteredAmountNumber,
-          },
-        ],
-        fallbackUrl:window.location.href
+        prodId: props.id,
+        prodAmount: enteredAmountNumber,
+        fallbackUrl: window.location.href,
       }),
       {
         "Content-Type": "application/json",

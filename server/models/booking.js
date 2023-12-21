@@ -21,6 +21,7 @@ const bookingSchema = new mongoose.Schema({
   },
   totalAmount: {
     type: Number,
+    set: (val) => Math.round(val * 100) / 100,
     require: [true, "Booking must have a total amount."],
   },
   createdAt: {

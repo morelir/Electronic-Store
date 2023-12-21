@@ -113,12 +113,8 @@ const ShoppingCart = (props) => {
       `${process.env.REACT_APP_BACKEND_URL}/bookings/checkout-session`,
       "POST",
       JSON.stringify({
-        products: loadedProducts.map((item) => {
-          return {
-            productId: item.product._id,
-            amount: item.amount,
-          };
-        }),
+        cartId: cart.id,
+        fallbackUrl: window.location.href,
       }),
       {
         "Content-Type": "application/json",

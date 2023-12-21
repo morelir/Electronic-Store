@@ -1,33 +1,31 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Booking = require("../models/booking");
+const Cart = require("../models/cart");
 const Product = require("../models/product");
 
 exports.getCheckoutSession = async (req, res, next) => {
-  const products = req.body.products;
-
-  // Create checkout session
-  const line_items = await Promise.all(
-    products.map(async (item) => {
-      // Get the currently booked product
-      const { productId, amount } = item;
-      const product = await Product.findById(productId);
-      if (!product) {
-        const error = new HttpError("No document found with that ID.", 404);
-        return next(error);
-      }
-
+  const { cartId, prodId, prodAmount } = req.body;
+  let cart, prod, line_items;
+  //Two options to create a checkout session with a cart or a product, depends on provided req.body params 
+  if (cartId) {
+    cart = await Cart.findById(cartId).populate("products.product");
+    if (!cart) {
+      const error = new HttpError("No document found with that ID.", 404);
+      return next(error);
+    }
+    // Create checkout session for cart
+    line_items = cart.products.map((item) => {
       return {
-        product:productId,
-        quantity: amount,
+        quantity: item.amount,
         price_data: {
           currency: "usd",
           unit_amount: Math.round(
-            (1 - product.discount / 100) * product.listPrice * 100
+            (1 - item.product.discount / 100) * item.product.listPrice * 100
           ), // multiply by 100 for converting to cent
           product_data: {
-            name: `${product.title} product`,
+            name: `${item.product.title} product`,
             images: [
-              `https://electronic-store-online.onrender.com/${product.images[0].replace(
+              `https://electronic-store-online.onrender.com/${item.product.images[0].replace(
                 /\\/g,
                 "/"
               )}`, //replace backslashes with forward slashs
@@ -35,17 +33,45 @@ exports.getCheckoutSession = async (req, res, next) => {
           },
         },
       };
-    })
-  );
+    });
+  } else if (prodId && prodAmount) {
+    prod = await Product.findById(prodId);
+    if (!prod) {
+      const error = new HttpError("No document found with that ID.", 404);
+      return next(error);
+    }
+    // Create checkout session for product
+    line_items = [{
+      quantity: prodAmount,
+      price_data: {
+        currency: "usd",
+        unit_amount: Math.round(
+          (1 - prod.discount / 100) * prod.listPrice * 100
+        ), // multiply by 100 for converting to cent
+        product_data: {
+          name: `${prod.title} product`,
+          images: [
+            `https://electronic-store-online.onrender.com/${prod.images[0].replace(
+              /\\/g,
+              "/"
+            )}`, //replace backslashes with forward slashs
+          ], //only accepts live images (images hosted on the internet),
+        },
+      },
+    }]
+  } else {
+    const error = new HttpError("No document found with that ID.", 404);
+    return next(error);
+  }
 
   const session = await stripe.checkout.sessions.create({
     // Session Information
     payment_method_types: ["card"],
-    metadata: { uid: req.userData.userId },
+    metadata: { uid: req.userData.userId, cartId, prodId,prodAmount },
     success_url: `${req.get("origin")}`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
+    // client_reference_id: cartId,
     // customer_email: "webappsce@gmail.com",
-    // client_reference_id: productId,
     // Product Purchase Information
     line_items: line_items,
     mode: "payment",
@@ -56,45 +82,6 @@ exports.getCheckoutSession = async (req, res, next) => {
     status: "success",
     id: session.id,
   });
-};
-
-const createBookingCheckout = async (event) => {
-  const session = event.data.object;
-  const user = session.metadata.uid;
-
-  // const totalAmount = session.line_items.reduce(
-  //   (acc, product) => product.price / 100 + acc,
-  //   0
-  // );
-  // const products = session.line_items.map((item) => ({
-  //   product: item.metadata.productId,
-  //   amount: item.quantity,
-  // }));
-
-  const lineItems = await stripe.checkout.sessions.listLineItems(
-    session.id,
-    {
-      limit: 100,
-      expand: ["data.price.product"],
-    }
-  );
-
-  let totalAmount=0;
-  const products = lineItems.data.map((item, index) => {
-    totalAmount+=item.amount_total / 100;
-    return {
-      product:item.price.product.id,
-      amount: item.quantity,
-    };
-  });
-
-  console.log(products);
-  console.log("+-------------------------------+");
-  console.log(user);
-  console.log("+-------------------------------+");
-  console.log(totalAmount);
-
-  await Booking.create({ products, user, totalAmount });
 };
 
 exports.webhookCheckout = (req, res, next) => {
@@ -114,8 +101,34 @@ exports.webhookCheckout = (req, res, next) => {
     return;
   }
 
-  if (event.type === "checkout.session.completed") createBookingCheckout(event);
+  if (event.type === "checkout.session.completed")
+    createBookingCheckout(event.data.object);
 
   // Return a 200 response to acknowledge receipt of the event (to stripe)
   res.status(200).json({ recevied: true });
+};
+
+const createBookingCheckout = async (session) => {
+  // const user = session.metadata.uid;
+  const { cartId, prodId, prodAmount, uid } = session.metadata;
+  let cart, prod;
+  if (cartId) {
+    cart = await Cart.findById(cartId);
+    await Booking.create({
+      products: cart.products,
+      user: cart.user,
+      totalAmount: cart.totalAmount,
+    });
+  } else if (prodId && prodAmount) {
+    prod = await Product.findById(prodId);
+    console.log(prod)
+    await Booking.create({
+      products: [{ amount: prodAmount, product: prod.id }],
+      user: uid,
+      totalAmount: (1 - prod.discount / 100) * prod.listPrice * prodAmount,
+    });
+  } else {
+    const error = new HttpError("No document found with that ID.", 404);
+    return next(error);
+  }
 };

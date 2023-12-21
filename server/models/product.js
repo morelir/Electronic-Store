@@ -1,15 +1,6 @@
 const mongoose = require("mongoose");
 
-// let Rating = {
-//   amount: Number,
-//   stars: {
-//     oneStars: Number,
-//     twoStars: Number,
-//     threeStars: Number,
-//     fourStars: Number,
-//     fiveStars: Number,
-//   },
-// };
+
 
 const productSchema = new mongoose.Schema(
   {
@@ -52,4 +43,4 @@ const productSchema = new mongoose.Schema(
 // };
 
 module.exports = mongoose.model("products", productSchema);
-// exports.Product = mongoose.model("products", productSchema);
+
