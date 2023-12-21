@@ -1,0 +1,65 @@
+.profile {
+  max-width: 100rem;
+  padding-bottom: 8px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 4px 5px -2px gray;
+  margin-top: 10rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px) saturate(180%);
+  color: #333;
+}
+
+.profile header {
+  text-align: center;
+  border: 5px solid #212529;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 10px 0;
+  background-color: #212529;
+  color: white;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.profile-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.profile-container .account-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.account-details p{
+    margin-right: auto;
+}
+
+.account-details .account-img {
+  max-width: 15rem;
+  margin-bottom: 1rem;
+}
+
+.account-details .account-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-container .orders {
+  flex: 3;
+  padding: 2rem;
+}
+
+.profile-container .orders .order {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+}

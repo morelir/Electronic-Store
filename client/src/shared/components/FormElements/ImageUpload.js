@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import Button from "./Button";
 import CropImage from "./CropImage";
-import defualtProfile from "../../images/profile image.jpg";
+import defualtProfile from "../../images/profile_image.jpg";
 import "./ImageUpload.css";
 
 const ImageUpload = (props) => {

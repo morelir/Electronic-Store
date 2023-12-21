@@ -1,0 +1,56 @@
+.authentication {
+  max-width: 28rem;
+  padding-bottom: 8px;
+  border-radius: 15px;
+  /* width: 800px; */
+  margin: 30px auto;
+  box-shadow: 0 4px 5px -2px gray;
+  margin-top: 10rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px) saturate(180%);
+  color: #333;
+}
+
+.authentication__header {
+  text-align: center;
+  border: 5px solid #212529;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 10px 0;
+  background-color: #212529;
+  color: white;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.authentication form input {
+  flex: 3;
+  font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.authentication form input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.authentication .auth-switcher-text span {
+  color: #f08c00;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}

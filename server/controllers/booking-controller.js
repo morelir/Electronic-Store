@@ -4,7 +4,7 @@ const Cart = require("../models/cart");
 const Product = require("../models/product");
 
 exports.getAllBooking = async (req, res, next) => {
-  const booking = await Booking.find({ user: req.userData.userId });
+  const booking = await Booking.find({ user: req.userData.userId }).populate("products.product");
   res.status(200).json({
     status: "success",
     data: {
@@ -80,9 +80,8 @@ exports.getCheckoutSession = async (req, res, next) => {
     // Session Information
     payment_method_types: ["card"],
     metadata: { uid: req.userData.userId, cartId, prodId, prodAmount },
-    success_url: `${req.get("origin")}`,
+    success_url: `${req.get("origin")}/auth`,
     cancel_url: req.body.fallbackUrl ?? `${req.get("origin")}`,
-    // client_reference_id: cartId,
     // customer_email: "webappsce@gmail.com",
     // Product Purchase Information
     line_items: line_items,

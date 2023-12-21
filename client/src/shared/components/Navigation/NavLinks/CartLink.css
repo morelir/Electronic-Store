@@ -1,0 +1,37 @@
+.link-cart {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.link-cart .amount {
+  color: rgb(158, 172, 255);;
+  font-weight: 500;
+  font-size: 1.6rem;
+
+}
+
+.link-cart .bump {
+  animation: bump 400ms ease-out;
+}
+
+
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

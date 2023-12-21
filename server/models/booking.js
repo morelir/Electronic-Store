@@ -12,27 +12,29 @@ const Product = {
   },
 };
 
-const bookingSchema = new mongoose.Schema({
-  products: [Product],
-  user: {
-    type: mongoose.Schema.ObjectId,
-    ref: "users",
-    required: [true, "Booking must belong to a User!"],
+const bookingSchema = new mongoose.Schema(
+  {
+    products: [Product],
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "users",
+      required: [true, "Booking must belong to a User!"],
+    },
+    totalAmount: {
+      type: Number,
+      set: (val) => Math.round(val * 100) / 100,
+      require: [true, "Booking must have a total amount."],
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+    },
+    paid: {
+      type: Boolean,
+      default: true,
+    },
   },
-  totalAmount: {
-    type: Number,
-    set: (val) => Math.round(val * 100) / 100,
-    require: [true, "Booking must have a total amount."],
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
-  paid: {
-    type: Boolean,
-    default: true,
-  },
-});
+);
 
 const Booking = mongoose.model("Booking", bookingSchema);
 

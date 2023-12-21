@@ -1,49 +1,33 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
-import CartButton from "./MainNavigationButtons/CartButton";
-import AccountButton from "./MainNavigationButtons/AccountButton";
+import CartLink from "./NavLinks/CartLink";
+import AccountLink from "./NavLinks/AccountLink";
 
 import "./NavLinks.css";
 
 const NavLinks = (props) => {
-  const { isLoggedIn, image, name, email } = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigation = useNavigate();
 
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
 
-  const authClickHandler = () => {
-    navigation("/auth", { replace: true });
-  };
-
-  const cartClickHandler = () => {
-    navigation("/shoppingCart", { replace: true });
-  };
-
   return (
     <ul className="nav-links">
-      {!isLoggedIn && (
+      {!auth.isLoggedIn && (
         <li>
-          <AccountButton isLoggedIn={isLoggedIn} onClick={authClickHandler} />
+          <AccountLink to="/auth" />
         </li>
       )}
-      {isLoggedIn && (
+      {auth.isLoggedIn && (
         <React.Fragment>
           <li>
-            <AccountButton
-              isLoggedIn={isLoggedIn}
-              name={name}
-              image={image}
-              email={email}
-              onLogout={logoutHandler}
-            />
+            <AccountLink to="/auth" name={auth.name} />
           </li>
-          <li onClick={cartClickHandler}>
-            <CartButton />
+          <li >
+            <CartLink to="/shoppingCart" />
           </li>
         </React.Fragment>
       )}

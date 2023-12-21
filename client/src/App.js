@@ -41,6 +41,7 @@ function App() {
         <Route path="/products" element={<StoreProducts />} />
         <Route path="/:categoryId/:productId" element={<ProductDetail />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
+        <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );
