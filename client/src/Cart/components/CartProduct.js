@@ -31,7 +31,7 @@ const CartProduct = (props) => {
       <div className="detail">
         <h3>{props.title}</h3>
         <span className="price">
-          Price: {finalPrice} x {props.amount} = ${finalPrice * props.amount}
+          Price: {finalPrice} x {props.amount} = {finalPrice * props.amount}$
         </span>
 
         <div className="amount-controller">

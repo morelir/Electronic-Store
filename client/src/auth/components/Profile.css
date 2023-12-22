@@ -8,6 +8,14 @@
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(2px) saturate(180%);
   color: #333;
+  font-size: 1.1rem;
+}
+
+.profile h1 {
+  font-size: 1.8rem;
+}
+.profile h2 {
+  font-size: 1.4rem;;
 }
 
 .profile header {
@@ -19,7 +27,8 @@
   background-color: #212529;
   color: white;
   font-weight: 500;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
+  height: 5rem;
 }
 
 .profile-container {
@@ -33,18 +42,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
+  gap: 1.5rem;
   font-weight: 600;
 }
 
-.account-details p{
-    
-}
 
 .account-details .account-img {
-  max-width: 15rem;
-  margin-bottom: 1rem;
+
+  max-width: 8rem;
+  display: flex;
 }
 
 .account-details .account-img img {
@@ -53,13 +59,73 @@
   border-radius: 50%;
 }
 
+.account-details .input-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem
+}
+
+.account-details label,.account-details input{
+    margin-right:auto
+}
+
+.account-details label{
+  font-weight: bold;
+}
+
+.account-details input{
+  width: 100%;
+  font: inherit;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 0.15rem 0.25rem;
+
+  border-radius: 6px;
+  padding: .35rem;
+}
+
+.account-details .logout-btn{
+  margin-top: auto;
+  margin-right:auto
+}
+
+
 .profile-container .orders {
   flex: 3;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+  padding:0 2rem;
+  height: 43rem;
+  overflow-y: auto;
+  color: #434242;
 }
 
 .profile-container .orders .order {
   background-color: white;
   border-radius: 25px;
-  padding: 2rem;
+  border:2px solid #748ffc;
+  padding: 2rem 2rem;
+}
+
+.profile-container .orders .order .date{
+  font-size: 1rem;
+}
+
+.profile-container .orders .order .details{
+  margin:2rem 0;
+  display: grid;
+  grid-template-columns:1fr 5fr;
+  align-items: center;
+  
+}
+
+.profile-container .orders .order .title{
+  font-weight: 600;
+  height: 1.9rem;
+  overflow: hidden;
+}
+.profile-container .orders .order img{
+  max-width: 8rem;
+  grid-row: 1/-3;
 }

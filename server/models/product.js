@@ -34,13 +34,10 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-// productSchema.methods.finalPrice = function() {
-//   if (this.discount) {
-//     return (1 - this.discount / 100) * this.listPrice;
-//   } else {
-//     return this.listPrice;
-//   }
-// };
+productSchema.virtual('price').get(function() {
+  return ((1 - this.discount / 100) * this.listPrice).toFixed(2); //covert the duration in days to weeks
+});
+
 
 module.exports = mongoose.model("products", productSchema);
 

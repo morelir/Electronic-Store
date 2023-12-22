@@ -88,7 +88,7 @@ exports.getCheckoutSession = async (req, res, next) => {
     mode: "payment",
   });
   
-  //createBookingCheckout(session)
+  // createBookingCheckout(session)
 
   // 3) Create session as response
   res.status(200).json({
