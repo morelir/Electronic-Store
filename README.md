@@ -1,7 +1,7 @@
 
 <h1 align="center" style="border-bottom: none">Electronic Store</h1>
 
-<p align="center">🎉 The app is live, try it <a href="https://test-9b5eb.web.app/" target="_blank">here</a>. </p> 
+<p align="center">🎉 The app is live, try it <a href="https://electronic-store-mern.netlify.app/" target="_blank">here</a>. </p> 
 </br>
 
 An Online Store that demonstrates the selling of consumer electronic products.
