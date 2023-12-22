@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useSelector ,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import defaultProfileImage from "../../shared/images/profile_image.jpg";
 import "./Profile.css";
 import Button from "../../shared/components/FormElements/Button";
-import Input from "../../shared/components/FormElements/Input";
+
 import { authActions } from "../../shared/store/auth-slice";
+import { displayDate } from "../../shared/util/functions";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -29,9 +30,10 @@ const Profile = () => {
 
   return (
     <div className="profile">
-      <header>Profile</header>
+      <header></header>
       <div className="profile-container">
         <div className="account-details">
+          <h1 className="account-header">Your Account Settings</h1>
           <div className="account-img">
             <img
               src={
@@ -42,35 +44,21 @@ const Profile = () => {
               alt=""
             />
           </div>
-          {/* <Input
-            element="input"
-            id="email"
-            type="email"
-            label={
-              <span>
-                E-Mail <span style={{ color: "orange" }}>*</span>
-              </span>
-            }
-            // validators={[VALIDATOR_EMAIL()]}
-            // errorText="Please enter a valid email address."
-            // onInput={inputHandler}
-          />
-          <Input
-            element="input"
-            id="email"
-            type="email"
-            label={
-              <span>
-                E-Mail <span style={{ color: "orange" }}>*</span>
-              </span>
-            }
-            // validators={[VALIDATOR_EMAIL()]}
-            // errorText="Please enter a valid email address."
-            // onInput={inputHandler}
-          /> */}
-          <p>Name: {auth.name}</p>
-          <p>Email: {auth.email}</p>
-          <Button onClick={()=>dispatch(authActions.logout())}>Logout</Button>
+          <div className="input-wrapper">
+            <label htmlFor="account-name">Name</label>
+            <input id="account-name" type="text" disabled value={auth.name} />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="account-email">Email</label>
+            <input id="account-email" type="email" disabled value={auth.email} />
+          </div>
+
+          <Button
+            className="logout-btn"
+            onClick={() => dispatch(authActions.logout())}
+          >
+            Logout
+          </Button>
         </div>
         {error && <p>{error}</p>}
         <div className="orders">
@@ -78,9 +66,29 @@ const Profile = () => {
             return (
               <div key={order._id} className="order">
                 <h1>Order #{pos}</h1>
+                <p className="date">{displayDate(order.createdAt)}</p>
                 {order.products.map((prod) => {
-                  return <div key={prod._id}>{prod.product.title}</div>;
+                  return (
+                    <div className="details">
+                      <img
+                        src={
+                          process.env.REACT_APP_ASSET_URL +
+                          "/" +
+                          prod.product.images[0]
+                        }
+                        alt=""
+                      />
+                      <p className="title" key={prod._id}>
+                        {prod.product.title}
+                      </p>
+                      <p className="price" key={prod._id}>
+                        Price: {prod.product.price} X {prod.amount} ={" "}
+                        {prod.product.price * prod.amount}$
+                      </p>
+                    </div>
+                  );
                 })}
+                <h2>Order Total: {order.totalAmount}$</h2>
               </div>
             );
           })}
