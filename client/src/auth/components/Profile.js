@@ -34,16 +34,14 @@ const Profile = () => {
       <div className="profile-container">
         <div className="account-details">
           <h1 className="account-header">Your Account Settings</h1>
-          <div className="account-img">
-            <img
-              src={
-                auth.image
-                  ? `${process.env.REACT_APP_ASSET_URL}/${auth.image}`
-                  : defaultProfileImage
-              }
-              alt=""
-            />
-          </div>
+          <img
+            src={
+              auth.image
+                ? `${process.env.REACT_APP_ASSET_URL}/${auth.image}`
+                : defaultProfileImage
+            }
+            alt=""
+          />
           <div className="input-wrapper">
             <label htmlFor="account-name">Name</label>
             <input id="account-name" type="text" disabled value={auth.name} />
