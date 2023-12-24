@@ -49,7 +49,7 @@
 
 .account-details .account-img {
 
-  max-width: 8rem;
+  max-width: 10rem;
   display: flex;
 }
 
@@ -112,20 +112,33 @@
   font-size: 1rem;
 }
 
-.profile-container .orders .order .details{
+.profile-container .orders .order-details{
   margin:2rem 0;
   display: grid;
-  grid-template-columns:1fr 5fr;
+  grid-template-columns:1fr 6fr;
   align-items: center;
+  gap:0.5rem 1rem;
   
 }
 
-.profile-container .orders .order .title{
+.profile-container .orders .order-title{
   font-weight: 600;
   height: 1.9rem;
   overflow: hidden;
+  align-self: end;
 }
-.profile-container .orders .order img{
-  max-width: 8rem;
+.profile-container .orders .order-price{
+  
+  align-self: start;
+}
+
+.profile-container .orders img{
+  width: 100%;
+  height: 6rem;
+  object-fit: cover;
   grid-row: 1/-3;
+  grid-column: 1/2;
+  
 }
+
+

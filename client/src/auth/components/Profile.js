@@ -50,7 +50,12 @@ const Profile = () => {
           </div>
           <div className="input-wrapper">
             <label htmlFor="account-email">Email</label>
-            <input id="account-email" type="email" disabled value={auth.email} />
+            <input
+              id="account-email"
+              type="email"
+              disabled
+              value={auth.email}
+            />
           </div>
 
           <Button
@@ -69,7 +74,7 @@ const Profile = () => {
                 <p className="date">{displayDate(order.createdAt)}</p>
                 {order.products.map((prod) => {
                   return (
-                    <div className="details">
+                    <div className="order-details">
                       <img
                         src={
                           process.env.REACT_APP_ASSET_URL +
@@ -78,17 +83,17 @@ const Profile = () => {
                         }
                         alt=""
                       />
-                      <p className="title" key={prod._id}>
+                      <p className="order-title" key={prod._id}>
                         {prod.product.title}
                       </p>
-                      <p className="price" key={prod._id}>
+                      <p className="order-price" key={prod._id}>
                         Price: {prod.product.price} X {prod.amount} ={" "}
                         {prod.product.price * prod.amount}$
                       </p>
                     </div>
                   );
                 })}
-                <h2>Order Total: {order.totalAmount}$</h2>
+                <h2>Total Order: {order.totalAmount}$</h2>
               </div>
             );
           })}
