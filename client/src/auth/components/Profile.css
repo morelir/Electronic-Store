@@ -15,7 +15,7 @@
   font-size: 1.8rem;
 }
 .profile h2 {
-  font-size: 1.4rem;;
+  font-size: 1.4rem;
 }
 
 .profile header {
@@ -46,28 +46,28 @@
   font-weight: 600;
 }
 
-
 .account-details img {
   border-radius: 50%;
   max-width: 10rem;
   max-height: 10rem;
 }
 
-.account-details .input-wrapper{
+.account-details .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap:0.5rem
+  gap: 0.5rem;
 }
 
-.account-details label,.account-details input{
-    margin-right:auto
+.account-details label,
+.account-details input {
+  margin-right: auto;
 }
 
-.account-details label{
+.account-details label {
   font-weight: bold;
 }
 
-.account-details input{
+.account-details input {
   width: 100%;
   font: inherit;
   border: 1px solid #ccc;
@@ -75,22 +75,21 @@
   padding: 0.15rem 0.25rem;
 
   border-radius: 6px;
-  padding: .35rem;
+  padding: 0.35rem;
 }
 
-.account-details .logout-btn{
+.account-details .logout-btn {
   margin-top: auto;
-  margin-right:auto
+  padding: 0.7rem 5rem;
 }
-
 
 .profile-container .orders {
   flex: 3;
   display: flex;
   flex-direction: column;
-  gap:2rem;
-  padding:0 2rem;
-  height: 43rem;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-height: 43rem;
   overflow-y: auto;
   color: #434242;
 }
@@ -98,41 +97,59 @@
 .profile-container .orders .order {
   background-color: white;
   border-radius: 25px;
-  border:2px solid #748ffc;
+  border: 2px solid #748ffc;
   padding: 2rem 2rem;
 }
 
-.profile-container .orders .order .date{
+.profile-container .orders .order .date {
   font-size: 1rem;
 }
 
-.profile-container .orders .order-details{
-  margin:2rem 0;
+.profile-container .orders .order-details {
+  margin: 2rem 0;
   display: grid;
-  grid-template-columns:1fr 6fr;
+  grid-template-columns: 1fr 6fr;
   align-items: center;
-  gap:0.5rem 1rem;
-  
+  gap: 0.5rem 1rem;
 }
 
-.profile-container .orders .order-title{
+.profile-container .orders .order-title {
   font-weight: 600;
   height: 1.9rem;
   overflow: hidden;
   align-self: end;
 }
-.profile-container .orders .order-price{
-  
+.profile-container .orders .order-price {
   align-self: start;
 }
 
-.profile-container .orders img{
+.profile-container .orders img {
   width: 100%;
   height: 6rem;
   object-fit: cover;
   grid-row: 1/-3;
-
-  
 }
 
+@media (max-width: 1000px) {
+  .profile-container {
+    flex-direction: column;
+  }
 
+  .profile-container .orders {
+    padding: 0;
+  }
+
+  .profile-container .orders .order-details {
+    grid-template-columns: 1fr 5fr;
+  }
+
+  .profile-container .account-details .logout-btn{
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container .orders .order-details {
+    grid-template-columns: 1fr 2fr;
+  }
+}
