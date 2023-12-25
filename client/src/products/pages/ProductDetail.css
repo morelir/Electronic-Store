@@ -6,7 +6,7 @@
   align-items: flex-start;
   gap:2rem;
   background: rgba(255, 255, 255, 0.85);
-  padding:4rem 3rem;
+  padding:4rem 2rem;
   border-radius: 16px;
   backdrop-filter: blur(2px) saturate(180%);
 }
