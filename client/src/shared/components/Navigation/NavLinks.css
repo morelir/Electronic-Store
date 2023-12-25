@@ -12,6 +12,8 @@
 
 .nav-links li {
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   margin: 0.3rem;
 }
@@ -21,6 +23,8 @@
   border: 3px solid transparent;
   color: white;
   text-decoration: none;
+  padding: 0.4rem;
+  flex:1;
 }
 
 .nav-links a:hover {
@@ -48,6 +52,7 @@
   }
 
   .nav-links li {
+    align-items: stretch;
     margin: 0 0.5rem;
   }
   .nav-links a {

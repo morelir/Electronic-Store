@@ -3,7 +3,7 @@ import { useNavigate,useSearchParams } from "react-router-dom";
 import "./SearchBar.css";
 import searchIcon from "../../images/search.png";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [search,setSearch]=useState('')
@@ -17,6 +17,7 @@ const SearchBar = () => {
     // setSearch(search, {
     //   replace: true,
     // });
+    props?.onClick()
   };
 
   useEffect(()=>{

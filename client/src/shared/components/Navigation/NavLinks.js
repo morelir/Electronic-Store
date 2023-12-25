@@ -17,16 +17,16 @@ const NavLinks = (props) => {
   return (
     <ul className="nav-links">
       {!auth.isLoggedIn && (
-        <li>
+        <li onClick={props?.onClick}>
           <AccountLink to="/auth" />
         </li>
       )}
       {auth.isLoggedIn && (
         <React.Fragment>
-          <li>
+          <li onClick={props?.onClick}>
             <AccountLink to="/auth" name={auth.name} />
           </li>
-          <li >
+          <li onClick={props?.onClick}>
             <CartLink to="/shoppingCart" />
           </li>
         </React.Fragment>

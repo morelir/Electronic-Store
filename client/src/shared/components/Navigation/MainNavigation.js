@@ -7,6 +7,7 @@ import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "../UIElements/Backdrop";
 import SearchBar from "../UIElements/SearchBar";
+import close from "../../images/close.svg"
 
 import "./MainNavigation.css";
 
@@ -24,13 +25,31 @@ const MainNavigation = (props) => {
   return (
     <React.Fragment>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
-      <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler} >
-        <nav className="main-navigation__drawer-nav">
-          <NavLinks />
+      <SideDrawer show={drawerIsOpen} >
+        <img onClick={closeDrawerHandler} className="close-img" src={close} alt=""/>
+
+        <div className="search-bar__drawer-search">
+          <SearchBar className="search-bar__drawer-search" onClick={closeDrawerHandler} />
+        </div>
+        <nav className="main-navigation__drawer-nav" >
+          <NavLinks onClick={closeDrawerHandler} />
         </nav>
       </SideDrawer>
 
       <MainHeader>
+        <h1 className="main-navigation__title">
+          <Link to="/">
+            <span>Electronic</span>{" "}
+            <span style={{ color: "#9eacff" }}>Store</span>
+          </Link>
+        </h1>
+        <div className="search-bar__header-search">
+          <SearchBar />
+        </div>
+        <nav className="main-navigation__header-nav">
+          <NavLinks />
+        </nav>
+
         <button
           className="main-navigation__menu-btn"
           onClick={openDrawerHandler}
@@ -39,18 +58,6 @@ const MainNavigation = (props) => {
           <span />
           <span />
         </button>
-
-        <h1 className="main-navigation__title">
-          <Link to="/">
-            {/* <img src={logo} height={50} /> */}
-            <span>Electronic</span>{" "}
-            <span style={{ color: "#9eacff" }}>Store</span>
-          </Link>
-        </h1>
-        <SearchBar className="search-bar" />
-        <nav className="main-navigation__header-nav">
-          <NavLinks />
-        </nav>
       </MainHeader>
     </React.Fragment>
   );

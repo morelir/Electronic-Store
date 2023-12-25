@@ -1,12 +1,16 @@
 .side-drawer {
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   z-index: 100;
   height: 100vh;
-  width: 13rem;
+  width: 24rem;
   background: #212529;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
 }
 
 @media (min-width: 768px) {

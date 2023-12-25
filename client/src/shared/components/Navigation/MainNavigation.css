@@ -28,14 +28,24 @@
   height: 100%;
 }
 
+.search-bar__header-search{
+  flex:1;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1090px) {
   .main-navigation__title {
     font-size: 1.8rem;
   }
+  .search-bar__header-search {
+    width: 280px;
+  }
+
 }
 
-@media (max-width: 900px) {
-  .search-bar {
+@media (max-width: 768px) {
+  .search-bar__header-search {
     display: none;
   }
 
@@ -52,6 +62,11 @@
     flex-direction: column;
     justify-content: space-around;
     margin-right: 2rem;
+    cursor: pointer;
+  }
+
+  .close-img{
+    width: 3rem;
     cursor: pointer;
   }
 }
