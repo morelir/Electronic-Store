@@ -32,7 +32,7 @@ const Profile = () => {
       <header></header>
       <div className="profile-container">
         <div className="account-details">
-          <h1 className="account-header">Your Account Settings</h1>
+          <h1 className="account-header">Account Settings</h1>
           <img
             src={
               auth.image
