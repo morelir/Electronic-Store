@@ -10,9 +10,6 @@ const uiSlice = createSlice({
     setError(state, action) {
       state.errorMessage = action.payload.message;
     },
-    setChangeMainHeader(state, action) {
-      state.changeMainHeader = action.payload.changeMainHeader;
-    },
   },
 });
 

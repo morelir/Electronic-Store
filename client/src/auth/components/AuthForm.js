@@ -41,13 +41,6 @@ const AuthForm = () => {
 
   const confPasswordInput = useRef();
 
-  useEffect(() => {
-    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: true }));
-    return () => {
-      dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
-    };
-  }, [dispatch]);
-
   const switchModeHandler = () => {
     if (!isLoginMode) {
       setFormData(
@@ -138,7 +131,6 @@ const AuthForm = () => {
       }
     }
     navigate("/",{ replace: true })
-    dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
 
   useEffect(() => {
