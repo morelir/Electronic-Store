@@ -6,7 +6,7 @@
 
 An Online Store that demonstrates the selling of consumer electronic products.
 The app uses **React**, **Node.js**, **Express** and **MongoDB** to create a Full Stack Web Application.
-Including Authentications, **Rest API**, File Uploading, and Data-Base maintenance, with responsive and interactive design.
+Including **Rest API**, user authentication using **JWT**, File Uploading, and Data-Base maintenance, with responsive and interactive design.
 
 <br/>
 
