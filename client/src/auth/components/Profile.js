@@ -21,7 +21,7 @@ const Profile = () => {
     }).then((res) => {
       setOrders(res.data.data);
     });
-  }, [auth.token,sendRequest]);
+  }, [auth.token, sendRequest]);
 
   if (isLoading) {
     return <LoadingSpinner asOverlay />;
@@ -63,38 +63,38 @@ const Profile = () => {
           </Button>
         </div>
         {error && <p>{error}</p>}
-        <div className="orders">
-          {orders.map((order, pos) => {
-            return (
-              <div key={order._id} className="order">
-                <h1>Order #{pos}</h1>
-                <p className="date">{displayDate(order.createdAt)}</p>
-                {order.products.map((prod,pos) => {
-                  return (
-                    <div key={prod._id} className="order-details">
-                      <img
-                        src={
-                          process.env.REACT_APP_ASSET_URL +
-                          "/" +
-                          prod.product.images[0]
-                        }
-                        alt=""
-                      />
-                      <p className="order-title" >
-                        {prod.product.title}
-                      </p>
-                      <p className="order-price" >
-                        Price: {prod.product.price} X {prod.amount} ={" "}
-                        {prod.product.price * prod.amount}$
-                      </p>
-                    </div>
-                  );
-                })}
-                <h2>Total Order: {order.totalAmount}$</h2>
-              </div>
-            );
-          })}
-        </div>
+        {orders.length > 0 && (
+          <div className="orders">
+            {orders.map((order, pos) => {
+              return (
+                <div key={order._id} className="order">
+                  <h1>Order #{pos}</h1>
+                  <p className="date">{displayDate(order.createdAt)}</p>
+                  {order.products.map((prod, pos) => {
+                    return (
+                      <div key={prod._id} className="order-details">
+                        <img
+                          src={
+                            process.env.REACT_APP_ASSET_URL +
+                            "/" +
+                            prod.product.images[0]
+                          }
+                          alt=""
+                        />
+                        <p className="order-title">{prod.product.title}</p>
+                        <p className="order-price">
+                          Price: {prod.product.price} X {prod.amount} ={" "}
+                          {prod.product.price * prod.amount}$
+                        </p>
+                      </div>
+                    );
+                  })}
+                  <h2>Total Order: {order.totalAmount}$</h2>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

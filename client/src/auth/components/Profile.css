@@ -1,5 +1,6 @@
 .profile {
   max-width: 100rem;
+  width: fit-content;
   padding-bottom: 8px;
   border-radius: 15px;
   margin: 30px auto;

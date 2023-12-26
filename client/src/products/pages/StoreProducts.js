@@ -34,7 +34,6 @@ const StoreProducts = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [isLoading]);
 
-  
   const handlePageChange = (event, newPage) => {
     searchParams.set("page", newPage.toString());
     setSearchParams(searchParams, {
@@ -64,9 +63,10 @@ const StoreProducts = () => {
           </>
         )}
         {!isLoading && loadedData && loadedData.totalPages === 0 && (
-          <div className="error">No results found</div>
+          <div className="empty-container">
+            <p className="empty-message">No results found</p>
+          </div>
         )}
-       
       </div>
     </section>
   );

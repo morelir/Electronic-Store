@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
@@ -18,7 +18,9 @@ import { authActions } from "../../shared/store/auth-slice";
 import { uiActions } from "../../shared/store/ui-slice";
 import "./AuthForm.css";
 
+
 const AuthForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -135,6 +137,7 @@ const AuthForm = () => {
         console.log(error);
       }
     }
+    navigate("/",{ replace: true })
     dispatch(uiActions.setChangeMainHeader({ changeMainHeader: false }));
   };
 

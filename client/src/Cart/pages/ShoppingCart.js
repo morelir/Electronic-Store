@@ -11,7 +11,7 @@ import "./ShoppingCart.css";
 
 const ShoppingCart = (props) => {
   const [initial, setInitial] = useState(true);
-  const [loadedProducts, setLoadedProducts] = useState();
+  const [loadedProducts, setLoadedProducts] = useState([]);
   const {
     isLoading: cartLoading,
     error,
@@ -25,24 +25,23 @@ const ShoppingCart = (props) => {
   const dispatch = useDispatch();
 
   const fetchCartProducts = React.useCallback(async () => {
-    try {
-      const responseData = await sendCartRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/cart/${cart.id}/products`,
-        "GET",
-        null,
-        { Authorization: `Bearer ${auth.token}` }
-      );
-      setLoadedProducts(responseData.products);
-    } catch (err) {}
+    const responseData = await sendCartRequest(
+      `${process.env.REACT_APP_BACKEND_URL}/cart/${cart.id}/products`,
+      "GET",
+      null,
+      { Authorization: `Bearer ${auth.token}` }
+    );
+    setLoadedProducts(responseData.products);
   }, [sendCartRequest, auth.token, cart.id]);
 
   useEffect(() => {
+    if (cart.totalAmount === 0) return;
     const fetchData = async () => {
       await fetchCartProducts();
       setInitial(false);
     };
     fetchData();
-  }, [fetchCartProducts]);
+  }, [fetchCartProducts, cart.totalAmount]);
 
   const addProductToCartHandler = React.useCallback(
     async (id, finalPrice) => {
@@ -138,28 +137,37 @@ const ShoppingCart = (props) => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      {loadedProducts && (
-        <div className="cart-products">
-          <h1 className="header">
-            Shopping <span style={{ color: "rgb(158, 172, 255)" }}>Cart</span>
-          </h1>
-          <CartProducts
-            onAddProductToCart={addProductToCartHandler}
-            onRemoveProductFromCart={removeProductFromCartHandler}
-            products={loadedProducts}
-            isLoading={cartLoading}
-          />
-          <h3 className="cart-summary">
-            <p>
-              Subtotal ({cart.totalQuantity} items):{" "}
-              <span className="price">${cart.totalAmount.toFixed(2)}</span>
-            </p>
-            <Button disabled={checkoutLoading} onClick={payNowHandler}>
-              {!checkoutLoading ? "Pay Now" : "Processing..."}
-            </Button>
-          </h3>
-        </div>
-      )}
+
+      <div className="cart-products">
+        <h1 className="header">
+          Shopping <span style={{ color: "rgb(158, 172, 255)" }}>Cart</span>
+        </h1>
+        {loadedProducts.length>0 && (
+          <>
+            <CartProducts
+              onAddProductToCart={addProductToCartHandler}
+              onRemoveProductFromCart={removeProductFromCartHandler}
+              products={loadedProducts}
+              isLoading={cartLoading}
+            />
+
+            <h3 className="cart-summary">
+              <p>
+                Subtotal ({cart.totalQuantity} items):{" "}
+                <span className="price">${cart.totalAmount.toFixed(2)}</span>
+              </p>
+              <Button disabled={checkoutLoading} onClick={payNowHandler}>
+                {!checkoutLoading ? "Pay Now" : "Processing..."}
+              </Button>
+            </h3>
+          </>
+        )}
+        {loadedProducts.length===0 && (
+          <div className="empty-container">
+            <p className="empty-message">There are no items in cart</p>
+          </div>
+        )}
+      </div>
     </React.Fragment>
   );
 };

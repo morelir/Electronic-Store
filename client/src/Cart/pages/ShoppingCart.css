@@ -5,6 +5,7 @@
   box-shadow: 0 4px 5px -2px gray;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(2px) saturate(180%);
+  
 }
 
 .cart-products .header {
@@ -30,6 +31,10 @@
 
 .cart-products .cart-summary .price {
   font-weight: 600;
+}
+
+.cart-products .empty-container{
+  height: 20rem;
 }
 
 @media (max-width: 480px) {

@@ -11,12 +11,7 @@ const SearchBar = (props) => {
   const searchHandler = (e) => {
     e.preventDefault();
     if(search.trim().length === 0) return;
-    
     navigate(`/products?search=${search}`)
-    // searchParams.set('search',search)
-    // setSearch(search, {
-    //   replace: true,
-    // });
     props?.onClick()
   };
 

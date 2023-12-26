@@ -17,7 +17,7 @@
   color: #fff;
 }
 
-.section-store .error {
+.section-store .empty-container {
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   filter: brightness(98%);
