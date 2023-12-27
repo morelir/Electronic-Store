@@ -8,6 +8,7 @@ import Button from "../../shared/components/FormElements/Button";
 
 import { authActions } from "../../shared/store/auth-slice";
 import { displayDate } from "../../shared/util/functions";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const Profile = () => {
 
   return (
     <div className="profile">
+      <ErrorModal error={error} onClear={clearError} />
       <header></header>
       <div className="profile-container">
         <div className="account-details">
@@ -62,7 +64,7 @@ const Profile = () => {
             Logout
           </Button>
         </div>
-        {error && <p>{error}</p>}
+  
         {orders.length > 0 && (
           <div className="orders">
             {orders.map((order, pos) => {
