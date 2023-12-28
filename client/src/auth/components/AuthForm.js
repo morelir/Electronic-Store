@@ -15,9 +15,8 @@ import {
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { authActions } from "../../shared/store/auth-slice";
-import { uiActions } from "../../shared/store/ui-slice";
+import { useGoogleLogin } from "@react-oauth/google";
 import "./AuthForm.css";
-
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -130,7 +129,7 @@ const AuthForm = () => {
         console.log(error);
       }
     }
-    navigate("/",{ replace: true })
+    navigate("/", { replace: true });
   };
 
   useEffect(() => {
@@ -145,6 +144,14 @@ const AuthForm = () => {
       confPasswordInput.current.checkInput();
     }
   }, [formState.inputs.password.value]);
+  
+  function GoogleLoginSuccessHandler(tokenResponse) {
+    const accessToken = tokenResponse.access_token;
+
+    // dispatch(signinGoogle(accessToken, navigate));
+  }
+  const googleLoginHandler = useGoogleLogin({ onSuccess: GoogleLoginSuccessHandler });
+
 
   if (isLoading) {
     return (
@@ -237,6 +244,11 @@ const AuthForm = () => {
 
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode ? "LOGIN" : "SIGNUP"}
+          </Button>
+
+          <span >or</span>
+          <Button onClick={googleLoginHandler} >
+             Continue with Google
           </Button>
 
           {isLoginMode ? (
