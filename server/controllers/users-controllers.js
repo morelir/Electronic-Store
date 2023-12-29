@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const axios = require("axios");
 
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
@@ -63,8 +64,6 @@ const signup = async (req, res, next) => {
     email,
     image: req.file?.path ?? null,
     password: hashedPassword,
-    places: [],
-    cart: null,
   });
 
   try {
@@ -161,6 +160,76 @@ const login = async (req, res, next) => {
     email: existingUser.email,
     name: existingUser.name,
     image: existingUser.image,
+    token: token,
+  });
+};
+
+exports.googleLogin = async (req, res, next) => {
+  const { accessToken } = req.body;
+  if (!accessToken) {
+    return next(
+      new HttpError("Invalid access token passed, please check your data.", 422)
+    );
+  }
+
+  let response;
+  try {
+    response = await axios.get(
+      "https://www.googleapis.com/oauth2/v3/userinfo",
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+  } catch (err) {
+    return next(
+      new HttpError(
+        err?.response?.statusText || "Invalid Request",
+        err?.response?.status || 400
+      )
+    );
+  }
+
+  const name = response.data.given_name;
+  const email = response.data.email;
+  const image = response.data.picture;
+
+  let user,
+    status = 200;
+  try {
+    user = await User.findOne({ email: email });
+  } catch (err) {
+    return next(
+      new HttpError("Logging in failed, please try again later.", 500)
+    );
+  }
+
+  if (!user) {
+    try {
+      user = await User.create({
+        name: name,
+        email: email,
+        image: image,
+      });
+      status = 201;
+    } catch {
+      return next(
+        new HttpError("Logging in failed, please try again later.", 500)
+      );
+    }
+  }
+
+  const token = jwt.sign(
+    { userId: user.id, email: user.email },
+    process.env.JWT_KEY,
+    { expiresIn: "1h" }
+  );
+
+  res.status(status).json({
+    email: user.email,
+    name: user.name,
+    image: user.image,
     token: token,
   });
 };

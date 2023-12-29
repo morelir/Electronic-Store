@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-import defaultProfileImage from "../../shared/images/profile_image.jpg";
+import defaultUserImage from "../../shared/images/default-user.jpg";
 import "./Profile.css";
 import Button from "../../shared/components/FormElements/Button";
 
@@ -24,6 +24,16 @@ const Profile = () => {
     });
   }, [auth.token, sendRequest]);
 
+  const getUserImage = () => {
+    if (auth.image) {
+      if (auth.image.startsWith("http")) {
+        return auth.image;
+      }
+      return process.env.REACT_APP_ASSET_URL + "/" + auth.image;
+    }
+    return defaultUserImage;
+  };
+
   if (isLoading) {
     return <LoadingSpinner asOverlay />;
   }
@@ -35,14 +45,7 @@ const Profile = () => {
       <div className="profile-container">
         <div className="account-details">
           <h1 className="account-header">Account Settings</h1>
-          <img
-            src={
-              auth.image
-                ? `${process.env.REACT_APP_ASSET_URL}/${auth.image}`
-                : defaultProfileImage
-            }
-            alt=""
-          />
+          <img src={getUserImage()} alt="" />
           <div className="input-wrapper">
             <label htmlFor="account-name">Name</label>
             <input id="account-name" type="text" disabled value={auth.name} />
@@ -64,7 +67,7 @@ const Profile = () => {
             Logout
           </Button>
         </div>
-  
+
         {orders.length > 0 && (
           <div className="orders">
             {orders.map((order, pos) => {

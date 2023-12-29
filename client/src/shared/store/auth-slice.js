@@ -30,6 +30,16 @@ const authSlice = createSlice({
       //     expiration: tokenExpirationDate,
       //   })
       // );
+      // localStorage.setItem(
+      //   "userData",
+      //   JSON.stringify({
+      //     token,
+      //     email,
+      //     name,
+      //     image,
+      //     expiration: tokenExpirationDate,
+      //   })
+      // );
     },
     logout(state) {
       state.token = undefined;

@@ -23,5 +23,6 @@ router.post(
 );
 
 router.post('/login', usersController.login);
+router.post('/login/google', usersController.googleLogin);
 
 module.exports = router;
