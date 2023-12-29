@@ -16,6 +16,7 @@ import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { authActions } from "../../shared/store/auth-slice";
 import { useGoogleLogin } from "@react-oauth/google";
+import google from "../../shared/images/google.svg";
 import "./AuthForm.css";
 
 const AuthForm = () => {
@@ -99,6 +100,7 @@ const AuthForm = () => {
             image: responseData.image,
           })
         );
+        navigate("/", { replace: true });
       } catch (error) {
         console.log(error);
       }
@@ -125,11 +127,11 @@ const AuthForm = () => {
             image: responseData.image,
           })
         );
+        navigate("/", { replace: true });
       } catch (error) {
         console.log(error);
       }
     }
-    navigate("/", { replace: true });
   };
 
   useEffect(() => {
@@ -144,14 +146,39 @@ const AuthForm = () => {
       confPasswordInput.current.checkInput();
     }
   }, [formState.inputs.password.value]);
-  
-  function GoogleLoginSuccessHandler(tokenResponse) {
+
+  async function GoogleLoginSuccessHandler(tokenResponse) {
     const accessToken = tokenResponse.access_token;
 
+    try {
+      const responseData = await sendRequest(
+        process.env.REACT_APP_BACKEND_URL + "/users/login/google",
+        "POST",
+        JSON.stringify({
+          accessToken,
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+
+      dispatch(
+        authActions.login({
+          token: responseData.token,
+          email: responseData.email,
+          name: responseData.name,
+          image: responseData.image,
+        })
+      );
+      navigate("/", { replace: true });
+    } catch (error) {
+      console.log(error);
+    }
     // dispatch(signinGoogle(accessToken, navigate));
   }
-  const googleLoginHandler = useGoogleLogin({ onSuccess: GoogleLoginSuccessHandler });
-
+  const googleLoginHandler = useGoogleLogin({
+    onSuccess: GoogleLoginSuccessHandler,
+  });
 
   if (isLoading) {
     return (
@@ -245,10 +272,15 @@ const AuthForm = () => {
           <Button type="submit" disabled={!formState.isValid}>
             {isLoginMode ? "LOGIN" : "SIGNUP"}
           </Button>
+          <div className="or-wrapper">
+            <hr className="line"/>
+            <div>or</div>
+            <hr className="line"/>
+          </div>
 
-          <span >or</span>
-          <Button onClick={googleLoginHandler} >
-             Continue with Google
+          <Button className="google-btn" onClick={googleLoginHandler}>
+            <img src={google} alt="" />
+            <span>Continue with Google</span>
           </Button>
 
           {isLoginMode ? (

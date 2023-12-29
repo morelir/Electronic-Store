@@ -48,9 +48,41 @@
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
+.authentication form .or-wrapper{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.authentication form .or-wrapper .line{
+  flex:1
+}
+
+.authentication form .google-btn{
+  background: #474d57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:0.5rem;
+}
+
+.authentication form .google-btn:hover,
+.authentication form .google-btn:active{
+  background: rgba(71, 77, 87, 0.805);
+}
+
+.authentication form .google-btn img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+
+
 .authentication .auth-switcher-text span {
   color: #f08c00;
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
 }
+
+

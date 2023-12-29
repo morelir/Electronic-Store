@@ -18,7 +18,7 @@ app.post(//req.body need to be in the raw form, so its need to be before bodyPar
 
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join("uploads")));
-
+app.use(express.static(path.join(__dirname, 'public')))
 routesInit(app);
 
 mongoose
