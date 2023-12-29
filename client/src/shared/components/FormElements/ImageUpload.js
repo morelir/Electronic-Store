@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import Button from "./Button";
 import CropImage from "./CropImage";
-import defualtProfile from "../../images/profile_image.jpg";
+import defualtUserImage from "../../images/default-user.jpg";
 import "./ImageUpload.css";
 
 const ImageUpload = (props) => {
@@ -52,7 +52,7 @@ const ImageUpload = (props) => {
         <div className={`image-upload ${props.center && "center"}`}>
           <div className="image-upload__preview">
             {previewUrl && <img src={previewUrl} alt="Preview" />}
-            {!previewUrl && <img src={defualtProfile} alt="Preview" />}
+            {!previewUrl && <img src={defualtUserImage} alt="Preview" />}
           </div>
           <Button type="button" onClick={pickImageHandler}>
             PICK IMAGE
