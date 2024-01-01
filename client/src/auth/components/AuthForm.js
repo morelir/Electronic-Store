@@ -18,6 +18,7 @@ import { authActions } from "../../shared/store/auth-slice";
 import { useGoogleLogin } from "@react-oauth/google";
 import google from "../../shared/images/google.svg";
 import "./AuthForm.css";
+import { saveAuth } from "../../shared/store/auth-actions";
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -93,13 +94,14 @@ const AuthForm = () => {
         );
 
         dispatch(
-          authActions.login({
+          saveAuth({
             token: responseData.token,
             email: responseData.email,
             name: responseData.name,
             image: responseData.image,
           })
         );
+        console.log(responseData);
         navigate("/", { replace: true });
       } catch (error) {
         console.log(error);
@@ -120,7 +122,7 @@ const AuthForm = () => {
           formData
         );
         dispatch(
-          authActions.login({
+          saveAuth({
             token: responseData.token,
             email: responseData.email,
             name: responseData.name,
@@ -273,9 +275,9 @@ const AuthForm = () => {
             {isLoginMode ? "LOGIN" : "SIGNUP"}
           </Button>
           <div className="or-wrapper">
-            <hr className="line"/>
+            <hr className="line" />
             <div>or</div>
-            <hr className="line"/>
+            <hr className="line" />
           </div>
 
           <Button className="google-btn" onClick={googleLoginHandler}>

@@ -5,10 +5,9 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import defaultUserImage from "../../shared/images/default-user.jpg";
 import "./Profile.css";
 import Button from "../../shared/components/FormElements/Button";
-
-import { authActions } from "../../shared/store/auth-slice";
 import { displayDate } from "../../shared/util/functions";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import { logout } from "../../shared/store/auth-actions";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -62,7 +61,7 @@ const Profile = () => {
 
           <Button
             className="logout-btn"
-            onClick={() => dispatch(authActions.logout())}
+            onClick={() => dispatch(logout())}
           >
             Logout
           </Button>
