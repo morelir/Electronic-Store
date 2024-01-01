@@ -12,34 +12,13 @@ const authSlice = createSlice({
   },
   reducers: {
     login(state, action) {
-      const { token, email,name,image, expirationDate } = action.payload;
+      const { token, email, name, image, expirationDate } = action.payload;
       state.isLoggedIn = true;
       state.email = email;
       state.name = name;
       state.image = image;
       state.token = token;
-      let tokenExpirationDate =
-        expirationDate ??
-        new Date(new Date().getTime() + 1000 * 60 * 60).toISOString();
-      state.tokenExpirationDate = tokenExpirationDate;
-      // localStorage.setItem(
-      //   "userData",
-      //   JSON.stringify({
-      //     userId: userId,
-      //     token: token,
-      //     expiration: tokenExpirationDate,
-      //   })
-      // );
-      // localStorage.setItem(
-      //   "userData",
-      //   JSON.stringify({
-      //     token,
-      //     email,
-      //     name,
-      //     image,
-      //     expiration: tokenExpirationDate,
-      //   })
-      // );
+      state.tokenExpirationDate = expirationDate;
     },
     logout(state) {
       state.token = undefined;
@@ -48,7 +27,7 @@ const authSlice = createSlice({
       state.image = "";
       state.tokenExpirationDate = undefined;
       state.isLoggedIn = false;
-      localStorage.removeItem("userData");
+      // localStorage.removeItem("userData");
     },
   },
 });
