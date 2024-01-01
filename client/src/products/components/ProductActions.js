@@ -1,12 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../../shared/store/cart-slice";
 import { sendCartData } from "../../shared/store/cart-actions";
 import Input from "../../shared/components/UIElements/Input";
 import "./ProductActions.css";
-import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import Button from "../../shared/components/FormElements/Button";
-import { CircularProgress } from "@mui/material";
 import { loadStripe } from "@stripe/stripe-js";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
