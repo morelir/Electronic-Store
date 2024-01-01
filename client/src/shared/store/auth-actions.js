@@ -2,7 +2,7 @@ import { authActions } from "./auth-slice";
 
 let logoutTimer;
 
-export const saveAuth = (data) => async (dispatch) => {
+export const login = (data) => async (dispatch) => {
   const { token, email, name, image, expirationDate } = data;
   let tokenExpirationDate =
     expirationDate ??
@@ -37,7 +37,7 @@ export const saveAuth = (data) => async (dispatch) => {
   }, remainingTime);
 };
 
-export const getAuthAndLogin = () => (dispatch) => {
+export const getUserAndLogin = () => (dispatch) => {
   try {
     const storedData = JSON.parse(localStorage.getItem("userData"));
     if (
