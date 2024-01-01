@@ -18,7 +18,7 @@ import { authActions } from "../../shared/store/auth-slice";
 import { useGoogleLogin } from "@react-oauth/google";
 import google from "../../shared/images/google.svg";
 import "./AuthForm.css";
-import { saveAuth } from "../../shared/store/auth-actions";
+import { login } from "../../shared/store/auth-actions";
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -94,7 +94,7 @@ const AuthForm = () => {
         );
 
         dispatch(
-          saveAuth({
+          login({
             token: responseData.token,
             email: responseData.email,
             name: responseData.name,
@@ -122,7 +122,7 @@ const AuthForm = () => {
           formData
         );
         dispatch(
-          saveAuth({
+          login({
             token: responseData.token,
             email: responseData.email,
             name: responseData.name,
@@ -165,7 +165,7 @@ const AuthForm = () => {
       );
 
       dispatch(
-        authActions.login({
+        login({
           token: responseData.token,
           email: responseData.email,
           name: responseData.name,

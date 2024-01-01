@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartData } from "../store/cart-actions";
-import { getAuthAndLogin } from "../store/auth-actions";
+import { getUserAndLogin } from "../store/auth-actions";
 
 export const useSideEffects = () => {
   const { token, isLoggedIn } = useSelector((state) => state.auth);
@@ -9,7 +9,7 @@ export const useSideEffects = () => {
 
   useEffect(() => {
     // get userData from local storage and if there is login again
-    dispatch(getAuthAndLogin());
+    dispatch(getUserAndLogin());
   }, [dispatch]);
 
   useEffect(() => {
