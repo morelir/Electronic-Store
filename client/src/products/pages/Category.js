@@ -62,14 +62,17 @@ const Category = () => {
           <h1>Electronic Store</h1>
           <p>
             A simple online store made with <strong>ReactJS</strong>,{" "}
-            <strong>Redux</strong>, <strong>NodeJS</strong> &{" "}
-            <strong>MongoDB</strong>. Written in <strong>JavaScript</strong>,
-            with implementation of REST API, Authentication and much more!
+            <strong>NodeJS</strong> & <strong>MongoDB</strong>. Written in{" "}
+            <strong>JavaScript</strong>, with implementation of{" "}
+            <strong>REST API</strong>, <strong>Authentication</strong> and much
+            more!
           </p>
           <p>
-            This project demonstrates the selling of consumer electronic
-            products. You can register for the system, manage your personal
-            shopping cart and enjoy a responsive and interactive design.
+            This project introduces an engaging e-commerce web application,
+            seamlessly integrating with <strong>Stripe</strong> for secure and efficient payment
+            processing. Dynamic page navigation and user authentication using 
+            <strong> JWT</strong> contribute to the application's functionality. Leveraging <strong>Redux </strong>
+            for state management enhances the overall user experience.
           </p>
           <div className="home-container__buttons">
             <Button

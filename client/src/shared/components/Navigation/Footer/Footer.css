@@ -16,14 +16,14 @@
 }
 .footer-section {
   text-align: center;
-  width: 35%;
+  max-width: 50rem;
   display: block;
   padding: 10px 35px;
 }
 
 .footer-section p {
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2rem;
   line-height: 28px;
 }
 .footer-section h1 {

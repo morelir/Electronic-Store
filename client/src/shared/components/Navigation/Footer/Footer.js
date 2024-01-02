@@ -13,10 +13,7 @@ const Footer = () => {
               <span style={{ color: "rgb(158, 172, 255)" }}>Store</span>
             </h1>
             <p>
-              A personal ecommerce web project that demonstrates the selling of
-              consumer electronic products. You can register for the system,
-              manage your personal shopping cart and enjoy a responsive and
-              interactive design.
+              Desgined & created by Mor Elir | Web development learning project
             </p>
           </div>
         </div>
@@ -56,11 +53,15 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="first-box">
-          <Link to="/terms-and-conditions">Terms & Conditions</Link>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-and-conditions" onClick={(e) => e.preventDefault()}>
+            Terms & Conditions
+          </Link>
+          <Link to="/privacy-policy" onClick={(e) => e.preventDefault()}>
+            Privacy Policy
+          </Link>
         </div>
         <div className="last-box">
-          <span>Copyright &copy; 2022. All rights reserved.</span>
+          <span>Copyright &copy; 2023. All rights reserved.</span>
         </div>
       </div>
     </div>
