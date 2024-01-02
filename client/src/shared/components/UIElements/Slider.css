@@ -102,10 +102,12 @@
 
 @media (max-width: 480px) {
   .slick-slider {
-    max-width: 316px;
+    max-width: 273px;
   }
   .slide img {
-    height: 12rem;
-    width: 18rem;
+    height: 10rem;
+    width: 12rem;
   }
+
+  
 }

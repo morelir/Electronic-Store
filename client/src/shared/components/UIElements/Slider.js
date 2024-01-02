@@ -91,7 +91,7 @@ const Slider = () => {
       {
         breakpoint: 480,
         settings: {
-          arrows: false,
+          arrows: true,
           slidesToShow: 1,
           slidesToScroll: 1,
         },
