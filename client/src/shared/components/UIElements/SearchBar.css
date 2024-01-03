@@ -23,6 +23,20 @@
   
 }
 
+/* both transparency and ability to change background color together for auto-complete */
+/* Note that transition here does nothing in recent Chrome browsers, it's only a fallback solution for older versions of Chrome. */
+.search-bar input:-webkit-autofill,
+.search-bar input:-webkit-autofill:hover, 
+.search-bar input:-webkit-autofill:focus, 
+.search-bar input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #cac7ff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent;
+}
+
+
+
 .search-bar input::placeholder {
   color: #cac7ff;
 }

@@ -6,7 +6,6 @@
   backdrop-filter: blur(2px) saturate(180%);
   border-radius: 16px;
   padding-bottom: 0.8rem;
-  overflow: hidden;
   color: #0f1111;
 }
 
@@ -17,6 +16,9 @@
   font-size: 1.6rem;
   color: #fff;
   font-weight: 500;
+  border: 5px solid #212529;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .filter-box {
