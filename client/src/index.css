@@ -136,7 +136,6 @@ hr {
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0);
   }
 }
 
