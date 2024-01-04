@@ -8,9 +8,7 @@
 
 html {
   font-family: "Poppins", "Roboto", sans-serif;
-
   height: 100%;
-
   /* font-size: 10px; */
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
@@ -108,7 +106,6 @@ hr {
 
 .animate {
   animation-duration: 0.4s;
-  /* animation-duration: 1s; */
   animation-delay: 0.5s;
   animation-name: animate-fade;
   /* animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48); */
