@@ -8,7 +8,7 @@ import ProductPrice from "./ProductPrice";
 
 const ProductItem = (props) => {
   return (
-    <li className="product-item">
+    <li className="product-item ">
       <Card className="product-item__content">
         <div className="product-item__image">
           <Link to={`${props.id}`}>

@@ -13,14 +13,14 @@ main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../public/background.webp);
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   background-repeat: no-repeat;
   /* background: linear-gradient(to right, #9eacff9c, #cce9bf9c); */
+ 
 }
 
 .main-box {
   margin: 0 auto;
-  max-width: 2550px;
   width: 100%;
   min-height: 100vh;
   max-width: 1600px;

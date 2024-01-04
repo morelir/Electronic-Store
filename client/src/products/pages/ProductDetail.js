@@ -34,7 +34,8 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="product-detail">
+    <div className="product-detail animate slide-up">
+      {/* {isLoading && <LoadingSpinner asOverlay />} */}
       <ErrorModal error={error} onClear={clearError} />
       {product && (
         <React.Fragment>

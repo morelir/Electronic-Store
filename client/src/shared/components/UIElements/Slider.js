@@ -60,7 +60,7 @@ let category_images = [
   },
 ];
 
-const Slider = () => {
+const Slider = (props) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const settings = {
@@ -99,7 +99,7 @@ const Slider = () => {
     ],
   };
   return (
-    <SimpleSlider {...settings}>
+    <SimpleSlider {...settings} className={`${props.className}`}>
       {category_images.map((img, idx) => (
         <Link
           key={idx}

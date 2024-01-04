@@ -51,6 +51,7 @@ const StoreProducts = () => {
           <>
             <ProductList products={loadedData.products} />
             <Pagination
+              className="animate slide-up"
               count={loadedData.totalPages}
               page={loadedData.page}
               onChange={handlePageChange}
@@ -63,7 +64,7 @@ const StoreProducts = () => {
           </>
         )}
         {!isLoading && loadedData && loadedData.totalPages === 0 && (
-          <div className="empty-container">
+          <div className="empty-container animate slide-up">
             <p className="empty-message">No results found</p>
           </div>
         )}

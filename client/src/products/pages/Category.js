@@ -56,7 +56,7 @@ const Category = () => {
 
   return (
     <React.Fragment>
-      <Slider />
+      <Slider className="animate slide-up" />
       <div className="home__container">
         <div className="home__mainTextContainer">
           <h1>Electronic Store</h1>
@@ -96,7 +96,7 @@ const Category = () => {
                 to={`products?category=${img.id}`}
                 data-testid={img.id}
               >
-                <figure id={img.id} className="card__container">
+                <figure id={img.id} className="card__container animate slide-up">
                   <div className="image-container">
                     <img src={img.src} alt="" />
                   </div>

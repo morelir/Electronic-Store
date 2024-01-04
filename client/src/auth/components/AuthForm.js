@@ -193,7 +193,7 @@ const AuthForm = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <div className="authentication ">
+      <div className="authentication animate slide-up">
         {isLoginMode && (
           <header className="authentication__header">
             Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>

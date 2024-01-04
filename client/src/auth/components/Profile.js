@@ -38,9 +38,9 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile">
+    <div className="profile animate slide-up">
       <ErrorModal error={error} onClear={clearError} />
-      <header></header>
+      <header>Profile</header>
       <div className="profile-container">
         <div className="account-details">
           <h1 className="account-header">Account Settings</h1>

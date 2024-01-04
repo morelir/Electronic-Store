@@ -49,7 +49,7 @@ const Filters = () => {
   };
 
   return (
-    <div className="products-filter" data-testid="filter-id">
+    <div className={`products-filter`} data-testid="filter-id">
       <span style={{ display: "none" }}>{search.toString()}</span>
       <header className="filter-header">Filters</header>
       <div className="filter-box">

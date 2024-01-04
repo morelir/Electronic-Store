@@ -138,7 +138,7 @@ const ShoppingCart = (props) => {
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
 
-      <div className="cart-products">
+      <div className="cart-products animate slide-up">
         <h1 className="header">
           Shopping <span style={{ color: "rgb(158, 172, 255)" }}>Cart</span>
         </h1>

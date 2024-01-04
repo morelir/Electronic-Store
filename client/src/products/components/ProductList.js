@@ -5,7 +5,7 @@ import "./ProductList.css";
 
 const ProductList = (props) => {
   return (
-    <ul className="store-product-list" data-testid="products-list">
+    <ul className="store-product-list animate slide-left" data-testid="products-list">
       {props.products.map((product) => (
         <ProductItem
           key={product.id}
