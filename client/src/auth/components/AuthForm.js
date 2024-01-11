@@ -196,12 +196,12 @@ const AuthForm = () => {
       <div className="authentication animate slide-up">
         {isLoginMode && (
           <header className="authentication__header">
-            Sign <span style={{ color: "rgb(158, 172, 255)" }}>in</span>
+            Sign <span>in</span>
           </header>
         )}
         {!isLoginMode && (
           <header className="authentication__header">
-            Sign <span style={{ color: "rgb(158, 172, 255)" }}>up</span>
+            Sign <span>up</span>
           </header>
         )}
         <form onSubmit={authSubmitHandler}>
