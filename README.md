@@ -27,29 +27,35 @@ Including **Rest API**, user authentication using **JWT**, File Uploading, and D
 ## Desktop Screenshots
 
 #### Home Page:
-![Capture](https://github.com/morelir/Electronic-Store/assets/58606266/47ebcac5-5bad-404e-9e69-77a846c15175)
+![Capture](https://github.com/morelir/Electronic-Store/assets/58606266/109a7698-df7f-4114-8fda-f9b14b718e66)
+
 #### Laptop Category:
-![Capture2](https://github.com/morelir/Electronic-Store/assets/58606266/6ef14875-415f-4ec8-9b70-5a2ecfea4fe8)
+![Capture2](https://github.com/morelir/Electronic-Store/assets/58606266/3c6935da-89d1-443e-944f-293b28d60ced)
 #### Product Details:
-![Capture3](https://user-images.githubusercontent.com/58606266/224555522-b0d00834-a77c-4357-aa84-0ca025db1422.PNG)
+![Capture3](https://github.com/morelir/Electronic-Store/assets/58606266/bca3242c-f8bd-4ded-883a-0a3e13b21265)
 #### Login:
-![Capture4](https://user-images.githubusercontent.com/58606266/224555524-38ebab94-748c-4b4b-972f-874028e4ea64.PNG)
+![Capture4](https://github.com/morelir/Electronic-Store/assets/58606266/77cd129c-a792-4c6d-bf41-b63dd4d0b7b8)
 #### Sign Up:
-![Capture5](https://user-images.githubusercontent.com/58606266/224555525-da2e261f-39cd-4dc6-8877-e4cf0cb8e3aa.PNG)
+![Capture5](https://github.com/morelir/Electronic-Store/assets/58606266/75690c4f-381d-4802-a68e-d4805d63791f)
 #### Shopping Cart:
-![Capture6](https://user-images.githubusercontent.com/58606266/224555527-fd43a297-b928-4b85-8fba-09e7012071a9.PNG)
+![Capture6](https://github.com/morelir/Electronic-Store/assets/58606266/966c4dc6-449c-4dd8-a62f-7575b1b80842)
+### Payment:
+![stripe](https://github.com/morelir/Electronic-Store/assets/58606266/b86e74ad-f660-47b0-8b7e-11920a3e9dac)
+### Profile & Orders:
+![Profile](https://github.com/morelir/Electronic-Store/assets/58606266/7c994b02-1ca5-4253-bc9c-e10840b3e93c)
 #### Footer:
-![Capture7](https://user-images.githubusercontent.com/58606266/224555528-1d6debb5-ba30-4abc-ab00-003f3d809278.PNG)
+![Capture7](https://github.com/morelir/Electronic-Store/assets/58606266/33fa0b6d-0361-4d8e-95a8-970088368ef0)
 
 </br>
 
 ## Mobile Screenshots
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/58606266/224555687-307acf82-7303-4a6d-9401-ea26d0128917.PNG" width="250">
-  <img src="https://user-images.githubusercontent.com/58606266/224555688-65b63f07-d828-4fc4-b60a-a9f2e0095be1.PNG" width="250">
-  <img src="https://user-images.githubusercontent.com/58606266/224555689-d34fd918-f719-475c-a999-4688f7635661.PNG" width="250">
-  <img src="https://user-images.githubusercontent.com/58606266/224555691-75b54057-5f2f-4c00-85f4-7a3807e56ea0.PNG" width="250">
-  <img src="https://user-images.githubusercontent.com/58606266/224555693-a9138b88-5041-4db5-9581-7ad9c65f4d27.PNG" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/16aee543-53c8-43a8-b8e8-c3b338f044f7" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/dd454512-6387-4087-bec0-e474d11fad75" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/7a05a754-7a8a-4cc6-b348-34589fdd23f4" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/b8317c74-df32-4bd8-8f0f-b6f618176dde" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/e078bb79-af4b-4a6d-ab35-75337fe7bb3c" width="250">
+  <img src="https://github.com/morelir/Electronic-Store/assets/58606266/d369220f-c020-41a1-934c-aba04219d626c" width="250">
 </div>
 
 </br>
