@@ -140,7 +140,7 @@ const ShoppingCart = (props) => {
 
       <div className="cart-products animate slide-up">
         <h1 className="header">
-          Shopping <span style={{ color: "rgb(158, 172, 255)" }}>Cart</span>
+          Shopping <span>Cart</span>
         </h1>
         {loadedProducts.length>0 && (
           <>
